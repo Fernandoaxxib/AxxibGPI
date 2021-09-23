@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("mx.axxib.gestionProyectosInversion.cntrll")
+@ComponentScan("mx.axxib.gpi.config")
 public class WebConfig implements WebMvcConfigurer {
 	
 	@Autowired
