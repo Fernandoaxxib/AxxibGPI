@@ -1,0 +1,167 @@
+
+
+/*************GENERAL********************/
+a{
+   
+    text-decoration: none;
+    overflow:hidden;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/***********HEADER-LOGIN***************/
+
+#login-header .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    background: white;
+    border-bottom: solid 3px #ea324a;
+    position: fixed;
+    width: 100%;
+    margin-top: -8px;
+    left: 1px;
+    height: 62px;
+    
+  }
+
+  .logo-nav {    
+     margin-left: 14px;
+     margin-top: 10px;
+ }
+
+  .afore{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 38px;
+    color: rgb(0, 82, 155);
+    margin-top: 10px;
+  }
+
+  .est-acd {
+    color: rgb(75 76 76);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+    padding: 1px 25px;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+ .HACD:hover {
+    border: 1px solid #ea324a;
+    height: 61px;
+    margin-top: 0px;
+    line-height: 13px;
+}
+
+/*****************BODY-LOGIN***************************/
+
+#sesion-login {
+    background-image: url('../Imagenes/fondo-hex-ani.gif');
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 0px 20px 0px;
+    font-family: 'Noto Sans', sans-serif ;
+   
+}
+
+#sesion-login .item2 { 
+    grid-area: menu; 
+    width: 462px;
+ }
+
+ #sesion-login .item3 { 
+    grid-area: main; 
+}
+
+#sesion-login .item4 { 
+    grid-area: right;
+ }
+
+ #sesion-login .grid-container {
+	display: grid;
+    grid-template-areas: 'menu main main main right right';
+    grid-gap: 10px;
+}
+
+#sesion-login .grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.h-back:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+}
+#sesion-login .card-header-titulo {
+    color: #464646;
+    font-weight: 600;
+    font-size: 30px;
+    text-shadow: 6px 6px 2px #cccccc9c;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 22px;
+}
+
+#sesion-login img {
+    display: block;
+    width: 44%;
+    margin: 0px auto 10px auto;
+}
+
+#sesion-login .card-login-head{
+    color: #3c3c3c;
+    font-weight: 500;
+    padding: .7rem;
+    background: #efecec;
+    font-size: 14px;
+    width: 300px;
+    margin-left: auto;
+    font-family: sans-serif;
+}
+
+#sesion-login .card-login-body{
+    color: #3c3c3c;
+    font-weight: 500;
+    padding: .7rem;
+    background: #fffbfb;
+    font-size: 14px;
+    width: 300px;
+    margin-left: auto;
+    font-family: sans-serif;
+    height: 200px;
+
+}
+
+
+/*******************FOOTER-LOGIN**********************/
+.fixed-bottom {
+    font-family: 'Noto Sans', sans-serif ;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px ;
+    background-color: #FFF;
+    border-top: solid 3px #d2cbcb;
+    z-index: 2000;
+}
+.float-right{
+    float: right;
+    margin-top: -17px;
+    margin-right: 44px;
+}
+
+.float-left{
+    margin-left: 44px;
+}
+
+.h-back:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+}
