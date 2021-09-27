@@ -1,4 +1,4 @@
-package mx.axxib.gpi.service;
+package mx.axxib.gpi.serv;
 
 public class LoginService {
 
