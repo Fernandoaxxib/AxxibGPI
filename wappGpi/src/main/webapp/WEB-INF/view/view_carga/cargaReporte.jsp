@@ -40,19 +40,19 @@ table {
 							<td></td>
 						</tr>
 						<tr height="50px">
-							<td align="left"><input type="submit" class="boton" 
+							<td align="left"><input type="submit" class="boton" name="action"
 								value="Reporte BP Operaciones"></td>
 						</tr>
 						<tr height="50px">
-							<td align="left"><input type="submit" class="boton"
+							<td align="left"><input type="submit" class="boton" name="action"
 								value="Reporte BP Inversiones"></td>
 						</tr>
 						<tr height="50px">
-							<td align="left"><input type="submit" class="boton"
+							<td align="left"><input type="submit" class="boton" name="action"
 								value="Reporte BP Comercial"></td>
 						</tr>
 						<tr height="50px">
-							<td align="left"><input type="submit" class="boton"
+							<td align="left"><input type="submit" class="boton" name="action"
 								value="Reporte BP Administración y Finanzas"></td>
 						</tr>
 						<tr height="20px">
