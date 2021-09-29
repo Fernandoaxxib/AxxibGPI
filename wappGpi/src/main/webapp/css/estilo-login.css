@@ -181,11 +181,12 @@ input[type=text], input[type=password] {
     border-color: transparent;
     border-radius: .25rem;
     margin: 8px auto auto 99px;
+    box-shadow: 0 0 0 0.2rem rgb(195 195 195 / 50%);
 }
 .btn-iniciarSesion:hover{
     background-color: #59ad40 ;
     border-color: transparent;
-    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+    box-shadow: 0 0 0 0.2rem rgb(195 195 195 / 50%);
 }
 
 .noticias-right{
