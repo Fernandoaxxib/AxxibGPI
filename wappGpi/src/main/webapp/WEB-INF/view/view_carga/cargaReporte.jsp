@@ -1,6 +1,10 @@
 <html>
 <head>
+<link rel="stylesheet" href="css/estilo-head-footer.css">
+<script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
 <style>
+
+
 table {
 	border: gray 1px solid;
 	border-radius: 10px;
@@ -17,6 +21,10 @@ table {
 </style>
 </head>
 <body>
+
+<jsp:include page="../layaut/header.jsp" />
+
+<section >
 	<table width="100%">
 		<tr height="100px">
 			<td colspan="3">CARGA REPORTES DE AVANCE PARA PORTAFOLIOS.</td>
@@ -67,5 +75,9 @@ table {
 			<td colspan="3" align="center">${mensaje}</td>
 		</tr>
 	</table>
+	</section>
+	
+	<jsp:include page="../layaut/footer.jsp" />
+	
 </body>
 </html>

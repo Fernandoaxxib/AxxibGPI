@@ -1,0 +1,152 @@
+
+#login-header .item2 { 
+    grid-area: menu; 
+    width: 0px;
+ }
+
+ #login-header .item3 { 
+    grid-area: main;
+    width: 406px; 
+}
+
+#login-header .item4 { 
+    grid-area: right;
+    margin-right: auto;
+ }
+ 
+#login-header .item5 { 
+    grid-area: right;
+ }
+
+ #login-header .grid-container {
+	display: grid;
+    grid-template-areas: 'menu main main main right right';
+    grid-gap: 10px;
+}
+
+#login-header .grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/*************GENERAL********************/
+a{
+   
+    text-decoration: none;
+    overflow:hidden;
+}
+
+
+
+.blue{
+	color: rgb(0, 82, 155);
+}
+
+.grey{
+	color: rgb(141 141 141);
+}
+.font-weig-txt{
+	
+}
+
+/***********HEADER-LOGIN***************/
+
+#login-header  {
+   
+    grid-template-columns: repeat(6,1fr);
+    background: white;
+    border-bottom: solid 3px #ea324a;
+    position: fixed;
+    width: 112%;
+    margin-top: -8px;    
+    height: 62px;
+    
+  }
+
+  .logo-nav {    
+    margin-left: 14px;
+    margin-top: -11px;
+ }
+
+  .afore{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 44px;
+    margin-top: -11px;
+  }
+ 
+
+#header .usuario-header{
+	font-weight: 600;   
+    text-align: center;
+
+}
+
+#header .salir-header{
+	font-weight: 600;
+    text-align: center;
+}
+
+#header .area2-headperfil a {
+    display: block;
+    color: #8e8b8b;
+    padding: 0.1rem 1rem .5rem 1rem;
+    font-size: 12px;
+}
+
+#header .area2-headperfil a:hover {
+    color: #fff;
+    border: 1px solid #ea324a;
+    background-color: #ea324a;
+    text-decoration: none;
+}
+
+.icono-cerrar{
+	font-size: 25px;
+    color: #d30000;
+}
+/*******************FOOTER-LOGIN**********************/
+.fixed-bottom {
+    font-family: 'Noto Sans', sans-serif ;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px ;
+    background-color: #FFF;
+    border-top: solid 3px #d2cbcb;
+    z-index: 2000;
+}
+.float-right{
+    float: right;
+    margin-top: -17px;
+    margin-right: 44px;
+}
+
+.float-left{
+    margin-left: 44px;
+}
+
+.h-back:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+}
+
+
+#footer a:hover {
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+
+section {
+    /*background-image: url(../Imagenes/cel.jpg);*/
+    background-color: #f3f3f3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 419px;
+    padding: 80px 0px;
+    font-family: 'Montserrat';
+
+}

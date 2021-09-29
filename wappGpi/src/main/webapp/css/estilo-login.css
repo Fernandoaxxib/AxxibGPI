@@ -13,6 +13,24 @@ a:hover {
     overflow: hidden;
 }
 
+.msg-gen-error{
+	color: red;
+	font-size: 13px;
+    text-align: center;
+}
+
+.form-color-login{
+	 color: #3c3c3c;
+}
+.text-right{
+   text-align: end;
+    margin-right: 13px;
+    margin-top: -29px;
+}
+
+.green{
+	color: #59ad40;
+}
 /***********HEADER-LOGIN***************/
 
 #login-header .wrapper {
@@ -21,11 +39,15 @@ a:hover {
     background: white;
     border-bottom: solid 3px #ea324a;
     position: fixed;
-    width: 100%;
+    width: 131%;
     margin-top: -8px;
     left: 1px;
     height: 62px;
     
+  }
+  
+  .left-gpp{
+    margin-left: -65px;
   }
 
   .logo-nav {    
@@ -61,7 +83,14 @@ a:hover {
 }
 
 /*****************BODY-LOGIN***************************/
+.titulo-login{
+    width: 400px;
+    float: left;
+}
 
+.imagen-login{
+    float: left;
+}
 #sesion-login {
     background-image: url('../Imagenes/fondo-hex-ani.gif');
     height: 500px;
@@ -70,31 +99,6 @@ a:hover {
     padding: 60px 0px 20px 0px;
     font-family: 'Noto Sans', sans-serif ;
    
-}
-
-#sesion-login .item2 { 
-    grid-area: menu; 
-    width: 462px;
- }
-
- #sesion-login .item3 { 
-    grid-area: main; 
-}
-
-#sesion-login .item4 { 
-    grid-area: right;
- }
-
- #sesion-login .grid-container {
-	display: grid;
-    grid-template-areas: 'menu main main main right right';
-    grid-gap: 10px;
-}
-
-#sesion-login .grid-container > div {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
 }
 
 .h-back:hover {
@@ -112,34 +116,143 @@ a:hover {
 
 #sesion-login img {
     display: block;
-    width: 44%;
-    margin: 0px auto 10px auto;
+    width: 35%;
+    margin-left: 343px;
 }
+
 
 #sesion-login .card-login-head{
     color: #3c3c3c;
     font-weight: 500;
     padding: .7rem;
     background: #efecec;
-    font-size: 14px;
-    width: 300px;
-    margin-left: auto;
+    text-align: center;
+    font-size: 15px;
     font-family: sans-serif;
 }
+.form-login{
+    width: 321px;
+    float: right;
+    margin-right: 199px;
+}
 
-#sesion-login .card-login-body{
+form {
+    border: 5px solid #f1f1f1;
+    
+}
+.formcontainer {
+    text-align: left;
+    background-color: white;
+    margin-top: -8px;
+   height: 293px;
+}
+.container {
+    padding: 9px 11px;
+    text-align: left;
+}
+
+#sesion-login label {
     color: #3c3c3c;
-    font-weight: 500;
-    padding: .7rem;
-    background: #fffbfb;
-    font-size: 14px;
-    width: 300px;
-    margin-left: auto;
-    font-family: sans-serif;
-    height: 200px;
-
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    text-align: left;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 10px;
+}
+
+.btn-iniciarSesion {
+    width: 111px;
+    height: 31px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #00529b;
+    border-color: transparent;
+    border-radius: .25rem;
+    margin: 8px auto auto 99px;
+}
+.btn-iniciarSesion:hover{
+    background-color: #59ad40 ;
+    border-color: transparent;
+    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+}
+
+.noticias-right{
+    margin-top: 177px;
+    float: right;
+}
+#noticias nav ul {
+    display: block;
+    
+    height: auto;
+    padding: 10px;
+    margin: 0px ;
+}
+
+#noticias nav li {
+    display: block;
+    margin-top: 10px;
+}
+
+#noticias .btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+}
+
+#noticias .btn {
+    width: 55px;
+    height: 55px;
+    display: block;
+    color: #fff;
+    background-color: #ea324a;
+    border: 2px solid #ea324a;
+    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+    border-radius: 2rem;
+    padding: 4px 3px;
+}
+
+#noticias .btn:hover {
+    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+    background-color: #59ad40;
+    border: #59ad40;
+}
+
+/****************NOTICIAS TOOLTIP***********************/
+.tooltip {
+    position: relative;
+  }
+  
+  .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 186px;
+      background-color: #fff;
+      color: #838383;
+      text-align: justify;
+      border-radius: 6px;
+      padding: 5px 12px;
+      position: absolute;
+      z-index: 1;
+      top: -5px;
+      right: 105%;
+    
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 /*******************FOOTER-LOGIN**********************/
 .fixed-bottom {
