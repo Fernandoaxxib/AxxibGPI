@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
 <title>Afore digital</title>
 <link rel="stylesheet" href="css/estilo-head-footer.css">
 <link rel="stylesheet" href="css/estilo-home.css">
+<link rel="stylesheet" href="css/estilos-gnrls.css">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
 </head>
 
@@ -25,7 +27,8 @@
 
 			<div id="nav">
 				<div class="cargarep-est-btn">
-					CARGA DE REPORTES DE AVANCE <span class=" grey reporte-icon"><i
+				<a class="grey" href="<c:url value="/carga"/>"> CARGA DE REPORTES DE AVANCE </a>
+				<span class=" grey reporte-icon"><i
 						class="far fa-file-alt"></i></span>
 				</div>
 			</div>
@@ -39,10 +42,10 @@
 				</div>
 				
 				<div class="btn-lista right">
-				<button type="button" class="btn-gnral" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral" >BP OPERACIONES</button>
+				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
+				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
+				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
+				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
 				
 				</div>
 				

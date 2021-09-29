@@ -1,12 +1,16 @@
 /***********ESTILOS GENERALES*********************/
-.right{
+#home .right{
 	 float: right;
+}
+
+#home a{
+	text-decoration: none;
 }
 
 /********************************/
 
 #nav .cargarep-est-btn {
-   font-size: 14px;
+    font-size: 14px;
     font-family: sans-serif;
     background: #e9e9e9;
     width: 293px;
@@ -56,18 +60,8 @@
 
 /****************btns*************/
 
-.btn-gnral {
+.btn-est {
     width: 164px;
-    height: 31px;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    background-color: #9c9c9d;
-    border-color: transparent;
-    border-radius: .25rem;
+    height: 31px;    
     margin: 51px 62px 0px 4px;
-}
-.btn-gnral:hover{
-    background-color: #9c9c9d;
-    border-color: transparent;
 }

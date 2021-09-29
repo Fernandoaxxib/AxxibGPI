@@ -1,0 +1,15 @@
+/****************BOTONES**********************/
+
+.btn-gnral {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #9c9c9d;
+    border-color: transparent;
+    border-radius: .25rem;
+}
+
+.btn-gnral:hover {
+    background-color: #9c9c9d;
+    border-color: transparent;
+}
