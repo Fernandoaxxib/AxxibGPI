@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -110,6 +111,7 @@
 			<td colspan="3" align="center">${mensaje}</td>
 		</tr>
 	</table>
+	
 	</section>
 	
 	<jsp:include page="../layaut/footer.jsp" />
