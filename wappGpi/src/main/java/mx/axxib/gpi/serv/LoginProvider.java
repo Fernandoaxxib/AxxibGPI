@@ -20,8 +20,8 @@ import org.apache.logging.log4j.Logger;
 import org.datacontract.schemas._2004._07.DomainService_Entities.*;
 
 @Component
-public class CustomAuthenticationProvider implements AuthenticationProvider{
-	private static final Logger LOGGER = LogManager.getLogger(CustomAuthenticationProvider.class);
+public class LoginProvider implements AuthenticationProvider{
+	private static final Logger LOGGER = LogManager.getLogger(LoginProvider.class);
 	
 	@Override
     public Authentication authenticate(Authentication authentication)     throws AuthenticationException {

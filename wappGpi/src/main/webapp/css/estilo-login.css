@@ -1,6 +1,25 @@
-
-
 /*************GENERAL********************/
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+
+}
+
+.left{
+  float: left;
+}
+
 a{
    
     text-decoration: none;
@@ -24,7 +43,7 @@ a:hover {
 }
 .text-right{
    text-align: end;
-    margin-right: 13px;
+   margin-right: 19px;
     margin-top: -29px;
 }
 
@@ -32,38 +51,24 @@ a:hover {
 	color: #59ad40;
 }
 /***********HEADER-LOGIN***************/
-
-#login-header .wrapper {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    background: white;
-    border-bottom: solid 3px #ea324a;
-    position: fixed;
-    width: 131%;
-    margin-top: -8px;
-    left: 1px;
-    height: 62px;
-    
-  }
   
-  .left-gpp{
-    margin-left: -65px;
-  }
+  .header {
+   overflow: hidden;
+    background-color: #ffffff;
+    height: 55px;
+    border-bottom: 3px solid rgb(234, 50, 74);
+}
 
-  .logo-nav {    
-     margin-left: 14px;
-     margin-top: 10px;
- }
 
   .afore{
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 38px;
     color: rgb(0, 82, 155);
-    margin-top: 10px;
+    margin-left: 25px;
   }
 
-  .est-acd {
+ /* .est-acd {
     color: rgb(75 76 76);
     font-size: 14px;
     font-weight: 500;
@@ -81,7 +86,7 @@ a:hover {
     margin-top: 0px;
     line-height: 13px;
 }
-
+*/
 /*****************BODY-LOGIN***************************/
 .titulo-login{
     width: 400px;
@@ -92,12 +97,15 @@ a:hover {
     float: left;
 }
 #sesion-login {
-    background-image: url('../Imagenes/fondo-hex-ani.gif');
-    height: 500px;
+   background-image: url(../Imagenes/fondo-hex-ani.gif);
+    height: 480px;
     background-position: center;
     background-size: cover;
-    padding: 60px 0px 20px 0px;
-    font-family: 'Noto Sans', sans-serif ;
+    padding: 18px 0px 20px 0px;
+    font-family: 'Noto Sans', sans-serif;
+
+
+
    
 }
 
@@ -133,7 +141,7 @@ a:hover {
 .form-login{
     width: 321px;
     float: right;
-    margin-right: 199px;
+    margin-right: 209px;
 }
 
 form {
@@ -144,10 +152,10 @@ form {
     text-align: left;
     background-color: white;
     margin-top: -8px;
-   height: 293px;
+    height: 280px;
 }
 .container {
-    padding: 9px 11px;
+    padding: 2px 11px;
     text-align: left;
 }
 
@@ -255,6 +263,31 @@ input[type=text], input[type=password] {
     visibility: visible;
   }
 
+/************* VIDEO *******************/
+  .tooltip-video {
+    position: relative;
+  }
+  
+
+  .tooltip-video .tooltipvideo {
+    visibility: hidden;
+    background-color: #fff;
+    color: #838383;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 5px 12px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 296%;
+    width: 186px;
+  
+}
+
+.tooltip-video:hover .tooltipvideo {
+    visibility: visible;
+  }
+  
 /*******************FOOTER-LOGIN**********************/
 .fixed-bottom {
     font-family: 'Noto Sans', sans-serif ;

@@ -8,24 +8,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate" />
-<title>Afore digital</title>
+<title>GPP</title>
 <link rel="stylesheet" href="css/estilo-login.css">
 
 </head>
 
 <body>
-	<div id="login-header">
-		<div class="wrapper ">
-			<div>
-				<img src="Imagenes/logo-ban.png" class="logo-nav">
-			</div>
-			<div>
-				<div class="afore left-gpp">GESTOR PORTAFOLIOS PARA PROYECTOS</div>
-			</div>
-			
-			
-		</div>
-	</div>
+	<div class="header">
+  <img src="Imagenes/logo-ban.png" class=" left">
+  <div class="afore left">PLATAFORMA AFORE DIGITAL</div>
+
+ 
+</div>
 
 
 	<section id="sesion-login">
@@ -52,9 +46,11 @@
 						</button>
 					</li>
 					<li>
-						<button class=" btn " >
+						<button class=" btn tooltip-video " >
 							<img src="Imagenes/videos.png" class="image-fluid " alt="">                                    
-							
+							<span class="tooltipvideo">
+								<iframe src="https://www.youtube.com/embed/MkNeIUgNPQ8?autoplay=1" ></iframe>
+	                        </span>
 						</button>
 					</li>
 				</ul>
@@ -89,7 +85,7 @@
 		  <div class=" text-right">[Versión 11.01.00]</div>
 		</div>
 
-
+		
 		
 
 	</section>

@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
 
-import mx.axxib.gpi.serv.CustomAuthenticationProvider;
+import mx.axxib.gpi.serv.LoginProvider;
 
 
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
@@ -21,7 +21,7 @@ public class SecurityConfigWeb extends WebSecurityConfigurerAdapter {
 	
 	
 	@Autowired
-	CustomAuthenticationProvider customAuthenticationProvider;
+	LoginProvider customAuthenticationProvider;
 	
 	
 	@Override

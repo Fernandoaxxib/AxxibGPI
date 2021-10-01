@@ -29,7 +29,7 @@
 			</div>
 			<div class="item1 left ">				
 				<div class="afore  salir-header  red">
-					<a	href="<c:url value="/logout"/>" ><span class="icono-cerrar "><i class="fas fa-power-off "></i></span> </a>
+					<a	href="<c:url value="/logout"/>" ><span class="icono-cerrar "><i class="fas fa-power-off "></i></span>  </a>
 				</div>
 			</div>
 			</div>
