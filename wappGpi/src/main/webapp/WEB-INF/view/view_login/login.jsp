@@ -16,7 +16,7 @@
 <body>
 	<div class="header">
   <img src="Imagenes/logo-ban.png" class=" left">
-  <div class="afore left">PLATAFORMA AFORE DIGITAL</div>
+  <div class="afore left">GESTOR PORTAFOLIOS PARA PROYECTOS</div>
 
  
 </div>
