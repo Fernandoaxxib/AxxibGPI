@@ -2,24 +2,25 @@ package mx.axxib.gpi.ctrll;
 
 
 import java.security.Principal;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 @Controller
 public class LoginController {
+	private static final Logger LOGGER = LogManager.getLogger(LoginController.class);
 
 	/**********************************************
-	 * DETALLE: LOGIN 
+	 * DETALLE: VISTA LOGIN 
 	 *           Valida que los datos de ingreso no sean nulos
 	 **********************************************/
 	@GetMapping(value = {"/", "/login"})
@@ -39,6 +40,8 @@ public class LoginController {
 		model.addAttribute("errorMessge", errorMessge);
 	
         vistaRetorno ="view_login/login";
+        
+        LOGGER.info("# LOGIN  - VISTA LOGIN ");
 		
 		return vistaRetorno;
 	
@@ -54,6 +57,8 @@ public class LoginController {
 		}
 		
 		  retorno= "redirect:/login?logout";
+		  
+		  LOGGER.info("# LOGIN  - VISTA LOGIN (LOGOUT) ");
 		
 		return retorno;
 	}
@@ -75,7 +80,7 @@ public class LoginController {
 		 
 		  retorno = "ms_security/login";
 		 
-		
+		  LOGGER.info("# LOGIN  - VISTA LOGIN (ACCESO DENEGADO) ");
 		return retorno;
 	}
 

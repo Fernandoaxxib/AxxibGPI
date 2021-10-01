@@ -41,15 +41,19 @@ a:hover {
 .form-color-login{
 	 color: #3c3c3c;
 }
+
 .text-right{
    text-align: end;
    margin-right: 19px;
-    margin-top: -29px;
+   margin-top: -29px;
+   font-size: 13px;
+   font-family: 'Montserrat', sans-serif;
 }
 
 .green{
 	color: #59ad40;
 }
+
 /***********HEADER-LOGIN***************/
   
   .header {

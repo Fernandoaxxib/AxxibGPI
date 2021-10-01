@@ -15,52 +15,76 @@
 
 <body>
 
-	
+
 	<jsp:include page="../layaut/header.jsp" />
 
 
 
 	<section id="home">
 
-		<div id="wrapper">
+		<table id="tabla-gnral">
+			<tr height="100px">
+				<td colspan="3">
+					<div id="nav">
+						<div class="cargarep-est-btn">
+							<a class="grey" href="<c:url value="/carga"/>"> CARGA DE
+								REPORTES DE AVANCE </a> <span class=" grey reporte-icon"><i
+								class="far fa-file-alt"></i></span>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td ></td>
+				<td class="tbla-whit-center">
+					<div class="tbl-btn-gnral est-titulos">
+						<table id="tbl-gnral-btones">
+							<tr>
+								<td width="200px" align="center" rowspan="6">
+									<div class="img-left">
+										<div class="cargarep-est-btn txt-estilo">
+											<span class=" grey portafolio-icon"><i
+												class="fas fa-chart-line"></i></span><br> GESTIÓN DE
+											PORTAFOLIOS
+										</div>
+									</div>
+								</td>
+							</tr>							
+							<tr >
+								<td align="left"><button type="button"
+										class="btn-gnral btn-est">BP OPERACIONES</button></td>
+							</tr>
+							<tr >
+								<td align="left"><button type="button"
+										class="btn-gnral btn-est">BP INVERSIONES</button></td>
+							</tr>
+							<tr >
+								<td align="left"><button type="button"
+										class="btn-gnral btn-est">BP COMERCIAL</button></td>
+							</tr>
+							<tr >
+								<td align="left"><button type="button"
+										class="btn-gnral btn-est">BP ADMINISTRACIÓN Y
+										FINANZAS</button></td>
+							</tr>
+							<tr >
+								<td></td>
+							</tr>
+						</table>
 
+					</div>
+				</td>
+				<td ></td>
+			</tr>
+			
 
-			<div id="nav">
-				<div class="cargarep-est-btn">
-				<a class="grey" href="<c:url value="/carga"/>"> CARGA DE REPORTES DE AVANCE </a>
-				<span class=" grey reporte-icon"><i
-						class="far fa-file-alt"></i></span>
-				</div>
-			</div>
-
-			<div id="section">
-				<div class="img-left">
-				<div class="cargarep-est-btn txt-estilo">
-				<span class=" grey portafolio-icon"><i class="fas fa-chart-line"></i></span><br>
-					GESTIÓN DE PORTAFOLIOS 
-				</div>
-				</div>
-				
-				<div class="btn-lista right">
-				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
-				<button type="button" class="btn-gnral btn-est" >BP OPERACIONES</button> <br>
-				
-				</div>
-				
-				
-			</div>
-
-
-
-		</div>
+		</table>
 
 	</section>
 
 
 
-	
+
 	<jsp:include page="../layaut/footer.jsp" />
 
 

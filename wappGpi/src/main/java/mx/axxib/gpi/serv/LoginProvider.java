@@ -28,7 +28,9 @@ public class LoginProvider implements AuthenticationProvider{
  
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
-         Authentication auth = null;
+        
+        Authentication auth = null;
+        
         IDomainServiceProxy proxyy = new IDomainServiceProxy();	
  		DTOLogin login = new DTOLogin();
  		DTOResponseLogin respLogin = new DTOResponseLogin();
@@ -42,8 +44,10 @@ public class LoginProvider implements AuthenticationProvider{
    		   login.setPassword(password);        	
 
     	   respLogin = service.authenticate(login);
-    		LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}", respLogin.getResult() , respLogin.getMessage(), name.toLowerCase());
-        	if(respLogin.getResult()) {        		
+    		
+    	   LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}", respLogin.getResult() , respLogin.getMessage(), name.toLowerCase());
+        	
+    		if(respLogin.getResult()) {        		
         		final List<GrantedAuthority> grantedAuths = new ArrayList<>();
     			grantedAuths.add(new SimpleGrantedAuthority("ROLE_ALL"));
     			final UserDetails principal = new User(name, password, grantedAuths);

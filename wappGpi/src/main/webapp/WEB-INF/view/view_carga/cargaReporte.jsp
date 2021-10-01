@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/estilo-head-footer.css">
 <link rel="stylesheet" href="css/estilos-gnrls.css">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
 <style>
 
 
@@ -48,10 +49,15 @@
 
 }
 
+.ocultar {   
+		display:none
+	}
+
 </style>
 </head>
 <body>
 
+<jsp:include page="../layaut/cargando.jsp" flush="true"/>
 <jsp:include page="../layaut/header.jsp" />
 
 <section >
@@ -67,8 +73,7 @@
 			<td width="30%"></td>
 			<td width="40%">
 			<div  class="tbl-upload est-titulos">
-				<form method="POST" action="uploadFile"
-					enctype="multipart/form-data">
+				<form method="POST" action="uploadFile"	enctype="multipart/form-data" id="form-multipart-upload">
 					<table width="100%">
 						<tr height="50px">
 							<td align="center" colspan="2" class="est-ele-archivo"> Elegir archivo: <input
@@ -116,6 +121,12 @@
 	</section>
 	
 	<jsp:include page="../layaut/footer.jsp" />
+	<script src="js/gif-carga.js"></script>
+	<script>
+		$(function() {
+			gif_carga();
+		});
+	</script>
 	
 </body>
 </html>

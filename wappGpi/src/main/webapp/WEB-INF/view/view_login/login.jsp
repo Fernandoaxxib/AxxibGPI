@@ -49,7 +49,7 @@
 						<button class=" btn tooltip-video " >
 							<img src="Imagenes/videos.png" class="image-fluid " alt="">                                    
 							<span class="tooltipvideo">
-								<iframe src="https://www.youtube.com/embed/MkNeIUgNPQ8?autoplay=1" ></iframe>
+								
 	                        </span>
 						</button>
 					</li>
