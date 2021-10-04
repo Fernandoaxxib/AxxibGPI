@@ -58,9 +58,10 @@ a:hover {
   
   .header {
    overflow: hidden;
-    background-color: #ffffff;
-    height: 55px;
-    border-bottom: 3px solid rgb(234, 50, 74);
+  background-color: #ffffff;
+  height: 55px;
+  
+  border-bottom: 3px solid rgb(234, 50, 74);
 }
 
 
@@ -72,25 +73,7 @@ a:hover {
     margin-left: 25px;
   }
 
- /* .est-acd {
-    color: rgb(75 76 76);
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-decoration: none;
-    padding: 1px 25px;
-    text-align: center;
-    margin-top: 20px;
-    
-}
-
- .HACD:hover {
-    border: 1px solid #ea324a;
-    height: 61px;
-    margin-top: 0px;
-    line-height: 13px;
-}
-*/
+ 
 /*****************BODY-LOGIN***************************/
 .titulo-login{
     width: 400px;

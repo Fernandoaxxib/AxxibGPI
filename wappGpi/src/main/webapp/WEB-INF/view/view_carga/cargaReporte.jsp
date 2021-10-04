@@ -38,6 +38,7 @@
 
 .tbl-upload{
  width: 520px;
+ height: 258px;
 }
 
 .est-ele-archivo{
@@ -87,19 +88,19 @@
 						<tr height="10px">
 							<td></td>
 						</tr>
-						<tr height="50px">
+						<tr height="45px">
 							<td align="left"><input type="submit" class="boton btn-gnral" name="action"
 								value="Reporte BP Operaciones"></td>
 						</tr>
-						<tr height="50px">
+						<tr height="45px">
 							<td align="left"><input type="submit" class="boton btn-gnral" name="action"
 								value="Reporte BP Inversiones"></td>
 						</tr>
-						<tr height="50px">
+						<tr height="45px">
 							<td align="left"><input type="submit" class="boton btn-gnral" name="action"
 								value="Reporte BP Comercial"></td>
 						</tr>
-						<tr height="50px">
+						<tr height="45px">
 							<td align="left"><input type="submit" class="boton btn-gnral" name="action"
 								value="Reporte BP Administración y Finanzas"></td>
 						</tr>

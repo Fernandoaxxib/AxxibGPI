@@ -41,7 +41,7 @@ public class LoginController {
 	
         vistaRetorno ="view_login/login";
         
-        LOGGER.info("# LOGIN  - VISTA LOGIN ");
+        LOGGER.info("# LOGIN  - VISTA INICIO LOGIN ");
 		
 		return vistaRetorno;
 	
