@@ -1,9 +1,5 @@
 package mx.axxib.gpi.ctrll;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +21,39 @@ public class CargaReporte {
 			Model model) {
 
 		String msg = "";
+		String error = "";
 		if (!file.isEmpty()) {
 			try {
 				String nombre = file.getOriginalFilename();
-				if (nombreValido(nombre, action)) {
+				boolean valido = false;
+				
+				if (action.contains("Operaciones")) {
+					if(nombre.toUpperCase().equals("BP_OPERACIONES.XLSX")) {
+						valido = true;
+					} else {
+						error = "El archivo para Operaciones debe llamarse BP_OPERACIONES.XLSX";
+					}
+				} else if (action.contains("Inversiones")) {
+					if(nombre.toUpperCase().equals("BP_INVERSIONES.XLSX")) {
+						valido = true;
+					} else {
+						error = "El archivo para Inversiones debe llamarse BP_INVERSIONES.XLSX";
+					}
+				} else if (action.contains("Comercial")) {
+					if(nombre.toUpperCase().equals("BP_COMERCIAL.XLSX")) {
+						valido = true;
+					} else {
+						error = "El archivo para Comercial debe llamarse BP_COMERCIAL.XLSX";
+					}
+				} else if (action.contains("Administración")) {
+					if(nombre.toUpperCase().equals("BP_ADMINISTRACION.XLSX")) {
+						valido = true;
+					} else {
+						error = "El archivo para Administración debe llamarse BP_ADMINISTRACION.XLSX";
+					}
+				}
+				
+				if (valido) {
 					
 					byte[] bytes = file.getBytes();
 
@@ -39,41 +64,19 @@ public class CargaReporte {
 					 * stream.close();
 					 */
 
-					msg = "Cargado correctamente";
-				} else {
-					msg = "El nombre del archivo no corresponde al esperado";
-				}
+					msg = "Archivo cargado correctamente";
+				} 
 			} catch (Exception e) {
-				msg = "Su carga ha fallado";
+				error = "Se produjo un error inesperado";
 			}
 		} else {
-			msg = "Debe elegir un archivo";
+			error = "Debe elegir un archivo";
 		}
 
 		model.addAttribute("mensaje", msg);
+		model.addAttribute("error", error);
 		return "view_carga/cargaReporte";
 
-	}
-
-	private boolean nombreValido(String nombre, String tipo) {
-		if (tipo.contains("Operaciones")) {
-			if(nombre.toUpperCase().equals("BP_OPERACIONES.XLS") || nombre.toUpperCase().equals("BP_OPERACIONES.XLSX")) {
-				return true;
-			}
-		} else if (tipo.contains("Inversiones")) {
-			if(nombre.toUpperCase().equals("BP_INVERSIONES.XLS") || nombre.toUpperCase().equals("BP_INVERSIONES.XLSX")) {
-				return true;
-			}
-		} else if (tipo.contains("Comercial")) {
-			if(nombre.toUpperCase().equals("BP_COMERCIAL.XLS") || nombre.toUpperCase().equals("BP_COMERCIAL.XLSX")) {
-				return true;
-			}
-		} else if (tipo.contains("Administración")) {
-			if(nombre.toUpperCase().equals("BP_ADMINISTRACION.XLS") || nombre.toUpperCase().equals("BP_ADMINISTRACION.XLSX")) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 }
