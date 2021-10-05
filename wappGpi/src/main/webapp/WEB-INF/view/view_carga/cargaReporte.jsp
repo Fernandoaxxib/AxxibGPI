@@ -117,9 +117,9 @@
 			</tr>
 			<tr height="100px">
 				<td colspan="3" align="center">
-				<div style="margin-left:48px">
-					<p style="color: green">${mensaje}</p>
-					<p style="color: red">${error}</p>
+					<div style="margin-left: 48px">
+						<p style="color: green">${mensaje}</p>
+						<p style="color: red">${error}</p>
 					</div>
 				</td>
 			</tr>
