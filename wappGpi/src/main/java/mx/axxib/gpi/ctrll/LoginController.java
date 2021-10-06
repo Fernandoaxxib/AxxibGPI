@@ -76,9 +76,9 @@ public class LoginController {
 		}
 		
 		
-		 model.addAttribute("errorMessge", errorMessge);
+		 model.addAttribute("errorMessge", "Usuario no autorizado para ingresar al portal. Contacte al administrador de sitio.");
 		 
-		  retorno = "ms_security/login";
+		  retorno = "view_login/login";
 		 
 		  LOGGER.info("# LOGIN  - VISTA LOGIN (ACCESO DENEGADO) ");
 		return retorno;

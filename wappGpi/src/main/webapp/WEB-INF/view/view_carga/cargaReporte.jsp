@@ -79,7 +79,7 @@
 
 	<section>
 		<table width="100%">
-			<tr height="50px">
+			<tr height="100px">
 				<td colspan="3">
 					<div class="cargarep-titulo est-tam">CARGA REPORTES DE AVANCE
 						PARA PORTAFOLIOS.</div>

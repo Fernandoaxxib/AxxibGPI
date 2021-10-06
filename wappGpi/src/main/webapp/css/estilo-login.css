@@ -34,8 +34,9 @@ a:hover {
 
 .msg-gen-error{
 	color: red;
-	font-size: 13px;
-    text-align: center;
+    font-size: 13px;
+    text-align: justify;
+    padding: 0px 10px 4px 12px;
 }
 
 .form-color-login{
@@ -110,9 +111,9 @@ a:hover {
 }
 
 #sesion-login img {
-    display: block;
-    width: 35%;
-    margin-left: 343px;
+   display: block;
+    width: 32%;
+    margin-left: 355px;
 }
 
 
@@ -126,7 +127,7 @@ a:hover {
     font-family: sans-serif;
 }
 .form-login{
-    width: 321px;
+    width: 308px;
     float: right;
     margin-right: 209px;
 }
@@ -139,7 +140,7 @@ form {
     text-align: left;
     background-color: white;
     margin-top: -11px;
-    height: 252px;
+    height: 280px;
 }
 .container {
     padding: 2px 14px;
@@ -150,7 +151,7 @@ form {
     color: #3c3c3c;
     display: block;
     margin-bottom: 0.5rem;
-    margin-top: 3px;
+    margin-top: 7px;
     text-align: left;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;

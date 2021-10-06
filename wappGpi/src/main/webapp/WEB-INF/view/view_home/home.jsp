@@ -23,7 +23,7 @@
 	<section id="home">
 
 		<table id="tabla-gnral">
-			<tr height="50px">
+			<tr height="100px" >
 				<td colspan="3">
 					<div id="nav-carga-reporte">						
 							<a class="grey" href="<c:url value="/carga"/>">							

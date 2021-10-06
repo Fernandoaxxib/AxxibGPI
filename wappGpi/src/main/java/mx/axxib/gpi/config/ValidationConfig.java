@@ -7,6 +7,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 @Configuration
+@PropertySource({"classpath:/META-INF/Global.properties"})
 public class ValidationConfig {
 
 	@Bean
