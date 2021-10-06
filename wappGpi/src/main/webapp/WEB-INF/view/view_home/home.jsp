@@ -23,27 +23,31 @@
 	<section id="home">
 
 		<table id="tabla-gnral">
-			<tr height="100px">
+			<tr height="50px">
 				<td colspan="3">
-					<div id="nav">
-						<div class="cargarep-est-btn">
-							<a class="grey" href="<c:url value="/carga"/>"> CARGA DE
-								REPORTES DE AVANCE </a> <span class=" grey reporte-icon"><i
+					<div id="nav-carga-reporte">						
+							<a class="grey" href="<c:url value="/carga"/>">							
+							 <div class="cargarep-est-btn" id="carga-avance-tit">
+							  CARGA DE REPORTE DE AVANCE <span class="  reporte-icon"><i
 								class="far fa-file-alt"></i></span>
-						</div>
+						     </div>
+							 </a> 
+						
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<td ></td>
 				<td class="tbla-whit-center">
-					<div class="tbl-btn-gnral est-titulos">
-						<table id="tbl-gnral-btones">
+					<div class="tbl-btn-gnral est-titulos grey-obscuro">
+					<form method="POST" action="cargarArchivo"	enctype="multipart/form-data" id="form-gestion-portafolios">
+					<table id="tbl-gnral-btones">
+						
 							<tr>
 								<td width="200px" align="center" rowspan="6">
 									<div class="img-left">
-										<div class="cargarep-est-btn txt-estilo">
-											<span class=" grey portafolio-icon"><i
+										<div class="cargarep-est-btn txt-estilo grey-obscuro">
+											<span class=" grey-obscuro portafolio-icon"><i
 												class="fas fa-chart-line"></i></span><br> GESTIÓN DE
 											PORTAFOLIOS
 										</div>
@@ -64,13 +68,14 @@
 							</tr>
 							<tr >
 								<td align="left"><button type="button"
-										class="btn-gnral btn-est">BP ADMINISTRACIÓN Y
+										class="btn-gnral btn-est">BP ADMON. Y
 										FINANZAS</button></td>
 							</tr>
 							<tr >
 								<td></td>
 							</tr>
 						</table>
+						</form>
 
 					</div>
 				</td>

@@ -27,25 +27,25 @@ public class CargaReporte {
 				String nombre = file.getOriginalFilename();
 				boolean valido = false;
 				
-				if (action.contains("Operaciones")) {
+				if (action.toUpperCase().contains("OPERACIONES")) {
 					if(nombre.toUpperCase().equals("BP_OPERACIONES.XLSX")) {
 						valido = true;
 					} else {
 						error = "El archivo para Operaciones debe llamarse BP_OPERACIONES.XLSX";
 					}
-				} else if (action.contains("Inversiones")) {
+				} else if (action.toUpperCase().contains("INVERSIONES")) {
 					if(nombre.toUpperCase().equals("BP_INVERSIONES.XLSX")) {
 						valido = true;
 					} else {
 						error = "El archivo para Inversiones debe llamarse BP_INVERSIONES.XLSX";
 					}
-				} else if (action.contains("Comercial")) {
+				} else if (action.toUpperCase().contains("COMERCIAL")) {
 					if(nombre.toUpperCase().equals("BP_COMERCIAL.XLSX")) {
 						valido = true;
 					} else {
 						error = "El archivo para Comercial debe llamarse BP_COMERCIAL.XLSX";
 					}
-				} else if (action.contains("Administración")) {
+				} else if (action.toUpperCase().contains("ADMON")) {
 					if(nombre.toUpperCase().equals("BP_ADMINISTRACION.XLSX")) {
 						valido = true;
 					} else {

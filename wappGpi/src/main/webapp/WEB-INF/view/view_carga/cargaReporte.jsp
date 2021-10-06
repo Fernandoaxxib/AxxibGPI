@@ -17,21 +17,40 @@
 	background-color: #f2f2f2;
 }
 */
+.grey-obscuro{
+	color: #6e6e6e;
+}
+
+ .cargarep-titulo {
+    font-size: 14px;
+    font-family: sans-serif;
+    background: #e9e9e9;
+    width: 293px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 48px;
+    font-weight: 600;
+    color: #00529b ;    
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #00529b;
+}
+
 .boton {
 	height: 30px;
 	width: 280px
 }
 
 .est-titulos {
-	font-size: 14px;
-	font-family: sans-serif;
-	background: #e9e9e9;
-	line-height: 32px;
-	text-align: center;
-	margin-left: 48px;
-	border: 5px solid #d1d1d1;
-	font-weight: 600;
-	color: grey;
+	 font-size: 14px;
+    font-family: sans-serif;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 48px;
+    font-weight: 600;  
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #6e6e6e;
+    border-radius: 14px;
 }
 
 .tbl-upload {
@@ -60,10 +79,15 @@
 
 	<section>
 		<table width="100%">
-			<tr height="100px">
+			<tr height="50px">
 				<td colspan="3">
-					<div class="est-titulos est-tam">CARGA REPORTES DE AVANCE
+					<div class="cargarep-titulo est-tam">CARGA REPORTES DE AVANCE
 						PARA PORTAFOLIOS.</div>
+				</td>
+			</tr>
+			<tr height="20px">
+				<td >
+					
 				</td>
 			</tr>
 			<tr>
@@ -74,7 +98,7 @@
 							enctype="multipart/form-data" id="form-multipart-upload">
 							<table width="100%">
 								<tr height="50px">
-									<td align="center" colspan="2" class="est-ele-archivo">
+									<td align="center" colspan="2" class="est-ele-archivo grey-obscuro">
 										Elegir archivo: <input type="file" name="file">
 									</td>
 								</tr>
@@ -88,22 +112,22 @@
 								<tr height="45px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
-										value="Reporte BP Operaciones"></td>
+										value="REPORTE BP OPERACIONES"></td>
 								</tr>
 								<tr height="45px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
-										value="Reporte BP Inversiones"></td>
+										value="REPORTE BP INVERSIONES"></td>
 								</tr>
 								<tr height="45px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
-										value="Reporte BP Comercial"></td>
+										value="REPORTE BP COMERCIAL"></td>
 								</tr>
 								<tr height="45px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
-										value="Reporte BP Administración y Finanzas"></td>
+										value="REPORTE BP ADMON. Y FINANZAS"></td>
 								</tr>
 								<tr height="20px">
 									<td></td>

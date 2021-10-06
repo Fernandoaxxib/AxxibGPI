@@ -53,15 +53,30 @@
 /****************BOTONES**********************/
 
 .btn-gnral {
-    font-size: 14px;
+  
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    background-color: #9c9c9d;
+    background-color: #00529b;
     border-color: transparent;
     border-radius: .25rem;
 }
 
 .btn-gnral:hover {
-    background-color: #9c9c9d;
+    background-color: #59ad40;
+    border-color: transparent;
+}
+
+/*************PARA BOTONES COMO CANCELAR O CERRAR*****************/
+.btn-gnral-red {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #e50e30;
+    border-color: transparent;
+    border-radius: .25rem;
+}
+
+.btn-gnral-red:hover {
+    background-color: #e50e30;
     border-color: transparent;
 }
