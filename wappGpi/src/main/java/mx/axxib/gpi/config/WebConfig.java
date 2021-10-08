@@ -1,5 +1,7 @@
 package mx.axxib.gpi.config;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
@@ -37,6 +40,13 @@ public class WebConfig implements WebMvcConfigurer {
 	    CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 	    multipartResolver.setMaxUploadSize(100000000); //100 MB
 	    return multipartResolver;
+	}
+	
+	@Bean
+	public SessionLocaleResolver localeResolver() {
+		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+		sessionLocaleResolver.setDefaultLocale(Locale.US);
+		return sessionLocaleResolver;
 	}
 	
 	@Override

@@ -27,9 +27,12 @@
 				<td colspan="3">
 					<div id="nav-carga-reporte">						
 							<a class="grey" href="<c:url value="/carga"/>">							
-							 <div class="cargarep-est-btn" id="carga-avance-tit">
-							  CARGA DE REPORTE DE AVANCE <span class="  reporte-icon"><i
-								class="far fa-file-alt"></i></span>
+							 <div class="cargarep-est-btn" id="carga-avance-tit" >
+							  CARGA DE REPORTE DE AVANCE 
+							  <span class="reporte-icon">
+							    <i	class="far fa-file-alt">
+							    </i>
+							  </span>
 						     </div>
 							 </a> 
 						
@@ -40,7 +43,7 @@
 				<td ></td>
 				<td class="tbla-whit-center">
 					<div class="tbl-btn-gnral est-titulos grey-obscuro">
-					<form method="POST" action="cargarArchivo"	enctype="multipart/form-data" id="form-gestion-portafolios">
+					<form method="POST" action="tab" enctype="multipart/form-data" id="form-gestion-portafolios">
 					<table id="tbl-gnral-btones">
 						
 							<tr>
@@ -55,19 +58,19 @@
 								</td>
 							</tr>							
 							<tr >
-								<td align="left"><button type="button"
+								<td align="left"><button type="submit" name="idPortafolio" value="1"
 										class="btn-gnral btn-est">BP OPERACIONES</button></td>
 							</tr>
 							<tr >
-								<td align="left"><button type="button"
+								<td align="left"><button type="submit" name="idPortafolio" value="2"
 										class="btn-gnral btn-est">BP INVERSIONES</button></td>
 							</tr>
 							<tr >
-								<td align="left"><button type="button"
+								<td align="left"><button type="submit" name="idPortafolio" value="3"
 										class="btn-gnral btn-est">BP COMERCIAL</button></td>
 							</tr>
 							<tr >
-								<td align="left"><button type="button"
+								<td align="left"><button type="submit" name="idPortafolio" value="4"
 										class="btn-gnral btn-est">BP ADMON. Y
 										FINANZAS</button></td>
 							</tr>
