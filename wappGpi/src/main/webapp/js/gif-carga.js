@@ -8,6 +8,11 @@ function gif_carga() {
 			$loader.toggleClass('ocultar');
 	});
 	
+	$('#form-tabulador').on('submit', function() {
+		if ($loader.hasClass('ocultar'))
+			$loader.toggleClass('ocultar');
+	});
+	
 	
 	
 	

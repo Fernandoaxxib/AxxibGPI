@@ -129,6 +129,7 @@ public class LoginController {
 		 	      }
 		 	      catch(Exception e){
 		 	         e.printStackTrace();
+		 	        LOGGER.error("# ERROR - ERROR AL CONSULTAR USUARIO EN EL ARCHIVO - ERROR  -  MENSAJE:{}", e.toString());
 		 	      }finally{
 		 	        
 		 	         try{                    
@@ -137,6 +138,7 @@ public class LoginController {
 		 	            }                  
 		 	         }catch (Exception e2){ 
 		 	            e2.printStackTrace();
+		 	           LOGGER.error("# ERROR - ERROR AL CONSULTAR USUARIO EN EL ARCHIVO - ERROR  -  MENSAJE:{}", e2.toString());
 		 	         }
 		 	      }
 		      	
