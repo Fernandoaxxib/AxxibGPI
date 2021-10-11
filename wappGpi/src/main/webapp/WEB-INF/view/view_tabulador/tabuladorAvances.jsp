@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/estilo-head-footer.css">
 <link rel="stylesheet" href="css/estilos-gnrls.css">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
 <script>
 	function filtrar() {
 		var busqueda = document.getElementById('buscar');
@@ -28,6 +29,7 @@
 	}
 </script>
 <style>
+
 .boton {
 	background-color: white;
 	border: gray 2px solid;
@@ -80,7 +82,7 @@
 	font-weight: 500 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
-	padding: 4px 10px;
+	padding: 4px 4px;
 }
 
 .grey-obscuro {
@@ -98,15 +100,58 @@
 	margin-left: 15px;
 	margin-bottom: 15px;
 }
+
+/***********SCROLL****************/
+
+
+ #info-tabulador {
+      overflow:scroll;
+      height: 406px;
+      width:100%;
+       }
+       
+   #info-tabulador::-webkit-scrollbar {
+      width: 14px; 
+      
+  }   
+  
+  #info-tabulador::-webkit-scrollbar-track:vertical {
+      background-color: #d6d6d6;
+  }
+  
+  ::-webkit-scrollbar-button {
+      background-color: #007bff00;
+  }
+  #info-tabulador::-webkit-scrollbar-thumb {
+      background-color: #00529b;
+      height: 80px;
+  } 
+  
+  
+  
+ ::-webkit-scrollbar-corner {
+      background-color: #007bff00;
+  }
+  
+  
+  
+
+
+.ocultar {
+	display: none
+}
+
 </style>
 </head>
 <body>
+
+    <jsp:include page="../layaut/cargando.jsp" flush="true" />
 	<jsp:include page="../layaut/header.jsp" />
 
 	<section>
 
 		<div class="div-buscar">
-			<form method="POST" action="tabulador">
+			<form method="POST" action="tabulador" id="form-tabulador">
 				<label class="est-ele-archivo grey-obscuro">GESTIÓN DE
 					PORTAFOLIOS: <c:out value="${portafolio}" />
 				</label> <input type="hidden" name="portafolio" value="${portafolio}">
@@ -122,7 +167,7 @@
 
 		</div>
 
-		<div class="table-wrapper">
+		<div class="table-wrapper" id="info-tabulador">
 			<table id="tabla" class="table1" style="width: 100%">
 				<thead>
 					<tr>
@@ -237,6 +282,13 @@
 	</section>
 
 	<jsp:include page="../layaut/footer.jsp" />
+	
+	<script src="js/gif-carga.js"></script>
+	<script>
+		$(function() {
+			gif_carga();
+		});
+	</script>
 
 </body>
 </html>
