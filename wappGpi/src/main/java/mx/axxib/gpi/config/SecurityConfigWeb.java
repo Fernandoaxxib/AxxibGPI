@@ -30,7 +30,7 @@ public class SecurityConfigWeb extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
 	        .antMatchers("/","/css/**", "/Imagenes/**").permitAll()	
-	        .antMatchers("/home").hasAuthority("ROLE_ALL")    
+	        .antMatchers("/home","/carga", "/uploadFile", "/tab" ,"/tabulador").hasAuthority("ROLE_ALL")
             .anyRequest().authenticated().
 	        and().formLogin().permitAll()
 			 .loginPage("/login")
