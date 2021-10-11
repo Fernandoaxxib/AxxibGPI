@@ -67,32 +67,31 @@ public class CargaReporte {
 				}
 				
 				if (valido) {
-					String url = "http://172.20.236.11:8081/axxibgpiapi/cargaReporteAvances/";
-					User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-					String userName = user.getUsername();	
-					byte[] bytes = file.getBytes();
-				
-					HttpHeaders headers = new HttpHeaders();
-//					headers.add("Username", "axxibConnGppi");
-//					headers.add("Password", "@xx1bC0nnGpp1");
-					
-					headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");
-					headers.setContentType(MediaType.APPLICATION_JSON);
-
-					JSONObject carga = new JSONObject();
-					carga.put("usResponsable", userName);
-					carga.put("tipoReporte", nombre.toUpperCase().replace(".XLSX", ""));
-					carga.put("documento", bytes);
-
-					HttpEntity<String> request = new HttpEntity<String>(carga.toString(), headers);
-					RestTemplate restTemplate = new RestTemplate();
-
-					CargaResponse res = restTemplate.postForObject(url, request, CargaResponse.class);
-					if(res.getCodRespuesta().equals("1")) {
+//					String url = "http://172.20.236.11:8081/axxibgpiapi/cargaReporteAvances/";
+//					User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//					String userName = user.getUsername();	
+//					byte[] bytes = file.getBytes();
+//				
+//					HttpHeaders headers = new HttpHeaders();
+//
+//					
+//					headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");
+//					headers.setContentType(MediaType.APPLICATION_JSON);
+//
+//					JSONObject carga = new JSONObject();
+//					carga.put("usResponsable", userName);
+//					carga.put("tipoReporte", nombre.toUpperCase().replace(".XLSX", ""));
+//					carga.put("documento", bytes);
+//
+//					HttpEntity<String> request = new HttpEntity<String>(carga.toString(), headers);
+//					RestTemplate restTemplate = new RestTemplate();
+//
+//					CargaResponse res = restTemplate.postForObject(url, request, CargaResponse.class);
+//					if(res.getCodRespuesta().equals("1")) {
 						msg = "Archivo cargado correctamente";
-					} else {
-						error = res.getMensaje();
-					}
+//					} else {
+//						error = res.getMensaje();
+//					}
 				} 
 			} catch (Exception e) {
 				error = "Se produjo un error inesperado";
