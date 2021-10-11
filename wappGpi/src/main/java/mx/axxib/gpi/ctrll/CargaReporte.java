@@ -97,7 +97,7 @@ public class CargaReporte {
 				error = "Se produjo un error inesperado";
 			}
 		} else {
-			error = "Debe elegir un archivo";
+			error = "Debe seleccionar un archivo";
 		}
 
 		model.addAttribute("mensaje", msg);
