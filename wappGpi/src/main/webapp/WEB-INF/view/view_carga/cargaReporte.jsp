@@ -55,7 +55,7 @@
 
 .tbl-upload {
 	width: 520px;
-	height: 258px;
+	height: 300px;
 }
 
 .est-ele-archivo {
@@ -114,25 +114,25 @@
 									<td width="200px" align="center" rowspan="6"><img
 										src="Imagenes/excel.png" width="150px"></td>
 								</tr>
-								<tr height="10px">
+								<tr height="1px">
 									<td></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP OPERACIONES"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP INVERSIONES"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP COMERCIAL"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP ADMON. Y FINANZAS"></td>
