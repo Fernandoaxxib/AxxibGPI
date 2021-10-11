@@ -82,7 +82,7 @@
 			<button type="submit" class=" btn-iniciarSesion">Iniciar Sesión</button>
 			</div>
 		  </form>
-		  <div class=" text-right">[Versión 11.01.00]</div>
+		  <div class=" text-right">[Versión 01.00.00]</div>
 		</div>
 
 		
