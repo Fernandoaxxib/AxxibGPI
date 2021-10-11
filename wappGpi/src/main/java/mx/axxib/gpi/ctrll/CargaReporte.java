@@ -1,12 +1,24 @@
 package mx.axxib.gpi.ctrll;
 
+
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
+
+import mx.axxib.gpi.eml.CargaResponse;
+
+
 
 @Controller
 public class CargaReporte {
@@ -24,6 +36,7 @@ public class CargaReporte {
 		String error = "";
 		if (!file.isEmpty()) {
 			try {
+			
 				String nombre = file.getOriginalFilename();
 				boolean valido = false;
 				
@@ -54,17 +67,32 @@ public class CargaReporte {
 				}
 				
 				if (valido) {
-					
+					String url = "http://172.20.236.11:8081/axxibgpiapi/cargaReporteAvances/";
+					User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+					String userName = user.getUsername();	
 					byte[] bytes = file.getBytes();
+				
+					HttpHeaders headers = new HttpHeaders();
+//					headers.add("Username", "axxibConnGppi");
+//					headers.add("Password", "@xx1bC0nnGpp1");
+					
+					headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");
+					headers.setContentType(MediaType.APPLICATION_JSON);
 
-					/*
-					 * File serverFile = new File("C:\\Reportes" + File.separator +
-					 * file.getOriginalFilename()); BufferedOutputStream stream = new
-					 * BufferedOutputStream( new FileOutputStream(serverFile)); stream.write(bytes);
-					 * stream.close();
-					 */
+					JSONObject carga = new JSONObject();
+					carga.put("usResponsable", userName);
+					carga.put("tipoReporte", nombre.toUpperCase().replace(".XLSX", ""));
+					carga.put("documento", bytes);
 
-					msg = "Archivo cargado correctamente";
+					HttpEntity<String> request = new HttpEntity<String>(carga.toString(), headers);
+					RestTemplate restTemplate = new RestTemplate();
+
+					CargaResponse res = restTemplate.postForObject(url, request, CargaResponse.class);
+					if(res.getCodRespuesta().equals("1")) {
+						msg = "Archivo cargado correctamente";
+					} else {
+						error = res.getMensaje();
+					}
 				} 
 			} catch (Exception e) {
 				error = "Se produjo un error inesperado";
