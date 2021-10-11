@@ -17,23 +17,23 @@
 	background-color: #f2f2f2;
 }
 */
-.grey-obscuro{
+.grey-obscuro {
 	color: #6e6e6e;
 }
 
- .cargarep-titulo {
-    font-size: 14px;
-    font-family: sans-serif;
-    background: #e9e9e9;
-    width: 293px;
-    height: 34px;
-    line-height: 32px;
-    text-align: center;
-    margin-left: 48px;
-    font-weight: 600;
-    color: #00529b ;    
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #00529b;
+.cargarep-titulo {
+	font-size: 14px;
+	font-family: sans-serif;
+	background: #e9e9e9;
+	width: 293px;
+	height: 34px;
+	line-height: 32px;
+	text-align: center;
+	margin-left: 48px;
+	font-weight: 600;
+	color: #00529b;
+	background-color: rgba(0, 0, 0, 0);
+	border: 1px solid #00529b;
 }
 
 .boton {
@@ -42,20 +42,20 @@
 }
 
 .est-titulos {
-	 font-size: 14px;
-    font-family: sans-serif;
-    line-height: 32px;
-    text-align: center;
-    margin-left: 48px;
-    font-weight: 600;  
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #6e6e6e;
-    border-radius: 14px;
+	font-size: 14px;
+	font-family: sans-serif;
+	line-height: 32px;
+	text-align: center;
+	margin-left: 48px;
+	font-weight: 600;
+	background-color: rgba(0, 0, 0, 0);
+	border: 2px solid #6e6e6e;
+	border-radius: 14px;
 }
 
 .tbl-upload {
 	width: 520px;
-	height: 258px;
+	height: 300px;
 }
 
 .est-ele-archivo {
@@ -69,6 +69,14 @@
 
 .ocultar {
 	display: none
+}
+
+::-webkit-file-upload-button {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	background-color: #00529b;
+	border-color: transparent;
+	border-radius: .25rem;
 }
 </style>
 </head>
@@ -86,9 +94,7 @@
 				</td>
 			</tr>
 			<tr height="20px">
-				<td >
-					
-				</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td width="30%"></td>
@@ -98,33 +104,35 @@
 							enctype="multipart/form-data" id="form-multipart-upload">
 							<table width="100%">
 								<tr height="50px">
-									<td align="center" colspan="2" class="est-ele-archivo grey-obscuro">
-										Elegir archivo: <input type="file" name="file">
+									<td align="center" colspan="2"
+										class="est-ele-archivo grey-obscuro">Elegir archivo: <input
+										type="file" name="file"
+										accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
 									</td>
 								</tr>
 								<tr>
 									<td width="200px" align="center" rowspan="6"><img
 										src="Imagenes/excel.png" width="150px"></td>
 								</tr>
-								<tr height="10px">
+								<tr height="1px">
 									<td></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP OPERACIONES"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP INVERSIONES"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP COMERCIAL"></td>
 								</tr>
-								<tr height="45px">
+								<tr height="55px">
 									<td align="left"><input type="submit"
 										class="boton btn-gnral" name="action"
 										value="REPORTE BP ADMON. Y FINANZAS"></td>
