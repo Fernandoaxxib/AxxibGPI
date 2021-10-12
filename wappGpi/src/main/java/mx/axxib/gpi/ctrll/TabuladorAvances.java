@@ -86,32 +86,32 @@ public class TabuladorAvances {
 
 		try {
 			String url =  "http://172.20.236.11:8081/axxibgpiapi/recuperaPortafolio/";			
-			String url2=  "http://localhost:9000/axxibgpiapi/recuperaPortafolio/";
+			//String url2=  "http://localhost:9000/axxibgpiapi/recuperaPortafolio/";
 			
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			String userName = user.getUsername();
+			
+			 JSONObject carga = new JSONObject(); 
+			 carga.put("usResponsable", userName);
+			 carga.put("tipoReporte", "BP_OPERACIONES");
+			 						
+			HttpHeaders headers = new HttpHeaders();			
+			headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");			
+			headers.setContentType(MediaType.APPLICATION_JSON);		
 
-			HttpHeaders headers = new HttpHeaders();
-			
-			headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");
-			
-			headers.setContentType(MediaType.APPLICATION_JSON);
-			
-			JSONObject carga = new JSONObject();
-			carga.put("usResponsable", userName);
-			carga.put("tipoReporte", "BP_OPERACIONES");
-
-			HttpEntity<String> request = new HttpEntity<String>(carga.toString(),headers);
+			HttpEntity<String> request = new HttpEntity<String>(carga.toString() , headers);
 			
 			RestTemplate restTemplate = new RestTemplate();						
 	
-			ResponseEntity<ReporteResponse> response = restTemplate.exchange(url, HttpMethod.GET, request, ReporteResponse.class);
+			ReporteResponse response= restTemplate.postForObject(url, request, ReporteResponse.class);
 			
-			ReporteResponse repo= response.getBody();
+		  //  ResponseEntity<ReporteResponse> response = restTemplate.exchange(url, HttpMethod.GET, request, ReporteResponse.class,carga.toString());
 			
-			System.out.println(repo.getMensaje()+""+repo.getCodRespuesta());			
+		//	ReporteResponse repo= response.getBody();
 			
-			return repo.getReporte();
+		//	System.out.println(repo.getMensaje()+""+repo.getCodRespuesta());			
+			
+			return response.getReporte();
 
 		} catch (final HttpClientErrorException httpClientErrorException) {
 			System.out.println("error1 " + httpClientErrorException.getMessage() + " - "
