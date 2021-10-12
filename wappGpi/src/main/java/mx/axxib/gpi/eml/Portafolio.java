@@ -6,7 +6,7 @@ public class Portafolio {
     private String idPortafolio;
     private String nombrePortafolio;
     private List<String> columnas;
-	private List<Registro> listaRegistros;
+	private List<Reporte> listaReportes;
 
 	
 	
@@ -34,13 +34,14 @@ public class Portafolio {
 		this.nombrePortafolio = nombrePortafolio;
 	}
 
-	public List<Registro> getListaRegistros() {
-		return listaRegistros;
+	public List<Reporte> getListaReportes() {
+		return listaReportes;
 	}
 
-	public void setListaRegistros(List<Registro> listaRegistros) {
-		this.listaRegistros = listaRegistros;
+	public void setListaReportes(List<Reporte> listaReportes) {
+		this.listaReportes = listaReportes;
 	}
+
 	
 	
 }

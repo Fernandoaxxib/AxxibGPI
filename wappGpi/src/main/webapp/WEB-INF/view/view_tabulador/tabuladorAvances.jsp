@@ -29,7 +29,6 @@
 	}
 </script>
 <style>
-
 .boton {
 	background-color: white;
 	border: gray 2px solid;
@@ -102,50 +101,41 @@
 }
 
 /***********SCROLL****************/
+#info-tabulador {
+	overflow: scroll;
+	height: 406px;
+	width: 100%;
+}
 
+#info-tabulador::-webkit-scrollbar {
+	width: 14px;
+}
 
- #info-tabulador {
-      overflow:scroll;
-      height: 406px;
-      width:100%;
-       }
-       
-   #info-tabulador::-webkit-scrollbar {
-      width: 14px; 
-      
-  }   
-  
-  #info-tabulador::-webkit-scrollbar-track:vertical {
-      background-color: #d6d6d6;
-  }
-  
-  ::-webkit-scrollbar-button {
-      background-color: #007bff00;
-  }
-  #info-tabulador::-webkit-scrollbar-thumb {
-      background-color: #00529b;
-      height: 80px;
-  } 
-  
-  
-  
- ::-webkit-scrollbar-corner {
-      background-color: #007bff00;
-  }
-  
-  
-  
+#info-tabulador::-webkit-scrollbar-track:vertical {
+	background-color: #d6d6d6;
+}
 
+::-webkit-scrollbar-button {
+	background-color: #007bff00;
+}
+
+#info-tabulador::-webkit-scrollbar-thumb {
+	background-color: #00529b;
+	height: 80px;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: #007bff00;
+}
 
 .ocultar {
 	display: none
 }
-
 </style>
 </head>
 <body>
 
-    <jsp:include page="../layaut/cargando.jsp" flush="true" />
+	<jsp:include page="../layaut/cargando.jsp" flush="true" />
 	<jsp:include page="../layaut/header.jsp" />
 
 	<section>
@@ -181,74 +171,81 @@
 						<th width="50">BP</th>
 						<th width="90">RECURSOS</th>
 						<th width="90">COSTOS</th>
-						<c:forEach items="${portafol.columnas}" var="columna">
+						<%-- <c:forEach items="${portafol.columnas}" var="columna">
 							<th width="70"><c:out value="${columna}"></c:out></th>
-						</c:forEach>
+						</c:forEach> --%>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${portafol.listaRegistros}" var="obj">
-						<tr>
-							<td width="200"><c:out value="${obj.iniciativa}"></c:out></td>
-							<td width="200"><c:out value="${obj.objetivo}"></c:out></td>
-							<td width="200"><c:out value="${obj.accionEstrategica}"></c:out></td>
-							<td width="300"><c:choose>
-									<c:when test="${obj.esTituloBloque > 0}">
-										<div style="background: yellow">
-											<c:out value="${obj.proyecto}" />
-										</div>
-									</c:when>
-									<c:otherwise>
-										<div>
-											<c:out value="${obj.proyecto}" />
-										</div>
-									</c:otherwise>
-								</c:choose></td>
-							<td width="90" style="text-align: right"><c:choose>
-									<c:when test="${obj.idPresupuesto > 0}">
-										<div>
-											<c:out value="${obj.idPresupuesto}" />
-										</div>
-									</c:when>
-									<c:otherwise>
-										<div>
-											<c:out value="" />
-										</div>
-									</c:otherwise>
-								</c:choose></td>
+					<c:forEach items="${portafol.listaReportes}" var="obj">
+						<c:if test="${obj.iniciativa.id > 0}">
+							<tr>
+								<td width="200"><c:out
+										value="${obj.iniciativa.iniciativa}"></c:out></td>
+								<td width="200"><c:out value="${obj.objetivo.objetivo}"></c:out></td>
+								<td width="200"><c:out
+										value="${obj.accionEstrategica.accionEstrategica}"></c:out></td>
+								<td width="300"><c:choose>
+										<c:when test="${obj.tituloBloque == true}">
+											<div style="background: yellow">
+												<c:out value="${obj.proyecto}" />
+											</div>
+										</c:when>
+										<c:otherwise>
+											<div>
+												<c:out value="${obj.proyecto}" />
+											</div>
+										</c:otherwise>
+									</c:choose></td>
+								<td width="90" style="text-align: right"><c:choose>
+										<c:when test="${obj.presupuesto.id > 0}">
+											<div>
+												<c:out value="${obj.presupuesto.id}" />
+											</div>
+										</c:when>
+										<c:otherwise>
+											<div>
+												<c:out value="" />
+											</div>
+										</c:otherwise>
+									</c:choose></td>
 
-							<td width="90" style="text-align: left"><c:choose>
-									<c:when test="${obj.esNormativo == 0}">
-										<c:out value="SI" />
-									</c:when>
-									<c:when test="${obj.esNormativo == 1}">
-										<c:out value="NO" />
-									</c:when>
-									<c:otherwise>
-										<div>
-											<c:out value="" />
-										</div>
-									</c:otherwise>
-								</c:choose></td>
-							<td width="90" style="text-align: right"><c:out
-									value="${obj.fechaRequerida}"></c:out></td>
-							<td width="50" style="text-align: left"><c:out
-									value="${obj.cveBp}"></c:out></td>
-							<td width="90" style="text-align: leftr"><c:out
-									value="${obj.cvesRecursos}"></c:out></td>
-							<td width="90" style="text-align: right"><c:choose>
-									<c:when test="${obj.costoPpto > 0}">
-										<fmt:formatNumber type="number" value="${obj.costoPpto}"
-											pattern="$#,##0.00" />
-									</c:when>
-									<c:otherwise>
-										<div>
-											<c:out value="" />
-										</div>
-									</c:otherwise>
-								</c:choose></td>
+								<td width="90" style="text-align: left"><c:choose>
+										<c:when test="${obj.normativo == true}">
+											<c:if test="${obj.tituloBloque == false}">
+												<c:out value="SI" />
+											</c:if>
+										</c:when>
+										<c:when test="${obj.normativo == false}">
+											<c:if test="${obj.tituloBloque == false}">
+												<c:out value="NO" />
+											</c:if>
+										</c:when>
+										<c:otherwise>
+											<div>
+												<c:out value="" />
+											</div>
+										</c:otherwise>
+									</c:choose></td>
+								<td width="90" style="text-align: right"><c:out
+										value="${obj.fechaRequerida}"></c:out></td>
+								<td width="50" style="text-align: left"><c:out
+										value="${obj.bp.cve}"></c:out></td>
+								<td width="90" style="text-align: leftr"><c:out
+										value="${obj.interventor.cve}"></c:out></td>
+								<td width="90" style="text-align: right"><c:choose>
+										<c:when test="${obj.costoPpto > 0}">
+											<fmt:formatNumber type="number" value="${obj.costoPpto}"
+												pattern="$#,##0.00" />
+										</c:when>
+										<c:otherwise>
+											<div>
+												<c:out value="" />
+											</div>
+										</c:otherwise>
+									</c:choose></td>
 
-							<c:forEach items="${portafol.columnas}" var="columna">
+								<%-- <c:forEach items="${portafol.columnas}" var="columna">
 								<td width="70"><c:forEach items="${obj.periodoAvance}"
 										var="avance">
 										<c:choose>
@@ -273,8 +270,9 @@
 											</c:when>
 										</c:choose>
 									</c:forEach></td>
-							</c:forEach>
-						</tr>
+							</c:forEach> --%>
+							</tr>
+						</c:if>
 					</c:forEach>
 				</tbody>
 			</table>
@@ -282,7 +280,7 @@
 	</section>
 
 	<jsp:include page="../layaut/footer.jsp" />
-	
+
 	<script src="js/gif-carga.js"></script>
 	<script>
 		$(function() {
