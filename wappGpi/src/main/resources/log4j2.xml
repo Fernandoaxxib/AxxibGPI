@@ -76,7 +76,7 @@
     </Appenders>
     <Loggers>
 		<!-- avoid duplicated logs with additivity=false -->
-        <Logger name="mx.axxib.aforedigitalgt"  additivity="false">
+        <Logger name="mx.axxib.gpi"  additivity="false">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToFileInfo"/>
             <AppenderRef ref="LogToFileError"/>

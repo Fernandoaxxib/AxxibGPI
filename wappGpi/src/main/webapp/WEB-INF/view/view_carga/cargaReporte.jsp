@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,9 @@
 <meta name="google" content="notranslate" />
 <title>GPP</title>
 <link rel="stylesheet" href="css/estilo-head-footer.css">
+
 <link rel="stylesheet" href="css/estilos-gnrls.css">
+<link rel="shortcut icon" href="<c:url value='/Imagenes/favicon.ico'/>">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
 <script src="js/jquery-1.12.1.min.js"></script>
 <style>

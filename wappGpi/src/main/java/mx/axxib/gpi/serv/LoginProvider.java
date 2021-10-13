@@ -62,7 +62,10 @@ public class LoginProvider implements AuthenticationProvider {
 		int conteo = 0;
 
 		try {
+			
+			
 
+			//password.replace("Â", "");
 			login.setGroupMember(null);
 			login.setUserName(usuario.toLowerCase());
 			login.setPassword(password);

@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate" />
+<link rel="shortcut icon" href="<c:url value='/Imagenes/favicon.ico'/>">
 <link rel="stylesheet" href="css/estilo-head-footer.css">
 <link rel="stylesheet" href="css/estilos-gnrls.css">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>

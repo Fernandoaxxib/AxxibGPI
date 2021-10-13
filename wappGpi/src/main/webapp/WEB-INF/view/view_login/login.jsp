@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate" />
 <title>GPP</title>
 <link rel="stylesheet" href="css/estilo-login.css">
+<link rel="shortcut icon" href="<c:url value='/Imagenes/favicon.ico'/>">
 
 </head>
 
@@ -37,11 +37,11 @@
 						<button class=" btn tooltip" >
 							<img src="Imagenes/noticias.png" class="image-fluid " alt="">
 							<span class="tooltiptext">
-													 <h4 class="green">Afore XXI Banorte invertir√° en bonos verdes</h4>
-													 <p>Afore XXI Banorte est√° dispuesta a destinar toda su inversi√≥n en 
-													 infraestructura y energ√≠a en bonos verdes, alrededor de 50,000 
+													 <h4 class="green">Afore XXI Banorte invertir· en bonos verdes</h4>
+													 <p>Afore XXI Banorte est· dispuesta a destinar toda su inversiÛn en 
+													 infraestructura y energÌa en bonos verdes, alrededor de 50,000 
 													 millones de pesos, como parte de su compromiso para combatir el cambio
-													  clim√°tico frente al riesgo que representa para las inversiones.</p>
+													  clim·tico frente al riesgo que representa para las inversiones.</p>
 						   </span>
 						</button>
 					</li>
@@ -60,8 +60,8 @@
 
 		<div class="form-login h-back">
 						
-			<c:url var="loginUrl" value="/login" />
-			<form action="${loginUrl}" method="POST" class="form-horizontal">
+			
+			<form action="login" method="POST" class="form-horizontal">
 			<div  class="card-login-head"> 
 			CONTROL DE ACCESO
 		     </div >
@@ -74,15 +74,15 @@
 			  <label for="uname"><strong>Cuenta Usuario:</strong></label>
 			  <input type="text" placeholder="Usuario" name="usuario"
 											id="validationTooltip01" required>
-			  <label for="psw"><strong>Contrase√±a:</strong></label>
-			  <input type="password" placeholder="Contrase√±a" id="validationTooltip03"
-											name="password" required>
+			  <label for="psw"><strong>ContraseÒa:</strong></label>
+			  <input type="password" placeholder="ContraseÒa" id="validationTooltip03"
+											name="password"  required>
 			</div>
 			
-			<button type="submit" class=" btn-iniciarSesion">Iniciar Sesi√≥n</button>
+			<button type="submit" class=" btn-iniciarSesion">Iniciar SesiÛn</button>
 			</div>
 		  </form>
-		  <div class=" text-right">[Versi√≥n 01.00.01]</div>
+		  <div class=" text-right">[VersiÛn 01.00.01]</div>
 		</div>
 
 		
@@ -93,28 +93,28 @@
 	<footer>
 		<div class="fixed-bottom">
 			<div class="float-left">
-				<span>¬© 2019. Afore XXI Banorte S.A. de C.V. Derechos
+				<span>© 2019. Afore XXI Banorte S.A. de C.V. Derechos
 					Reservados</span>
 			</div>
 			<div class="float-right">
 				<a href="https://twitter.com/XXIBanorte" target="_blank"
 					rel="noopener"> <img src="Imagenes/icn_tw.svg" width="24"
 					height="24" title="Ir a https://twitter.com/XXIBanorte"
-					class="h-back" alt="√çcono_Twitter">
+					class="h-back" alt="Õcono_Twitter">
 				</a> <a href="https://www.facebook.com/xxibanorte" target="_blank"
 					rel="noopener"> <img src="Imagenes/icn_fb.svg" width="24"
 					height="24" title="Ir a https://www.facebook.com/xxibanorte"
-					class="h-back" alt="√çcono_Facebook">
+					class="h-back" alt="Õcono_Facebook">
 				</a> <a href="https://www.youtube.com/user/AforeXXIBanorte"
 					target="_blank" rel="noopener"> <img
 					src="Imagenes/icn_youtube_circle_.svg" width="24" height="24"
 					title="Ir a https://www.youtube.com/user/AforeXXIBanorte"
-					class="h-back" alt="√çcono_Youtube">
+					class="h-back" alt="Õcono_Youtube">
 				</a> <a href="https://mx.linkedin.com/company/afore-xxi-banorte"
 					target="_blank" rel="noopener"> <img
 					src="Imagenes/icn_linkedin_circle_.svg" width="24" height="24"
 					title="Ir a https://mx.linkedin.com/company/afore-xxi-banorte"
-					class="h-back" alt="√çcono_Linkedin">
+					class="h-back" alt="Õcono_Linkedin">
 				</a>
 			</div>
 
