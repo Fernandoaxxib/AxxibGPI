@@ -20,7 +20,7 @@ public class HomeController {
      String vistaRetorno = null;
      vistaRetorno ="view_home/home";
      
-     LOGGER.info("# HOME  - VISTA HOME ");
+     LOGGER.info("# HOME  - VISTA (HOME) ");
 		return vistaRetorno;
 	
 	}

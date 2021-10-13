@@ -6,8 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -33,6 +37,10 @@ import mx.axxib.gpi.eml.ReporteResponse;
 
 @Controller
 public class TabuladorAvances {
+	private static final Logger LOGGER = LogManager.getLogger(TabuladorAvances.class);
+	
+	@Autowired
+	private Environment env;
 
 	@RequestMapping(value = "/tab", method = RequestMethod.POST)
 	public String carga2(@RequestParam String idPortafolio, Model model) {
@@ -61,6 +69,8 @@ public class TabuladorAvances {
 			break;
 		}
 		}
+		
+		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPROCESO:{} ", portafolio);
 
 		model.addAttribute("idPortafolio", idPortafolio);
 		model.addAttribute("portafolio", portafolio);
@@ -79,13 +89,15 @@ public class TabuladorAvances {
 		model.addAttribute("portafolio", portafolio);
 		model.addAttribute("portafol", portafol);
 
+		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPORTAFOLIO:{}, PORTAFOLIO:{} ", idPortafolio, portafolio);
+		
 		return "view_tabulador/tabuladorAvances";
 	}
 
 	public List<Reporte> cargarDatos(String tipoReporte) {
 
 		try {
-			String url =  "http://172.20.236.11:8081/axxibgpiapi/recuperaPortafolio/";			
+			//String url =  "http://172.20.236.11:8081/axxibgpiapi/recuperaPortafolio/";			
 			//String url2=  "http://localhost:9000/axxibgpiapi/recuperaPortafolio/";
 			
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -96,14 +108,15 @@ public class TabuladorAvances {
 			 carga.put("tipoReporte", "BP_OPERACIONES");
 			 						
 			HttpHeaders headers = new HttpHeaders();			
-			headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");			
+			//headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");			
+			headers.add("Authorization", this.env.getProperty("header.autorizacion"));			
 			headers.setContentType(MediaType.APPLICATION_JSON);		
 
 			HttpEntity<String> request = new HttpEntity<String>(carga.toString() , headers);
 			
 			RestTemplate restTemplate = new RestTemplate();						
 	
-			ReporteResponse response= restTemplate.postForObject(url, request, ReporteResponse.class);
+			ReporteResponse response= restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"), request, ReporteResponse.class);
 			
 		  //  ResponseEntity<ReporteResponse> response = restTemplate.exchange(url, HttpMethod.GET, request, ReporteResponse.class,carga.toString());
 			
@@ -111,17 +124,23 @@ public class TabuladorAvances {
 			
 		//	System.out.println(repo.getMensaje()+""+repo.getCodRespuesta());			
 			
+			LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte, response.getReporte());
+			
 			return response.getReporte();
 
-		} catch (final HttpClientErrorException httpClientErrorException) {
-			System.out.println("error1 " + httpClientErrorException.getMessage() + " - "
+		} catch (final HttpClientErrorException httpClientErrorException) {	
+			
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}",  httpClientErrorException.getMessage() + " - "
 					+ httpClientErrorException.getResponseBodyAsString() + " - "
 					+ httpClientErrorException.getMostSpecificCause() + " - " + httpClientErrorException.getRootCause()
 					+ " - " + httpClientErrorException.getStackTrace().toString());
-		} catch (HttpServerErrorException httpServerErrorException) {
-			System.out.println("error2 " + httpServerErrorException);
+			
+		} catch (HttpServerErrorException httpServerErrorException) {		
+			
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpServerErrorException);
+			
 		} catch (Exception exception) {
-			System.out.println("error3 " + exception);
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", exception);
 		}
 		return null;
 

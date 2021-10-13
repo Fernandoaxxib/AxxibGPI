@@ -3,6 +3,7 @@ package mx.axxib.gpi.serv;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,10 @@ import org.datacontract.schemas._2004._07.DomainService_Entities.*;
 
 @Component
 public class LoginProvider implements AuthenticationProvider {
+	
+	private static final Charset UTF_8 = Charset.forName("UTF-8");
+	private static final Charset ISO = Charset.forName("ISO-8859-1");
+	
 	private static final Logger LOGGER = LogManager.getLogger(LoginProvider.class);
 
 	@Autowired
@@ -39,6 +44,7 @@ public class LoginProvider implements AuthenticationProvider {
 		String usuario = authentication.getName();
 		String usuarioObtenido = null;
 		String password = authentication.getCredentials().toString();
+		String  passworLimpia = null;
 		boolean existeUsArchivo = false;
 		Authentication auth = null;
 
@@ -63,17 +69,17 @@ public class LoginProvider implements AuthenticationProvider {
 
 		try {
 			
+			LOGGER.info("# PASSWORD:{}", password);
 			
-
-			//password.replace("Â", "");
+			passworLimpia = new String(password.getBytes(ISO),UTF_8);
 			login.setGroupMember(null);
 			login.setUserName(usuario.toLowerCase());
-			login.setPassword(password);
+			login.setPassword(passworLimpia);
 
 			respLogin = service.authenticate(login);
 
-			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}", respLogin.getResult(),
-					respLogin.getMessage(), usuario);
+			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}, PASSWORD:{}", respLogin.getResult(),
+					respLogin.getMessage(), usuario, passworLimpia);
 
 			if (respLogin.getResult()) {
 
