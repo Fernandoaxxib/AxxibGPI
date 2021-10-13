@@ -69,7 +69,7 @@ public class LoginProvider implements AuthenticationProvider {
 
 		try {
 			
-			LOGGER.info("# PASSWORD:{}", password);
+			
 			
 			passworLimpia = new String(password.getBytes(ISO),UTF_8);
 			login.setGroupMember(null);
@@ -78,8 +78,8 @@ public class LoginProvider implements AuthenticationProvider {
 
 			respLogin = service.authenticate(login);
 
-			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}, PASSWORD:{}", respLogin.getResult(),
-					respLogin.getMessage(), usuario, passworLimpia);
+			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}, ", respLogin.getResult(),
+					respLogin.getMessage(), usuario);
 
 			if (respLogin.getResult()) {
 
