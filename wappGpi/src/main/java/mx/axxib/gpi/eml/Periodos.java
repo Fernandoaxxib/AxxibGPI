@@ -7,8 +7,15 @@ public class Periodos {
 	private String trimestre;
 	private String anio;
 	private String mes;
+	private String indicadorAvance;
 	
 	
+	public String getIndicadorAvance() {
+		return indicadorAvance;
+	}
+	public void setIndicadorAvance(String indicadorAvance) {
+		this.indicadorAvance = indicadorAvance;
+	}
 	public String getPeriodo() {
 		return periodo;
 	}

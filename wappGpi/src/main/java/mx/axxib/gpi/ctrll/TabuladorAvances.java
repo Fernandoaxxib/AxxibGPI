@@ -71,7 +71,8 @@ public class TabuladorAvances {
 	@RequestMapping(value = "/tabulador", method = RequestMethod.POST)
 	public String tabulador(@RequestParam String portafolio, @RequestParam String idPortafolio, Model model) {
 		Portafolio portafol = new Portafolio();
-		String nombrePortafolio;
+		String nombrePortafolio="";
+		String mensaje="";
 
 		if (portafolio.equals("BP ADMINISTRACIÓN Y FINANZAS")) {
 			nombrePortafolio = "BP_ADMINISTRACION";
@@ -79,15 +80,18 @@ public class TabuladorAvances {
 			nombrePortafolio = portafolio.replace(" ", "_");
 		}
 
-		List<Reporte> listaReportes = cargarDatos(nombrePortafolio);
-
-		if (listaReportes != null) {
-			portafol.setListaReportes(generaPeriodos(listaReportes));
+        ReporteResponse response= cargarDatos(nombrePortafolio);
+        if(response.getReporte()!=null) {
+        	List<Reporte> listaReportes = response.getReporte();
+        	portafol.setListaReportes(generaPeriodos(listaReportes));
 			portafol.setColumnas(getColumnas(listaReportes));
 			portafol.setIdPortafolio(idPortafolio);
 			portafol.setNombrePortafolio(portafolio);
-			
-		}
+        }else {        	
+        	mensaje=response.getMensaje();
+        }
+		
+        model.addAttribute("msj",mensaje);
 		model.addAttribute("portafolio", portafolio);
 		model.addAttribute("portafol", portafol);
 
@@ -96,10 +100,13 @@ public class TabuladorAvances {
 		return "view_tabulador/tabuladorAvances";
 	}
 
-	public List<Reporte> cargarDatos(String tipoReporte) {
+	public ReporteResponse cargarDatos(String tipoReporte) {
+		ReporteResponse response = new ReporteResponse();
+		
 		try {
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			String userName = user.getUsername();
+			
 
 			JSONObject carga = new JSONObject();
 			carga.put("usResponsable", userName);
@@ -113,32 +120,31 @@ public class TabuladorAvances {
 
 			RestTemplate restTemplate = new RestTemplate();
 
-			ReporteResponse response = restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"),
+			response = restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"),
 					request, ReporteResponse.class);
 
 			if (response.getCodRespuesta() == 1) {
 				if (response.getReporte() != null) {
 					LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte,
 							response.getReporte());
-					return response.getReporte();
+					return response;
 				}
 			} else {
-				LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte,
-						response.getReporte());
-				return null;
+				response.setMensaje("ERROR OBTENIDO DEL SERVICIO REST - "+response.getMensaje());
+				LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte,response);
+				return response;
 			}
 		} catch (final HttpClientErrorException httpClientErrorException) {
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}",
-					httpClientErrorException.getMessage() + " - " + httpClientErrorException.getResponseBodyAsString()
-							+ " - " + httpClientErrorException.getMostSpecificCause() + " - "
-							+ httpClientErrorException.getRootCause() + " - "
-							+ httpClientErrorException.getStackTrace().toString());
+			response.setMensaje("SE PRODUJO UN ERROR INESPERADO"); 
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpClientErrorException.getMessage());
 		} catch (HttpServerErrorException httpServerErrorException) {
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpServerErrorException);
+			response.setMensaje("SE PRODUJO UN ERROR INESPERADO"); 
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpServerErrorException.getMessage());
 		} catch (Exception exception) {
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", exception);
+			response.setMensaje("SE PRODUJO UN ERROR INESPERADO"); 
+			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}",exception.getMessage());
 		}
-		return null;
+		return response;
 	}
 
 	public List<String> getColumnas(List<Reporte> listaReportes) {
@@ -160,18 +166,8 @@ public class TabuladorAvances {
 
 		Integer anioInicial = Collections.min(anios);
 		Integer anioFinal = Collections.max(anios);
-		Integer trimestreInicial = 4;
-
-		for (Periodos p : listaPeriodos) {
-			if (Integer.valueOf(p.getAnio()) == anioInicial) {
-				if (Integer.valueOf(p.getTrimestre()) < trimestreInicial) {
-					trimestreInicial = Integer.valueOf(p.getTrimestre());
-				}
-			}
-		}
- 
-        //se pone trimestreInicial = 1 porque el Json no está regresando el correctamente el trimestre de cada periodo
-		trimestreInicial=1;
+		Integer trimestreInicial = 1;
+        
 		while (anioInicial <= anioFinal) {
 			if (trimestreInicial <= 4) {
 				switch (trimestreInicial) {
