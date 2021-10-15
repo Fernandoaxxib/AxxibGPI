@@ -172,17 +172,17 @@
 						<th width="50">BP</th>
 						<th width="90">RECURSOS</th>
 						<th width="90">COSTOS</th>
-						<%-- <c:forEach items="${portafol.columnas}" var="columna">
+						<c:forEach items="${portafol.columnas}" var="columna">
 							<th width="70"><c:out value="${columna}"></c:out></th>
-						</c:forEach> --%>
+						</c:forEach>
 					</tr>
 				</thead>
 				<tbody>
+				
 					<c:forEach items="${portafol.listaReportes}" var="obj">
 						<c:if test="${obj.iniciativa.id > 0}">
 							<tr>
-								<td width="200"><c:out
-										value="${obj.iniciativa.iniciativa}"></c:out></td>
+							<td width="200"><c:out value="${obj.iniciativa.iniciativa}"></c:out></td>
 								<td width="200"><c:out value="${obj.objetivo.objetivo}"></c:out></td>
 								<td width="200"><c:out
 										value="${obj.accionEstrategica.accionEstrategica}"></c:out></td>
@@ -246,32 +246,32 @@
 										</c:otherwise>
 									</c:choose></td>
 
-								<%-- <c:forEach items="${portafol.columnas}" var="columna">
-								<td width="70"><c:forEach items="${obj.periodoAvance}"
+								<c:forEach items="${portafol.columnas}" var="columna">
+								<td width="70"><c:forEach items="${obj.periodos}"
 										var="avance">
 										<c:choose>
 											<c:when test="${avance.periodo eq columna}">
 												<c:choose>
-													<c:when test="${avance.identificador == 0}">
-														<input type="text" value="" style="background: darkgrey;border: 1px solid darkgrey;max-width:70px !important" disabled="disabled" >
+													<c:when test="${avance.trimestre eq 0}">
+														<input type="text" value="" style="background: darkgrey;border: 1px solid darkgrey;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.identificador == 1}">
-														<input type="text" value="" style="background: green;border: 1px solid green;max-width:70px !important" disabled="disabled" >
+													<c:when test="${avance.trimestre eq 1}">
+														<input type="text" value="" style="background: green;border: 1px solid green;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.identificador == 2}">														
-														<input type="text" value="" style="background: lightgreen;border: 1px solid lightgreen;max-width:70px !important" disabled="disabled" >
+													<c:when test="${avance.trimestre eq 2}">														
+														<input type="text" value="" style="background: lightgreen;border: 1px solid lightgreen;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.identificador == 3}">
-														<input type="text" value="" style="background: yellow;border: 1px solid yellow;max-width:70px !important" disabled="disabled" >														
+													<c:when test="${avance.trimestre eq 3}">
+														<input type="text" value="" style="background: yellow;border: 1px solid yellow;width:60px !important;heigth:30px !important" disabled="disabled" >														
 													</c:when>
-													<c:when test="${avance.identificador == 4}">
-													    <input type="text" value="" style="background: red;border: 1px solid red;max-width:70px !important" disabled="disabled" />														
+													<c:when test="${avance.trimestre eq 4}">
+													    <input type="text" value="" style="background: red;border: 1px solid red;width:60px !important;heigth:30px !important" disabled="disabled" />														
 													</c:when>
 												</c:choose>
 											</c:when>
 										</c:choose>
 									</c:forEach></td>
-							</c:forEach> --%>
+							</c:forEach>
 							</tr>
 						</c:if>
 					</c:forEach>

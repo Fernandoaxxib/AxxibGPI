@@ -3,10 +3,18 @@ package mx.axxib.gpi.eml;
 
 public class Periodos {
 
+	private String periodo;
 	private String trimestre;
 	private String anio;
 	private String mes;
 	
+	
+	public String getPeriodo() {
+		return periodo;
+	}
+	public void setPeriodo(String periodo) {
+		this.periodo = periodo;
+	}
 	public String getTrimestre() {
 		return trimestre;
 	}
