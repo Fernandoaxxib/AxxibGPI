@@ -190,3 +190,11 @@ section {
     height: 522px;
 	font-family: 'Montserrat', sans-serif;
 }
+
+
+/**********ESTILOS PARA VISTA DE ERROR ********************/
+.est-msg-error{
+	font-size: 24px;
+    font-family: sans-serif;
+    text-align: center;
+}

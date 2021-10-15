@@ -32,7 +32,7 @@ public class LoginController {
 	 **********************************************/
 	@GetMapping(value = { "/", "/login" })
 	public String login(@RequestParam(value = "error", required = false) String error, Model model,
-			Principal principal) {
+			Principal principal) throws Exception {
 		String vistaRetorno = null;
 		String errorMessge = null;
 
@@ -44,6 +44,8 @@ public class LoginController {
 		String part1 = null;
 		String part2 = null;
 		int conteo = 0;
+		
+		try {
 
 		if (principal != null) {
 
@@ -61,15 +63,24 @@ public class LoginController {
 
 		LOGGER.info("# LOGIN  - VISTA INICIO LOGIN ");
 
+	}catch (Exception e) {
+		LOGGER.error("# ERROR - LOGIN  - MENSAJE:{}", e.toString());
+		throw new Exception();
+
+	}
+	
 		return vistaRetorno;
 
 	}
 
 	@GetMapping(value = "/logout")
-	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
+	public String logoutPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String retorno = null;
 
+		try {
+	
+		
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
@@ -78,11 +89,17 @@ public class LoginController {
 
 		LOGGER.info("# LOGIN  - VISTA LOGIN (LOGOUT) ");
 
+		}catch (Exception e) {
+			LOGGER.error("# ERROR - LOGIN  - MENSAJE:{}", e.toString());
+			throw new Exception();
+
+		}
+		
 		return retorno;
 	}
 
 	@GetMapping(value = "/acessoDenegado")
-	public String acessoDenegado(HttpServletRequest request, HttpServletResponse response, Model model) {
+	public String acessoDenegado(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String perfil = auth.getAuthorities().toString();
 		String errorMessge = null;
@@ -100,6 +117,8 @@ public class LoginController {
 		int conteo = 0;
 
 		String usuarioObtenido = null;
+		
+		try {
 
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
@@ -172,6 +191,13 @@ public class LoginController {
 		retorno = "view_login/login";
 
 		LOGGER.info("# LOGIN  - VISTA LOGIN (ACCESO DENEGADO) ");
+		
+	
+	}catch (Exception e) {
+		LOGGER.error("# ERROR - LOGIN  - MENSAJE:{}", e.toString());
+		throw new Exception();
+
+	}
 		return retorno;
 	}
 

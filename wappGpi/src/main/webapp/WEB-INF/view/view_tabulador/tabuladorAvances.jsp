@@ -60,7 +60,7 @@
 .table-wrapper table thead {
 	position: -webkit-sticky; /* Safari... */
 	position: sticky;
-	top: 0;
+	top: -1;
 	left: 0;
 }
 
@@ -76,10 +76,10 @@
 }
 
 .table-wrapper table thead th {
-	border: 1px solid #acbece;
+	border: 2px solid #acbece;
 	background: #ffffff !important;
 	color: #00529b !important;
-	font-weight: 500 !important;
+	font-weight: 700 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
 	padding: 4px 4px;
