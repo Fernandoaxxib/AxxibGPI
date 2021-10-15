@@ -53,30 +53,25 @@ public class CargaReporte {
 					if(nombre.toUpperCase().equals("BP_OPERACIONES.XLSX")) {
 						valido = true;
 					} else {
-						error = "El archivo para Operaciones debe llamarse BP_OPERACIONES.XLSX";
-						LOGGER.error("# CARGA REPORTE  - ERROR AL CARGAR EL ARCHIVO  -  MENSAJE:{}", error);
+						error = "EL ARCHIVO PARA OPERACIONES DEBE LLAMARSE: BP_OPERACIONES.XLSX";
 					}
 				} else if (action.toUpperCase().contains("INVERSIONES")) {
 					if(nombre.toUpperCase().equals("BP_INVERSIONES.XLSX")) {
 						valido = true;
 					} else {
-						error = "El archivo para Inversiones debe llamarse BP_INVERSIONES.XLSX";
-						LOGGER.error("# CARGA REPORTE  - ERROR AL CARGAR EL ARCHIVO  -  MENSAJE:{}", error);
+						error = "EL ARCHIVO PARA INVERSIONES DEBE LLAMARSE: BP_INVERSIONES.XLSX";
 					}
 				} else if (action.toUpperCase().contains("COMERCIAL")) {
 					if(nombre.toUpperCase().equals("BP_COMERCIAL.XLSX")) {
 						valido = true;
 					} else {
-						error = "El archivo para Comercial debe llamarse BP_COMERCIAL.XLSX";
-						LOGGER.error("# CARGA REPORTE  - ERROR AL CARGAR EL ARCHIVO  -  MENSAJE:{}", error);
+						error = "EL ARCHIVO PARA COMERCIAL DEBE LLAMARSE: BP_COMERCIAL.XLSX";
 					}
 				} else if (action.toUpperCase().contains("ADMON")) {
 					if(nombre.toUpperCase().equals("BP_ADMINISTRACION.XLSX")) {
 						valido = true;
 					} else {
-						error = "El archivo para Administración debe llamarse BP_ADMINISTRACION.XLSX";
-						LOGGER.error("# CARGA REPORTE  - ERROR AL CARGAR EL ARCHIVO  -  MENSAJE:{}", error);
-						
+						error = "EL ARCHIVO PARA ADMINISTRACIÓN DEBE LLAMARSE: BP_ADMINISTRACION.XLSX";
 					}
 				}
 				
@@ -88,7 +83,6 @@ public class CargaReporte {
 				
 					HttpHeaders headers = new HttpHeaders();
 
-					
 					//headers.add("Authorization", "Basic YXh4aWJDb25uR3BwaTpAeHgxYkMwbm5HcHAx");
 					headers.add("Authorization", this.env.getProperty("header.autorizacion"));
 					headers.setContentType(MediaType.APPLICATION_JSON);
@@ -103,20 +97,22 @@ public class CargaReporte {
 
 					CargaResponse res = restTemplate.postForObject(this.env.getProperty("direccion.cargaReporte"), request, CargaResponse.class);
 					if(res.getCodRespuesta().equals("1")) {
-						msg = "Archivo cargado correctamente";
+						msg = "ARCHIVO CARGADO CORRECTAMENTE";
+						LOGGER.info("# CARGA REPORTE  - ARCHIVO CARGADO - OPERACION:{},  NOMBREARCHIVO:{}, URL:{}, MENSAJE:{}", action, nombre,  this.env.getProperty("direccion.cargaReporte"), msg);
 					} else {
 						error = res.getMensaje();
+						LOGGER.error("# CARGA REPORTE  - ERROR OBTENIDO DEL SERVICIO REST  -  MENSAJE:{}", error);
 					}
-				} 
-				
-				LOGGER.info("# CARGA REPORTE  - ARCHIVO CARGADO - OPERACION:{},  NOMBREARCHIVO:{}, URL:{}, MENSAJE:{}", action, nombre,  this.env.getProperty("direccion.cargaReporte"), msg);
+				} else {
+					LOGGER.error("# CARGA REPORTE  - ERROR AL CARGAR EL ARCHIVO  -  MENSAJE:{}", error);
+				}
 				
 			} catch (Exception e) {
-				error = "Se produjo un error inesperado";
-				LOGGER.error("# ERROR EN CARGA REPORTE  - URL:{}, MENSAJE:{}", this.env.getProperty("direccion.cargaReporte") , error);
+				error = "SE PRODUJO UN ERROR INESPERADO";
+				LOGGER.error("# ERROR EN CARGA REPORTE  - ERROR AL INVOCAR EL SERVICIO - URL:{}, MENSAJE:{}", this.env.getProperty("direccion.cargaReporte") , error);
 			}
 		} else {
-			error = "Debe seleccionar un archivo";
+			error = "DEBE SELECCIONAR UN ARCHIVO";
 			LOGGER.error("# ERROR EN CARGA REPORTE  - URL:{}, MENSAJE:{}", this.env.getProperty("direccion.cargaReporte") , error);
 		}
 
