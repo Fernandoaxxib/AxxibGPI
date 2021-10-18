@@ -150,6 +150,7 @@
 				</label> <input type="hidden" name="portafolio" value="${portafolio}">
 				<button type="submit" name="idPortafolio" value="${idPortafolio}"
 					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>
+					<input type="text" value="${msj}" Style="font-size: 12px;font-family: sans-serif;color: red;border: 0px;width: 600px;margin-left: 150px;" disabled="disabled"/>
 			</form>
 		</div>
 
@@ -254,19 +255,19 @@
 										<c:choose>
 											<c:when test="${avance.periodo eq columna}">
 												<c:choose>
-													<c:when test="${avance.trimestre eq 0}">
+													<c:when test="${avance.indicadorAvance eq 0}">
 														<input type="text" value="" style="background: darkgrey;border: 1px solid darkgrey;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.trimestre eq 1}">
+													<c:when test="${avance.indicadorAvance eq 1}">
 														<input type="text" value="" style="background: green;border: 1px solid green;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.trimestre eq 2}">														
+													<c:when test="${avance.indicadorAvance eq 2}">														
 														<input type="text" value="" style="background: lightgreen;border: 1px solid lightgreen;width:60px !important;heigth:30px !important" disabled="disabled" >
 													</c:when>
-													<c:when test="${avance.trimestre eq 3}">
+													<c:when test="${avance.indicadorAvance eq 3}">
 														<input type="text" value="" style="background: yellow;border: 1px solid yellow;width:60px !important;heigth:30px !important" disabled="disabled" >														
 													</c:when>
-													<c:when test="${avance.trimestre eq 4}">
+													<c:when test="${avance.indicadorAvance eq 4}">
 													    <input type="text" value="" style="background: red;border: 1px solid red;width:60px !important;heigth:30px !important" disabled="disabled" />														
 													</c:when>
 												</c:choose>
