@@ -11,6 +11,8 @@
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
 <script src="js/jquery-1.12.1.min.js"></script>
 <script>
+
+
 	function filtrar() {
 		var busqueda = document.getElementById('buscar');
 		var table = document.getElementById("tabla").tBodies[0];
@@ -134,7 +136,7 @@
 }
 </style>
 </head>
-<body>
+<body  >
 
 	<jsp:include page="../layaut/cargando.jsp" flush="true" />
 	<jsp:include page="../layaut/header.jsp" />
