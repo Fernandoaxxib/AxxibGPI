@@ -83,6 +83,7 @@ a:hover {
 
 .imagen-login{
     float: left;
+    margin-left: 400px;
 }
 #sesion-login {
    background-image: url(../Imagenes/fondo-hex-ani.gif);
@@ -112,8 +113,8 @@ a:hover {
 
 #sesion-login img {
    display: block;
-    width: 32%;
-    margin-left: 355px;
+    width: 48%;
+   /* margin-left: 355px;*/
 }
 
 
@@ -130,6 +131,7 @@ a:hover {
     width: 308px;
     float: right;
     margin-right: 209px;
+    margin-top: 10px;
 }
 
 form {
@@ -186,7 +188,6 @@ input[type=text], input[type=password] {
 }
 
 .noticias-right{
-    margin-top: 177px;
     float: right;
 }
 #noticias nav ul {
