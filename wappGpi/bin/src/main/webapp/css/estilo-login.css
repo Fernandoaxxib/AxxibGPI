@@ -1,0 +1,303 @@
+/*************GENERAL********************/
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+
+}
+
+.left{
+  float: left;
+}
+
+a{
+   
+    text-decoration: none;
+    overflow:hidden;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.msg-gen-error{
+	color: red;
+    font-size: 13px;
+    text-align: justify;
+    padding: 0px 10px 4px 12px;
+}
+
+.form-color-login{
+	 color: #3c3c3c;
+}
+
+.text-right{
+   text-align: end;
+   margin-right: 19px;
+   margin-top: -29px;
+   font-size: 13px;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.green{
+	color: #59ad40;
+}
+
+/***********HEADER-LOGIN***************/
+  
+  .header {
+   overflow: hidden;
+  background-color: #ffffff;
+  height: 55px;
+  
+  border-bottom: 3px solid rgb(234, 50, 74);
+}
+
+
+  .afore{
+   font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 38px;
+    color: rgb(0, 82, 155);
+    margin-left: 25px;
+  }
+
+ 
+/*****************BODY-LOGIN***************************/
+.titulo-login{
+    width: 400px;
+    float: left;
+}
+
+.imagen-login{
+    float: left;
+    margin-left: 400px;
+}
+#sesion-login {
+   background-image: url(../Imagenes/fondo-hex-ani.gif);
+    height: 480px;
+    background-position: center;
+    background-size: cover;
+    padding: 18px 0px 20px 0px;
+    font-family: 'Noto Sans', sans-serif;
+
+
+
+   
+}
+
+.h-back:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+}
+#sesion-login .card-header-titulo {
+    color: #464646;
+    font-weight: 600;
+    font-size: 30px;
+    text-shadow: 6px 6px 2px #cccccc9c;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 22px;
+}
+
+#sesion-login img {
+   display: block;
+    width: 48%;
+   /* margin-left: 355px;*/
+}
+
+
+#sesion-login .card-login-head{
+    color: #3c3c3c;
+    font-weight: 500;
+    padding: .7rem;
+    background: #efecec;
+    text-align: center;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.form-login{
+    width: 308px;
+    float: right;
+    margin-right: 209px;
+    margin-top: 10px;
+}
+
+form {
+    border: 1px solid #f1f1f1;
+    
+}
+.formcontainer {
+    text-align: left;
+    background-color: white;
+    margin-top: -11px;
+    height: 300px;
+}
+.container {
+    padding: 2px 14px;
+    text-align: left;
+}
+
+#sesion-login label {
+    color: #3c3c3c;
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 7px;
+    text-align: left;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 10px;
+}
+
+.btn-iniciarSesion {
+    width: 111px;
+    height: 31px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #00529b;
+    border-color: transparent;
+    border-radius: .25rem;
+    margin: 8px auto auto 99px;
+    box-shadow: 0 0 0 0.2rem rgb(195 195 195 / 50%);
+}
+.btn-iniciarSesion:hover{
+    background-color: #59ad40 ;
+    border-color: transparent;
+    box-shadow: 0 0 0 0.2rem rgb(195 195 195 / 50%);
+}
+
+.noticias-right{
+    float: right;
+}
+#noticias nav ul {
+    display: block;
+    
+    height: auto;
+    padding: 10px;
+    margin: 0px ;
+}
+
+#noticias nav li {
+    display: block;
+    margin-top: 10px;
+}
+
+#noticias .btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+}
+
+#noticias .btn {
+    width: 55px;
+    height: 55px;
+    display: block;
+    color: #fff;
+    background-color: #ea324a;
+    border: 2px solid #ea324a;
+    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+    border-radius: 2rem;
+    padding: 4px 3px;
+}
+
+#noticias .btn:hover {
+    box-shadow: 0 0 0 0.2rem rgb(229 230 230 / 50%);
+    background-color: #59ad40;
+    border: #59ad40;
+}
+
+/****************NOTICIAS TOOLTIP***********************/
+.tooltip {
+    position: relative;
+  }
+  
+  .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 186px;
+      background-color: #fff;
+      color: #838383;
+      text-align: justify;
+      border-radius: 6px;
+      padding: 5px 12px;
+      position: absolute;
+      z-index: 1;
+      top: -5px;
+      right: 105%;
+    
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+/************* VIDEO *******************/
+  .tooltip-video {
+    position: relative;
+  }
+  
+
+  .tooltip-video .tooltipvideo {
+    visibility: hidden;
+    background-color: #fff;
+    color: #838383;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 5px 12px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 296%;
+    width: 186px;
+  
+}
+
+.tooltip-video:hover .tooltipvideo {
+    visibility: visible;
+  }
+  
+/*******************FOOTER-LOGIN**********************/
+.fixed-bottom {
+    font-family: 'Noto Sans', sans-serif ;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px ;
+    background-color: #FFF;
+    border-top: solid 3px #d2cbcb;
+    z-index: 2000;
+}
+.float-right{
+    float: right;
+    margin-top: -17px;
+    margin-right: 44px;
+}
+
+.float-left{
+    margin-left: 44px;
+}
+
+.h-back:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+}

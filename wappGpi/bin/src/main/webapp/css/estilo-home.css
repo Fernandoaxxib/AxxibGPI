@@ -1,0 +1,96 @@
+/***********ESTILOS GENERALES*********************/
+
+
+#home a{
+	text-decoration: none;
+}
+
+.white{
+	color:white;
+}
+.blue{
+	color: #00529b;
+}
+.grey-obscuro{
+	color: #6e6e6e;
+}
+/*************** TITULO CARGA ARCHIVO *****************/
+
+#nav-carga-reporte .cargarep-est-btn {
+    font-size: 14px;
+    font-family: sans-serif;
+    background: #e9e9e9;
+    width: 293px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 48px;
+    font-weight: 600;
+    color: #00529b ;    
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #00529b;
+}
+
+#nav-carga-reporte .cargarep-est-btn:hover {
+    color: #fff ;
+    font-weight: bolder;
+    background: #00529b;
+}
+
+
+.reporte-icon{
+	font-size: 23px;
+    margin: 7px;	
+}
+
+/*************TABLA*****************/
+table{
+	width: 100%;
+}
+
+#tbl-gnral-btones table{
+	width: 100%;
+}
+
+.tbla-whit-center{
+	width:40%;
+}
+
+.portafolio-icon{
+	 font-size: 102px;
+}
+
+.img-left{
+	width: 258px;
+    float: left;
+    text-align: center;
+    margin-top: 18px;
+}
+
+
+
+/****************btns*************/
+.tbl-btn-gnral{
+	width: 520px;
+}
+
+.est-titulos {
+   font-size: 14px;
+    font-family: sans-serif;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 48px;
+    font-weight: 600;
+    color: #00529b ;    
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #6e6e6e;
+    border-radius: 14px;
+    
+}
+
+
+.btn-est {
+    width: 196px;
+    height: 35px;    
+   margin: 20px 34px 7px 23px;
+}

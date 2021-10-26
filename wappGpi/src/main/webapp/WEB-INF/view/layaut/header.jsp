@@ -12,8 +12,8 @@
 
 
   <div class="header-right">
-   <div class="afore grey usuario-header">
-					<div >Usuario: <sec:authentication property="principal.username" /> </div>
+   <div class="afore blue usuario-header">
+					<div ><span class="icono-usuario "><i class="fas fa-user"></i> </span> <sec:authentication property="principal.username" /> </div>
 				</div>
     <div class="afore  salir-header  red">	 
 	 <button id="btn-modal-cerrar-sesion" class="btn-cerrar-sesion"><span class="icono-cerrar "><i class="fas fa-power-off "></i></span></button> 

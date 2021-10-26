@@ -1,0 +1,82 @@
+/****************CARGANDO LAYAUT*****************************/
+
+#loader-cargando {
+	position: fixed;
+    width: 99%;
+    height: 98%;
+    z-index: 1051;
+    overflow: visible;
+    background: rgb(37 37 37);
+    opacity: .7;
+}
+
+.preloader{
+	color: white;
+    font-size: 17px;
+    font-family: sans-serif;
+	margin-left: 598px;
+	position: fixed;
+}
+
+.est-txt{
+	width: 32%;
+    height: 48%;
+    margin-left: 485px;
+}
+
+.estilo-gifModal{
+  margin-top: -160px;
+  margin-left: 82px;
+  height: 203px;
+}
+
+.estilo-gifModalUsuario{
+  margin-top: -160px;
+  margin-left: 82px;
+  height: 203px;
+}
+
+
+.estilo-gifModalRemPermi{
+    margin-left: 89px;
+    margin-top: -259px;
+    height: 203px;
+}
+
+.estilo-gifEdEstPer{
+  margin-top: -160px;
+  margin-left: 82px;
+  height: 203px;
+}
+
+
+/****************BOTONES**********************/
+
+.btn-gnral {
+  
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #00529b;
+    border-color: transparent;
+    border-radius: .25rem;
+}
+
+.btn-gnral:hover {
+    background-color: #59ad40;
+    border-color: transparent;
+}
+
+/*************PARA BOTONES COMO CANCELAR O CERRAR*****************/
+.btn-gnral-red {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #e50e30;
+    border-color: transparent;
+    border-radius: .25rem;
+}
+
+.btn-gnral-red:hover {
+    background-color: #e50e30;
+    border-color: transparent;
+}
