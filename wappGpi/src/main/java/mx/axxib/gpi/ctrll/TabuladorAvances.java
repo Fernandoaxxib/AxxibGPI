@@ -253,7 +253,7 @@ public class TabuladorAvances {
 
 			String periodoInicial = columnasFinales.get(0).toString();
 
-			var bandera = true;
+			boolean bandera = true;
 
 			while (bandera) {
 				if (!columnas.get(0).equals(periodoInicial)) {
@@ -484,9 +484,9 @@ public class TabuladorAvances {
 			});
 		});
 		
-		var rowIniciativa=0;
+		int rowIniciativa=0;
 	    for (Iniciativa iniciativa : iniciativas) {
-	    	var rowObjetivo=0;
+	    	int rowObjetivo=0;
 		    for( Objetivo objetivo : iniciativa.getObjetivos()){
 		    	
 		    	for(AccionEstrategica accion : objetivo.getAccionesEstrategicas()) {
