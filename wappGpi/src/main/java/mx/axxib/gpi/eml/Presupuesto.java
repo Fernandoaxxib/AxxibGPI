@@ -5,8 +5,13 @@ public class Presupuesto {
 	private Integer id;
 	private String presupuesto;
 	
+	public Presupuesto() {}
 	
-	
+	public Presupuesto(Integer id, String presupuesto) {
+		super();
+		this.id = id;
+		this.presupuesto = presupuesto;
+	}
 	public Integer getId() {
 		return id;
 	}
