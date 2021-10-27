@@ -22,16 +22,15 @@
 	width: 280px
 }
 
-.cabecero{
-  	border: 1px solid blue;
+.cabecero {
+	border: 1px solid blue;
 }
 
 .table-wrapper {
 	width: 100%;
 	height: 419px;
-	overflow: auto;		
+	overflow: auto;
 }
-
 
 .table-wrapper table {
 	border-collapse: separate;
@@ -49,11 +48,9 @@
 .table-wrapper table thead {
 	position: -webkit-sticky;
 	position: sticky;
-	top: -1;
-	left: 0;		
+	top: -1px;
+	left: 0;
 }
-
-
 
 .table-wrapper table td {
 	border: 1px solid #acbece;
@@ -64,7 +61,7 @@
 	text-align: justify;
 	padding: 4px 10px;
 	color: #000000;
-	height:30px;
+	height: 30px;
 }
 
 .table-wrapper table thead th {
@@ -94,23 +91,18 @@
 }
 
 /***********SCROLL****************/
-
-
-
 #info-tabulador {
 	overflow: scroll;
 	height: 406px;
-	width: 100%;	
+	width: 100%;
 }
-
 
 #info-tabulador::-webkit-scrollbar {
 	width: 14px;
 }
 
 #info-tabulador::-webkit-scrollbar-track:vertical {
-	 background-color: #d6d6d6; 
-	
+	background-color: #d6d6d6;
 }
 
 ::-webkit-scrollbar-button {
@@ -129,7 +121,6 @@
 .ocultar {
 	display: none
 }
-
 
 .modalIndicadores {
 	display: none;
@@ -155,20 +146,17 @@
 
 .modalIndicadores .close-indicadores {
 	color: #787878;
-    float: right;
-    font-size: 37px;
-    font-weight: bold;
+	float: right;
+	font-size: 37px;
+	font-weight: bold;
 }
 
-.modalIndicadores .close-indicadores:hover, .modalIndicadores .close-indicadores:focus {
+.modalIndicadores .close-indicadores:hover, .modalIndicadores .close-indicadores:focus
+	{
 	color: #aaaaaa;
 	text-decoration: none;
 	cursor: pointer;
 }
-
-
-
-  
 </style>
 </head>
 <body>
@@ -177,31 +165,23 @@
 	<jsp:include page="../layaut/header.jsp" />
 
 	<section>
-
 		<div class="div-buscar">
 			<form method="POST" action="tabulador" id="form-tabulador">
 				<label class="est-ele-archivo grey-obscuro">GESTIÓN DE
 					PORTAFOLIOS: <c:out value="${portafolio}" />
 				</label> <input type="hidden" name="portafolio" value="${portafolio}">
 				<button type="submit" name="idPortafolio" value="${idPortafolio}"
-					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>
-				<input type="text" value="${msj}"
-					Style="font-size: 10px; font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 150px;"
-					disabled="disabled" />
-
-				<button id="btn-indicadores-avance" type="button" class="open btn-gnral"
-					style="margin-left: 30px">Indicadores de avance</button>
+					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>				
+				<button id="btn-indicadores-avance" type="button"
+					class="open btn-gnral" style="margin-left: 500px">Indicadores
+					de avance</button>
 			</form>
 		</div>
 
-		
-		
-
-
-	<div class="table-wrapper" id="info-tabulador">
-			<table style="width: 100%">			 
-				<thead>				  
-					<tr>						
+		<div class="table-wrapper" id="info-tabulador">
+			<table style="width: 100%">
+				<thead>
+					<tr>
 						<th width="200">INICIATIVA</th>
 						<th width="200">OBJETIVO</th>
 						<th width="200">ACCIONES ESTRATÉGICAS</th>
@@ -216,11 +196,8 @@
 							<th width="70" style="font-size: 10px !important;"><c:out
 									value="${columna}"></c:out></th>
 						</c:forEach>
-						
 					</tr>
-					
 				</thead>
-				
 				<tbody>
 
 					<c:forEach items="${portafol.iniciativas}" var="iniciativa">
@@ -350,111 +327,103 @@
 				</tbody>
 			</table>
 		</div>
-	</section>
-	
-	<div id="modal-indicadores-avance" class="modalIndicadores">
-		 <div class="modal-content">
-		 <span class="close-indicadores">×</span>
-		 
-		 <h2>Indicadores de Avance</h2>
 
-		    <div class="contenido-indicadores">
-		    
-		      <table style="margin-bottom: 20px">
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Existe intervención en el proyecto pero sin notificación de avance"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px;"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance terminado"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance satisfactorio"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance con retraso"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance con riesgo"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-			</table>
-		    
-		   
-				
-            
-            
-				
-				</div>
-
-
-
-			
-		
-		</div>		 
+		<div>
+			<input type="text" value="${msj}"
+				Style="font-size: 10px; font-weight:bold;font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 450px;"
+				disabled="disabled" />
 		</div>
+	</section>
+
+	<div id="modal-indicadores-avance" class="modalIndicadores">
+		<div class="modal-content">
+			<span class="close-indicadores">×</span>
+
+			<h2>Indicadores de Avance</h2>
+
+			<div class="contenido-indicadores">
+
+				<table style="margin-bottom: 20px">
+					<tr>
+						<td><input type="text" value=""
+							style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px; margin-left: 15px"
+							disabled="disabled" /></td>
+						<td><input type="text"
+							value="Existe intervención en el proyecto pero sin notificación de avance"
+							style="border: 0px; width: 430px; background: white; margin-bottom: 10px;"
+							disabled="disabled" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" value=""
+							style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px; margin-left: 15px"
+							disabled="disabled" /></td>
+						<td><input type="text"
+							value="Declara que se tiene avance terminado"
+							style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+							disabled="disabled" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" value=""
+							style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px; margin-left: 15px"
+							disabled="disabled" /></td>
+						<td><input type="text"
+							value="Declara que se tiene avance satisfactorio"
+							style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+							disabled="disabled" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" value=""
+							style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px; margin-left: 15px"
+							disabled="disabled" /></td>
+						<td><input type="text"
+							value="Declara que se tiene avance con retraso"
+							style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+							disabled="disabled" /></td>
+					</tr>
+					<tr>
+						<td><input type="text" value=""
+							style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px; margin-left: 15px"
+							disabled="disabled" /></td>
+						<td><input type="text"
+							value="Declara que se tiene avance con riesgo"
+							style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+							disabled="disabled" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
 	<jsp:include page="../layaut/footer.jsp" />
 
 	<script src="js/gif-carga.js"></script>
 	<script>
+		if (document.getElementById("btn-indicadores-avance")) {
+			var modalIndicadores = document
+					.getElementById("modal-indicadores-avance");
+			var btnIndicadores = document
+					.getElementById("btn-indicadores-avance");
+			var spanIndicadores = document
+					.getElementsByClassName("close-indicadores")[0];
 
-	if(document.getElementById("btn-indicadores-avance")){
-		var modalIndicadores = document.getElementById("modal-indicadores-avance");
-		var btnIndicadores = document.getElementById("btn-indicadores-avance");
-		var spanIndicadores = document.getElementsByClassName("close-indicadores")[0];
+			btnIndicadores.onclick = function() {
+				modalIndicadores.style.display = "block";
+				body.style.position = "static";
+				body.style.height = "100%";
+				body.style.overflow = "hidden";
+			}
 
-		btnIndicadores.onclick = function() {
-			modalIndicadores.style.display = "block";	
-			body.style.position = "static";
-			body.style.height = "100%";
-			body.style.overflow = "hidden";
+			spanIndicadores.onclick = function() {
+				modalIndicadores.style.display = "none";
+				body.style.position = "inherit";
+				body.style.height = "auto";
+				body.style.overflow = "visible";
+			}
+
 		}
-
-		spanIndicadores.onclick = function() {
-			modalIndicadores.style.display = "none";	
-			body.style.position = "inherit";
-			body.style.height = "auto";
-			body.style.overflow = "visible";
-		}
-
-		
-
-		
-	} 
 		$(function() {
 			gif_carga();
 		});
-
-		
 	</script>
 
 </body>
