@@ -161,8 +161,8 @@
 
 .close {
 	position: absolute;
-	top: -10;
-	right: -12;
+	top: -10px;
+	right: -12px;
 	text-align: center;
 	width: 24px;
 	text-decoration: none;
