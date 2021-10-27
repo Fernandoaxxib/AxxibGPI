@@ -130,63 +130,44 @@
 	display: none
 }
 
-.overlay {
+
+.modalIndicadores {
+	display: none;
 	position: fixed;
-	top: 0;
+	z-index: 1;
+	padding-top: 180px;
 	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0;
-	transition: .3s ease;
-	z-index: -1;
-	background: #000;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-.overlay.active {
-	opacity: 0.5;
-	z-index: 2;
+.modalIndicadores .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 4px 17px;
+	border: 1px solid lightgray;
+	width: 37%;
 }
 
-.modal {
-	background: #fff;
-	max-height: calc(100% - 100px);
-	position: fixed;
-	top: 40%;
-	left: 50%;
-	width: 580px;
-	transform: translate(-50%, -50%);
-	visibility: hidden;
-	opacity: 0;
-	transition: .3s ease;
-	color: #00529b !important;
-	font-weight: 700 !important;
-	font-size: 12px !important;
-	font-family: 'Montserrat', sans-serif;
-	text-align: center;	
+.modalIndicadores .close-indicadores {
+	color: #787878;
+    float: right;
+    font-size: 37px;
+    font-weight: bold;
 }
 
-.modal .close:hover, .modal .close:focus {
+.modalIndicadores .close-indicadores:hover, .modalIndicadores .close-indicadores:focus {
 	color: #aaaaaa;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-.modal.active {
-	visibility: visible;
-	z-index: 2;
-	opacity: 1;
-}
 
-.close {
 
-	color:#787878;
-	float:right;
-	font-size:37px;	
-	font-family:Times New Roman;
-	top:-5px;
-	right: 5px;
-	position: absolute;
-}
   
 </style>
 </head>
@@ -208,66 +189,13 @@
 					Style="font-size: 10px; font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 150px;"
 					disabled="disabled" />
 
-				<button type="button" class="open btn-gnral"
+				<button id="btn-indicadores-avance" type="button" class="open btn-gnral"
 					style="margin-left: 30px">Indicadores de avance</button>
 			</form>
 		</div>
 
-		<div class="overlay"></div>
-		<div class="modal">
-			<div class="modal-header">				
-				<span class="close" >×</span>				
-				<h2>Indicadores de Avance</h2>
-			</div>
-			<table style="margin-bottom: 20px">
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Existe intervención en el proyecto pero sin notificación de avance"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px;"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance terminado"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance satisfactorio"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance con retraso"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-				<tr>
-					<td><input type="text" value=""
-						style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px;margin-left:15px"
-						disabled="disabled" /></td>
-					<td><input type="text"
-						value="Declara que se tiene avance con riesgo"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
-						disabled="disabled" /></td>
-				</tr>
-			</table>
-
-		</div>
+		
+		
 
 
 	<div class="table-wrapper" id="info-tabulador">
@@ -423,22 +351,110 @@
 			</table>
 		</div>
 	</section>
+	
+	<div id="modal-indicadores-avance" class="modalIndicadores">
+		 <div class="modal-content">
+		 <span class="close-indicadores">×</span>
+		 
+		 <h2>Indicadores de Avance</h2>
+
+		    <div class="contenido-indicadores">
+		    
+		      <table style="margin-bottom: 20px">
+				<tr>
+					<td><input type="text" value=""
+						style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px;margin-left:15px"
+						disabled="disabled" /></td>
+					<td><input type="text"
+						value="Existe intervención en el proyecto pero sin notificación de avance"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px;"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" value=""
+						style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px;margin-left:15px"
+						disabled="disabled" /></td>
+					<td><input type="text"
+						value="Declara que se tiene avance terminado"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" value=""
+						style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px;margin-left:15px"
+						disabled="disabled" /></td>
+					<td><input type="text"
+						value="Declara que se tiene avance satisfactorio"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" value=""
+						style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px;margin-left:15px"
+						disabled="disabled" /></td>
+					<td><input type="text"
+						value="Declara que se tiene avance con retraso"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+						disabled="disabled" /></td>
+				</tr>
+				<tr>
+					<td><input type="text" value=""
+						style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px;margin-left:15px"
+						disabled="disabled" /></td>
+					<td><input type="text"
+						value="Declara que se tiene avance con riesgo"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+						disabled="disabled" /></td>
+				</tr>
+			</table>
+		    
+		   
+				
+            
+            
+				
+				</div>
+
+
+
+			
+		
+		</div>		 
+		</div>
 
 	<jsp:include page="../layaut/footer.jsp" />
 
 	<script src="js/gif-carga.js"></script>
 	<script>
+
+	if(document.getElementById("btn-indicadores-avance")){
+		var modalIndicadores = document.getElementById("modal-indicadores-avance");
+		var btnIndicadores = document.getElementById("btn-indicadores-avance");
+		var spanIndicadores = document.getElementsByClassName("close-indicadores")[0];
+
+		btnIndicadores.onclick = function() {
+			modalIndicadores.style.display = "block";	
+			body.style.position = "static";
+			body.style.height = "100%";
+			body.style.overflow = "hidden";
+		}
+
+		spanIndicadores.onclick = function() {
+			modalIndicadores.style.display = "none";	
+			body.style.position = "inherit";
+			body.style.height = "auto";
+			body.style.overflow = "visible";
+		}
+
+		
+
+		
+	} 
 		$(function() {
 			gif_carga();
 		});
 
-		$(".open").on("click", function() {
-			$(".overlay, .modal").addClass("active");
-		});
-
-		$(".close, .overlay").on("click", function() {
-			$(".overlay, .modal").removeClass("active");
-		});
+		
 	</script>
 
 </body>
