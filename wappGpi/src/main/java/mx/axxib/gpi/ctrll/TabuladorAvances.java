@@ -21,14 +21,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
-
 import mx.axxib.gpi.eml.AccionEstrategica;
 import mx.axxib.gpi.eml.Iniciativa;
 import mx.axxib.gpi.eml.Objetivo;
 import mx.axxib.gpi.eml.Periodos;
 import mx.axxib.gpi.eml.Portafolio;
-import mx.axxib.gpi.eml.Proyecto;
-import mx.axxib.gpi.eml.Reporte;
 import mx.axxib.gpi.eml.ReporteResponse;
 
 @Controller
@@ -320,111 +317,8 @@ public class TabuladorAvances {
 	}
 
 	public ReporteResponse cargarDatos2(String nombrePortafolio) {
-		
-		/*
-		ReporteResponse reporte = new ReporteResponse();
-		List<Iniciativa> iniciativas = new ArrayList<>();
-		List<Objetivo> objetivos = new ArrayList<>();
-		List<AccionEstrategica> acciones = new ArrayList<>();
-		List<AccionEstrategica> acciones2 = new ArrayList<>();
-		List<Proyecto> proyectos = new ArrayList<>();
-
-		Proyecto p1 = new Proyecto();
-		p1.setProyecto("Alcanzar datos completos de contacto de teléfono y email de segmento preferente");
-		p1.setPresupuesto(null);
-		p1.setTituloBloque(true);
-		p1.setOrden(1);
-		p1.setNormativo(null);
-		p1.setFechaRequerida(null);
-		p1.setBp(null);
-		p1.setInterventor(null);
-		p1.setCostoPpto(null);		
-		List<Periodos> periodos= new ArrayList<>();
-        Periodos prd= new Periodos();
-        prd.setTrimestre("1");
-        prd.setAnio("2021");
-        prd.setMes("MAR");
-        prd.setIndicadorAvance("0");
-		periodos.add(prd);
-		p1.setPeriodos(periodos);
-		
-		
-		Proyecto p2 = new Proyecto();
-		p2.setProyecto("Investigacion de mercado");
-		p2.setPresupuesto(null);
-		p2.setTituloBloque(false);
-		p2.setOrden(2);
-		p2.setNormativo(null);
-		p2.setFechaRequerida(null);
-		p2.setBp(null);
-		p2.setInterventor(null);
-		p2.setCostoPpto(null);
-		List<Periodos> periodos2= new ArrayList<>();
-        Periodos prd2= new Periodos();
-        prd2.setTrimestre("3");
-        prd2.setAnio("2022");
-        prd2.setMes("SEP");
-        prd2.setIndicadorAvance("3");
-		periodos2.add(prd2);		
-		p2.setPeriodos(periodos2);
-
-		Proyecto p3 = new Proyecto();
-		p3.setProyecto("Clientes prevalidados");
-		p3.setPresupuesto(null);
-		p3.setTituloBloque(false);
-		p3.setOrden(3);
-		p3.setNormativo(null);
-		p3.setFechaRequerida(null);
-		p3.setBp(null);
-		p3.setInterventor(null);
-		p3.setCostoPpto(null);
-		p3.setPeriodos(null);
-
-		AccionEstrategica accion = new AccionEstrategica();
-		accion.setId(504);
-		accion.setAccionEstrategica("504----");
-		accion.setRS_ACCION(4);
-
-		proyectos.add(p1);
-		proyectos.add(p2);
-		proyectos.add(p3);
-		accion.setProyectos(proyectos);
-
-		Objetivo obj1 = new Objetivo();
-		obj1.setId(406);
-		obj1.setObjetivo("406---");
-		obj1.setRS_OBJETIVO(4);
-
-		acciones.add(accion);
-		acciones.add(accion);
-		obj1.setAccionesEstrategicas(acciones);
-		
-
-		Iniciativa iniciativa = new Iniciativa();
-		iniciativa.setId(303);
-		iniciativa.setIniciativa("303 -----");
-		iniciativa.setRS_INICIATIVA(5);
-
-		objetivos.add(obj1);
-		objetivos.add(obj1);
-		iniciativa.setObjetivos(objetivos);
-
-		Reporte repo = new Reporte();
-
-		iniciativas.add(iniciativa);
-		iniciativas.add(iniciativa);
-
-		repo.setIniciativas(iniciativas);
-
-		reporte.setCodRespuesta(1);
-		reporte.setReporte(repo);
-	
-		
-		*/
 		ReporteResponse response = new ReporteResponse();
-		
-
-		
+				
 		try {
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			String userName = user.getUsername();
@@ -477,7 +371,7 @@ public class TabuladorAvances {
 				if(w.getAccionesEstrategicas().size()>0) {					
 					 w.getAccionesEstrategicas().forEach(x->{						
 						  if( x.getRS_ACCION()>0) {
-							  x.setRS_ACCION(x.getRS_ACCION()+2);							  
+							  x.setRS_ACCION(x.getRS_ACCION()+1);							  
 						  }					 
 					  });				  	
 				}				

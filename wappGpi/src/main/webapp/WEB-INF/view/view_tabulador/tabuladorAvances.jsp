@@ -22,11 +22,16 @@
 	width: 280px
 }
 
+.cabecero{
+  	border: 1px solid blue;
+}
+
 .table-wrapper {
 	width: 100%;
-	height: 419px; /* Altura de ejemplo */
-	overflow: auto;
+	height: 419px;
+	overflow: auto;		
 }
+
 
 .table-wrapper table {
 	border-collapse: separate;
@@ -42,11 +47,13 @@
 }
 
 .table-wrapper table thead {
-	position: -webkit-sticky; /* Safari... */
+	position: -webkit-sticky;
 	position: sticky;
 	top: -1;
-	left: 0;
+	left: 0;		
 }
+
+
 
 .table-wrapper table td {
 	border: 1px solid #acbece;
@@ -57,12 +64,13 @@
 	text-align: justify;
 	padding: 4px 10px;
 	color: #000000;
+	height:30px;
 }
 
 .table-wrapper table thead th {
-	border: 2px solid #acbece;
-	background: #ffffff !important;
-	color: #00529b !important;
+	border: 1px solid #acbece;
+	background: #00529b !important;
+	color: #fff !important;
 	font-weight: 700 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
@@ -86,18 +94,23 @@
 }
 
 /***********SCROLL****************/
+
+
+
 #info-tabulador {
 	overflow: scroll;
 	height: 406px;
-	width: 100%;
+	width: 100%;	
 }
+
 
 #info-tabulador::-webkit-scrollbar {
 	width: 14px;
 }
 
 #info-tabulador::-webkit-scrollbar-track:vertical {
-	background-color: #d6d6d6;
+	 background-color: #d6d6d6; 
+	
 }
 
 ::-webkit-scrollbar-button {
@@ -138,9 +151,9 @@
 	background: #fff;
 	max-height: calc(100% - 100px);
 	position: fixed;
-	top: 50%;
+	top: 40%;
 	left: 50%;
-	width: 500px;
+	width: 580px;
 	transform: translate(-50%, -50%);
 	visibility: hidden;
 	opacity: 0;
@@ -149,8 +162,13 @@
 	font-weight: 700 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	border-radius: 5px;
+	text-align: center;	
+}
+
+.modal .close:hover, .modal .close:focus {
+	color: #aaaaaa;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .modal.active {
@@ -160,15 +178,16 @@
 }
 
 .close {
+
+	color:#787878;
+	float:right;
+	font-size:37px;	
+	font-family:Times New Roman;
+	top:-5px;
+	right: 5px;
 	position: absolute;
-	top: -10px;
-	right: -12px;
-	text-align: center;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	border-radius: 12px;
 }
+  
 </style>
 </head>
 <body>
@@ -196,25 +215,23 @@
 
 		<div class="overlay"></div>
 		<div class="modal">
-			<div class="modal-header">
-				<button type="button" class="close btn-gnral" aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
+			<div class="modal-header">				
+				<span class="close" >×</span>				
 				<h2>Indicadores de Avance</h2>
 			</div>
 			<table style="margin-bottom: 20px">
 				<tr>
 					<td><input type="text" value=""
-						style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px"
+						style="width: 50px; background: gray; border: 1px solid gray; margin-bottom: 10px;margin-left:15px"
 						disabled="disabled" /></td>
 					<td><input type="text"
 						value="Existe intervención en el proyecto pero sin notificación de avance"
-						style="border: 0px; width: 430px; background: white; margin-bottom: 10px"
+						style="border: 0px; width: 430px; background: white; margin-bottom: 10px;"
 						disabled="disabled" /></td>
 				</tr>
 				<tr>
 					<td><input type="text" value=""
-						style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px"
+						style="width: 50px; background: green; border: 1px solid green; margin-bottom: 10px;margin-left:15px"
 						disabled="disabled" /></td>
 					<td><input type="text"
 						value="Declara que se tiene avance terminado"
@@ -223,7 +240,7 @@
 				</tr>
 				<tr>
 					<td><input type="text" value=""
-						style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px"
+						style="width: 50px; background: lightgreen; border: 1px solid lightgreen; margin-bottom: 10px;margin-left:15px"
 						disabled="disabled" /></td>
 					<td><input type="text"
 						value="Declara que se tiene avance satisfactorio"
@@ -232,7 +249,7 @@
 				</tr>
 				<tr>
 					<td><input type="text" value=""
-						style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px"
+						style="width: 50px; background: yellow; border: 1px solid yellow; margin-bottom: 10px;margin-left:15px"
 						disabled="disabled" /></td>
 					<td><input type="text"
 						value="Declara que se tiene avance con retraso"
@@ -241,7 +258,7 @@
 				</tr>
 				<tr>
 					<td><input type="text" value=""
-						style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px"
+						style="width: 50px; background: red; border: 1px solid red; margin-bottom: 10px;margin-left:15px"
 						disabled="disabled" /></td>
 					<td><input type="text"
 						value="Declara que se tiene avance con riesgo"
@@ -253,10 +270,10 @@
 		</div>
 
 
-		<div class="table-wrapper" id="info-tabulador">
-			<table id="tabla" class="table1" style="width: 100%">
-				<thead>
-					<tr>
+	<div class="table-wrapper" id="info-tabulador">
+			<table style="width: 100%">			 
+				<thead>				  
+					<tr>						
 						<th width="200">INICIATIVA</th>
 						<th width="200">OBJETIVO</th>
 						<th width="200">ACCIONES ESTRATÉGICAS</th>
@@ -271,8 +288,11 @@
 							<th width="70" style="font-size: 10px !important;"><c:out
 									value="${columna}"></c:out></th>
 						</c:forEach>
+						
 					</tr>
+					
 				</thead>
+				
 				<tbody>
 
 					<c:forEach items="${portafol.iniciativas}" var="iniciativa">
@@ -281,254 +301,122 @@
 								<td width="200" rowspan="${iniciativa.RS_INICIATIVA}"><c:out
 										value="${iniciativa.iniciativa}"></c:out></td>
 							</tr>
-							<c:forEach items="${iniciativa.objetivos}" var="objetivo">
+							<c:forEach items="${iniciativa.objetivos}" var="objetivos">
 								<tr>
-									<td width="200" rowspan="${objetivo.RS_OBJETIVO}"><c:out
-											value="${objetivo.objetivo}"></c:out></td>
+									<td width="200" rowspan="${objetivos.RS_OBJETIVO}"><c:out
+											value="${objetivos.objetivo}"></c:out></td>
 								</tr>
 
-								<c:forEach items="${objetivo.accionesEstrategicas}" var="accion">
+								<c:forEach items="${objetivos.accionesEstrategicas}"
+									var="accion">
 									<tr>
 										<td width="200" rowspan="${accion.RS_ACCION}"><c:out
 												value="${accion.accionEstrategica}"></c:out></td>
 									</tr>
-									<tr>
-										<c:forEach items="${accion.proyectos}" var="proyecto">
-											<tr>
-												<td width="300"><c:choose>
-														<c:when test="${proyecto.tituloBloque == true}">
-															<div style="font-weight: bold; font-size: 12px">
-																<c:out value="${proyecto.proyecto}" />
-															</div>
-														</c:when>
-														<c:otherwise>
-															<div>
-																	<c:out value="${proyecto.proyecto}" />																
-															</div>
-														</c:otherwise>
-													</c:choose></td>
+
+									<c:forEach items="${accion.proyectos}" var="proyecto">
+										<tr>
+											<td width="300"><c:choose>
+													<c:when test="${proyecto.tituloBloque == true}">
+														<div style="font-weight: bold;">
+															<c:out value="${proyecto.proyecto}" />
+														</div>
+													</c:when>
+													<c:otherwise>
+														<div>
+															<c:out value="${proyecto.proyecto}" />
+														</div>
+													</c:otherwise>
+												</c:choose></td>
 
 
 
-												<td width="90" style="text-align: right"><c:choose>
-														<c:when test="${proyecto.presupuesto.id > 0}">
-															<div>
-																<c:out value="${proyecto.presupuesto.id}" />
-															</div>
-														</c:when>
-														<c:otherwise>
-															<div>
-																<c:out value="" />
-															</div>
-														</c:otherwise>
-													</c:choose></td>
-												<td width="90" style="text-align: left"><c:choose>
-														<c:when test="${proyecto.normativo == true}">
-															<c:if test="${proyecto.tituloBloque == false}">
-																<c:out value="SI" />
-															</c:if>
-														</c:when>
-														<c:when test="${proyecto.normativo == false}">
-															<c:if test="${proyecto.tituloBloque == false}">
-																<c:out value="NO" />
-															</c:if>
-														</c:when>
-														<c:otherwise>
-															<div>
-																<c:out value="" />
-															</div>
-														</c:otherwise>
-													</c:choose></td>
-												<td width="90" style="text-align: right"><c:out
-														value="${proyecto.fechaRequerida}"></c:out></td>
-												<td width="50" style="text-align: left"><c:out
-														value="${proyecto.bp.cve}"></c:out></td>
-												<td width="90" style="text-align: leftr"><c:out
-														value="${proyecto.interventor.cve}"></c:out></td>
-												<td width="90" style="text-align: right"><c:choose>
-														<c:when test="${proyecto.costoPpto > 0}">
-															<fmt:formatNumber type="number" value="${obj.costoPpto}"
-																pattern="$#,##0.00" />
-														</c:when>
-														<c:otherwise>
-															<div>
-																<c:out value="" />
-															</div>
-														</c:otherwise>
-													</c:choose></td>
-												<!-- ------------------------------------ -->
-												<c:forEach items="${portafol.columnas}" var="columna">
-													<td width="70"><c:forEach items="${proyecto.periodos}"
-															var="avance">
-															<c:choose>
-																<c:when test="${avance.periodo eq columna}">
-																	<c:choose>
-																		<c:when test="${avance.indicadorAvance eq 0}">
-																			<input type="text" value=""
-																				style="background: darkgrey; border: 1px solid darkgrey; width: 60px !important; heigth: 30px !important"
-																				disabled="disabled">
-																		</c:when>
-																		<c:when test="${avance.indicadorAvance eq 1}">
-																			<input type="text" value=""
-																				style="background: green; border: 1px solid green; width: 60px !important; heigth: 30px !important"
-																				disabled="disabled">
-																		</c:when>
-																		<c:when test="${avance.indicadorAvance eq 2}">
-																			<input type="text" value=""
-																				style="background: lightgreen; border: 1px solid lightgreen; width: 60px !important; heigth: 30px !important"
-																				disabled="disabled">
-																		</c:when>
-																		<c:when test="${avance.indicadorAvance eq 3}">
-																			<input type="text" value=""
-																				style="background: yellow; border: 1px solid yellow; width: 60px !important; heigth: 30px !important"
-																				disabled="disabled">
-																		</c:when>
-																		<c:when test="${avance.indicadorAvance eq 4}">
-																			<input type="text" value=""
-																				style="background: red; border: 1px solid red; width: 60px !important; heigth: 30px !important"
-																				disabled="disabled" />
-																		</c:when>
-																	</c:choose>
-																</c:when>
-															</c:choose>
-														</c:forEach></td>
-												</c:forEach>
-
-
-												<!-- --------------------------------------- -->
-											</tr>
-										</c:forEach>
-									</tr>
+											<td width="90" style="text-align: right"><c:choose>
+													<c:when test="${proyecto.presupuesto.id > 0}">
+														<div>
+															<c:out value="${proyecto.presupuesto.id}" />
+														</div>
+													</c:when>
+													<c:otherwise>
+														<div>
+															<c:out value="" />
+														</div>
+													</c:otherwise>
+												</c:choose></td>
+											<td width="90" style="text-align: left"><c:choose>
+													<c:when test="${proyecto.normativo == true}">
+														<c:if test="${proyecto.tituloBloque == false}">
+															<c:out value="SI" />
+														</c:if>
+													</c:when>
+													<c:when test="${proyecto.normativo == false}">
+														<c:if test="${proyecto.tituloBloque == false}">
+															<c:out value="NO" />
+														</c:if>
+													</c:when>
+													<c:otherwise>
+														<div>
+															<c:out value="" />
+														</div>
+													</c:otherwise>
+												</c:choose></td>
+											<td width="90" style="text-align: right"><c:out
+													value="${proyecto.fechaRequerida}"></c:out></td>
+											<td width="50" style="text-align: left"><c:out
+													value="${proyecto.bp.cve}"></c:out></td>
+											<td width="90" style="text-align: leftr"><c:out
+													value="${proyecto.interventor.cve}"></c:out></td>
+											<td width="90" style="text-align: right"><c:choose>
+													<c:when test="${proyecto.costoPpto > 0}">
+														<fmt:formatNumber type="number" value="${obj.costoPpto}"
+															pattern="$#,##0.00" />
+													</c:when>
+													<c:otherwise>
+														<div>
+															<c:out value="" />
+														</div>
+													</c:otherwise>
+												</c:choose></td>
+											<c:forEach items="${portafol.columnas}" var="columna">
+												<td width="70"><c:forEach items="${proyecto.periodos}"
+														var="avance">
+														<c:choose>
+															<c:when test="${avance.periodo eq columna}">
+																<c:choose>
+																	<c:when test="${avance.indicadorAvance eq 0}">
+																		<input type="text" value=""
+																			style="background: darkgrey; border: 1px solid darkgrey; width: 60px !important; heigth: 30px !important"
+																			disabled="disabled">
+																	</c:when>
+																	<c:when test="${avance.indicadorAvance eq 1}">
+																		<input type="text" value=""
+																			style="background: green; border: 1px solid green; width: 60px !important; heigth: 30px !important"
+																			disabled="disabled">
+																	</c:when>
+																	<c:when test="${avance.indicadorAvance eq 2}">
+																		<input type="text" value=""
+																			style="background: lightgreen; border: 1px solid lightgreen; width: 60px !important; heigth: 30px !important"
+																			disabled="disabled">
+																	</c:when>
+																	<c:when test="${avance.indicadorAvance eq 3}">
+																		<input type="text" value=""
+																			style="background: yellow; border: 1px solid yellow; width: 60px !important; heigth: 30px !important"
+																			disabled="disabled">
+																	</c:when>
+																	<c:when test="${avance.indicadorAvance eq 4}">
+																		<input type="text" value=""
+																			style="background: red; border: 1px solid red; width: 60px !important; heigth: 30px !important"
+																			disabled="disabled" />
+																	</c:when>
+																</c:choose>
+															</c:when>
+														</c:choose>
+													</c:forEach></td>
+											</c:forEach>
+										</tr>
+									</c:forEach>
 								</c:forEach>
-
-								<%-- 								<c:forEach items="${obj.objetivos}" var="objetivos"> --%>
-								<%-- <c:forEach items="${objetivo.accionesEstrategicas}"
-										var="acciones">
-										
-									</c:forEach> --%>
-								<%-- 								</c:forEach> --%>
 							</c:forEach>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<%-- <tr>
-								<td width="200"><c:out value="${obj.iniciativa.iniciativa}"></c:out></td>
-								<td width="200"><c:out value="${obj.objetivo.objetivo}"></c:out></td>
-								<td width="200"><c:out
-										value="${obj.accionEstrategica.accionEstrategica}"></c:out></td>
-								<td width="300"><c:choose>
-										<c:when test="${obj.tituloBloque == true}">
-											<div style="font-weight: bold;">
-												<c:out value="${obj.proyecto}" />
-											</div>
-										</c:when>
-										<c:otherwise>
-											<div>
-												<c:out value="${obj.proyecto}" />
-											</div>
-										</c:otherwise>
-									</c:choose></td>
-								<td width="90" style="text-align: right"><c:choose>
-										<c:when test="${obj.presupuesto.id > 0}">
-											<div>
-												<c:out value="${obj.presupuesto.id}" />
-											</div>
-										</c:when>
-										<c:otherwise>
-											<div>
-												<c:out value="" />
-											</div>
-										</c:otherwise>
-									</c:choose></td>
-
-								<td width="90" style="text-align: left"><c:choose>
-										<c:when test="${obj.normativo == true}">
-											<c:if test="${obj.tituloBloque == false}">
-												<c:out value="SI" />
-											</c:if>
-										</c:when>
-										<c:when test="${obj.normativo == false}">
-											<c:if test="${obj.tituloBloque == false}">
-												<c:out value="NO" />
-											</c:if>
-										</c:when>
-										<c:otherwise>
-											<div>
-												<c:out value="" />
-											</div>
-										</c:otherwise>
-									</c:choose></td>
-								<td width="90" style="text-align: right"><c:out
-										value="${obj.fechaRequerida}"></c:out></td>
-								<td width="50" style="text-align: left"><c:out
-										value="${obj.bp.cve}"></c:out></td>
-								<td width="90" style="text-align: leftr"><c:out
-										value="${obj.interventor.cve}"></c:out></td>
-								<td width="90" style="text-align: right"><c:choose>
-										<c:when test="${obj.costoPpto > 0}">
-											<fmt:formatNumber type="number" value="${obj.costoPpto}"
-												pattern="$#,##0.00" />
-										</c:when>
-										<c:otherwise>
-											<div>
-												<c:out value="" />
-											</div>
-										</c:otherwise>
-									</c:choose></td>
-
-								<c:forEach items="${portafol.columnas}" var="columna">
-									<td width="70"><c:forEach items="${obj.periodos}"
-											var="avance">
-											<c:choose>
-												<c:when test="${avance.periodo eq columna}">
-													<c:choose>
-														<c:when test="${avance.indicadorAvance eq 0}">
-															<input type="text" value=""
-																style="background: darkgrey; border: 1px solid darkgrey; width: 60px !important; heigth: 30px !important"
-																disabled="disabled">
-														</c:when>
-														<c:when test="${avance.indicadorAvance eq 1}">
-															<input type="text" value=""
-																style="background: green; border: 1px solid green; width: 60px !important; heigth: 30px !important"
-																disabled="disabled">
-														</c:when>
-														<c:when test="${avance.indicadorAvance eq 2}">
-															<input type="text" value=""
-																style="background: lightgreen; border: 1px solid lightgreen; width: 60px !important; heigth: 30px !important"
-																disabled="disabled">
-														</c:when>
-														<c:when test="${avance.indicadorAvance eq 3}">
-															<input type="text" value=""
-																style="background: yellow; border: 1px solid yellow; width: 60px !important; heigth: 30px !important"
-																disabled="disabled">
-														</c:when>
-														<c:when test="${avance.indicadorAvance eq 4}">
-															<input type="text" value=""
-																style="background: red; border: 1px solid red; width: 60px !important; heigth: 30px !important"
-																disabled="disabled" />
-														</c:when>
-													</c:choose>
-												</c:when>
-											</c:choose>
-										</c:forEach></td>
-								</c:forEach>
-							</tr> --%>
 						</c:if>
 					</c:forEach>
 				</tbody>
