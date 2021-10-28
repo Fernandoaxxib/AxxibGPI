@@ -27,16 +27,15 @@
 .cargarep-titulo {
 	font-size: 14px;
 	font-family: sans-serif;
-	background: #e9e9e9;
-	width: 293px;
+	background: #59ad40;
 	height: 34px;
 	line-height: 32px;
 	text-align: center;
-	margin-left: 48px;
+	
 	font-weight: 600;
-	color: #00529b;
-	background-color: rgba(0, 0, 0, 0);
-	border: 1px solid #00529b;
+	color: white;
+	border: 1px solid #59ad40;
+	border-radius: 5px;
 }
 
 .boton {
@@ -44,13 +43,23 @@
 	width: 280px
 }
 
+.est-etiq {
+	font-size: 14px;
+	font-family: sans-serif;
+	
+	text-align: left;
+	
+	font-weight: 500;
+	
+}
+
 .est-titulos {
 	font-size: 14px;
 	font-family: sans-serif;
-	line-height: 32px;
-	text-align: center;
-	margin-left: 48px;
-	font-weight: 600;
+	line-height: 25px;
+	text-align: left;
+	
+	font-weight: 500;
 	background-color: rgba(0, 0, 0, 0);
 	border: 2px solid #6e6e6e;
 	border-radius: 14px;
@@ -58,12 +67,13 @@
 
 .tbl-upload {
 	width: 520px;
-	height: 300px;
+	height: 320px;
 }
 
 .est-ele-archivo {
 	font-size: 14px;
 	font-family: sans-serif;
+	font-weight: bold;
 }
 
 .est-tam {
@@ -89,79 +99,97 @@
 	<jsp:include page="../layaut/header.jsp" />
 
 	<section>
-		<table width="100%">
-			<tr height="100px">
-				<td colspan="3">
-					<div class="cargarep-titulo est-tam">CARGA REPORTES DE AVANCE
-						PARA PORTAFOLIOS.</div>
-				</td>
-			</tr>
-			<tr height="20px">
-				<td></td>
-			</tr>
-			<tr>
-				<td width="30%"></td>
-				<td width="40%">
+		<form method="POST" action="uploadFile" enctype="multipart/form-data"
+			id="form-multipart-upload">
+
+			<table border="0" style="width: 100%;">
+				<tr height="50px">
+					<td width="20%"></td>
+					<td colspan="3" style="text-align: center">
+						<div class="cargarep-titulo">CARGA REPORTES DE AVANCES PARA PORTAFOLIOS.</div>
+					</td>
+					<td width="20%"></td>
+				</tr>
+				<tr>
+					<td width="20%"></td>
+
+					<td width="100px" align="center"><img src="Imagenes/excel.png"
+						width="100px"></td>
+
+					<td align="left" colspan="2" class="est-ele-archivo grey-obscuro">Elegir
+						archivo: <input type="file" name="file"
+						accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+					</td>
+
+					<td width="20%"></td>
+				</tr>
+				<tr height="10px">
+				</tr>
+
+				<tr>
+					<td width="20%"></td>
+					<td width="10%"></td>
+
+					<td width="30%" align="center">
 					<div class="tbl-upload est-titulos">
-						<form method="POST" action="uploadFile"
-							enctype="multipart/form-data" id="form-multipart-upload">
-							<table width="100%">
-								<tr height="50px">
-									<td align="center" colspan="2"
-										class="est-ele-archivo grey-obscuro">Elegir archivo: <input
-										type="file" name="file"
-										accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
-									</td>
-								</tr>
+						<table border="0" style="width: 100%;">
+							<tr height="50px">
+								<td class="grey-obscuro">Seleccione la opción de carga de su interés:</td>
+							</tr>
+							<c:forEach var="i" begin="0" end="${tipos.size() - 1}">
 								<tr>
-									<td width="200px" align="center" rowspan="6"><img
-										src="Imagenes/excel.png" width="150px"></td>
+									<c:choose>
+										<c:when test="${i==0}">
+       										<td colspan="2" ><input type="radio"
+												id="${tipos.get(i).getId()}" name="tipos"
+												value="${tipos.get(i).getId()}" checked="checked">
+											<label for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
+									</td>
+										</c:when>
+										<c:otherwise>
+       										<td colspan="2" ><input
+											type="radio" id="${tipos.get(i).getId()}" name="tipos"
+											value="${tipos.get(i).getId()}">
+											 <label for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
+									</td>
+										</c:otherwise>
+									</c:choose>
 								</tr>
-								<tr height="1px">
-									<td></td>
-								</tr>
-								<tr height="55px">
-									<td align="left"><input type="submit"
-										class="boton btn-gnral" name="action"
-										value="REPORTE BP OPERACIONES"></td>
-								</tr>
-								<tr height="55px">
-									<td align="left"><input type="submit"
-										class="boton btn-gnral" name="action"
-										value="REPORTE BP INVERSIONES"></td>
-								</tr>
-								<tr height="55px">
-									<td align="left"><input type="submit"
-										class="boton btn-gnral" name="action"
-										value="REPORTE BP COMERCIAL"></td>
-								</tr>
-								<tr height="55px">
-									<td align="left"><input type="submit"
-										class="boton btn-gnral" name="action"
-										value="REPORTE BP ADMON. Y FINANZAS"></td>
-								</tr>
-								<tr height="20px">
-									<td></td>
-								</tr>
-							</table>
-
-						</form>
+							</c:forEach>
+						</table>
 					</div>
-				</td>
-				<td width="30%"></td>
-			</tr>
-			<tr height="100px">
-				<td colspan="3" align="center">
-					<div style="margin-left: 48px">
-						<p style="color: green">${mensaje}</p>
-						<p style="color: red">${error}</p>
-					</div>
-				</td>
-			</tr>
-		</table>
+					</td>
 
+					<td width="20%" align="left">
+						<table border="0"
+							style="height: 100%; margin-left: 10px; margin-right: 10px">
+							<tr height="180px">
+								<td></td>
+							</tr>
+							<tr height="50px">
+								<td><input type="submit" class="boton btn-gnral"
+									name="action" value="CARGAR REPORTE"></td>
+							</tr>
+
+							<tr  height="25px">
+								<td class="est-ele-archivo grey-obscuro">Resultados del proceso:</td>
+							</tr>
+
+							<tr>
+								<td><textarea class="est-etiq grey-obscuro" readonly style="width: 97%">${mensaje}${error}</textarea>
+								</td>
+							</tr>
+						</table>
+
+
+					</td>
+
+					<td width="20%"></td>
+				</tr>
+
+			</table>
+		</form>
 	</section>
-
 	<jsp:include page="../layaut/footer.jsp" />
 	<script src="js/gif-carga.js"></script>
 	<script>
@@ -169,6 +197,5 @@
 			gif_carga();
 		});
 	</script>
-
 </body>
 </html>
