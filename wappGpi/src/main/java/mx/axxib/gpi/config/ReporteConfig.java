@@ -16,7 +16,6 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
-import mx.axxib.gpi.ctrll.CargaReporte;
 import mx.axxib.gpi.eml.ReporteJson;
 
 @Configuration

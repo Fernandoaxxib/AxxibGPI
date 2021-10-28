@@ -2,6 +2,7 @@ package mx.axxib.gpi.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,7 +19,8 @@ import mx.axxib.gpi.serv.LoginProvider;
 @EnableWebSecurity
 public class SecurityConfigWeb extends WebSecurityConfigurerAdapter {
 	
-	
+	@Autowired
+	private Environment env;
 	
 	@Autowired
 	LoginProvider customAuthenticationProvider;
@@ -42,7 +44,8 @@ public class SecurityConfigWeb extends WebSecurityConfigurerAdapter {
 			.and().csrf().disable();
 		   
 		  
-             
+	     ReporteConfig.env = env;
+	     ReporteConfig.getReportes();
 
 	}
 

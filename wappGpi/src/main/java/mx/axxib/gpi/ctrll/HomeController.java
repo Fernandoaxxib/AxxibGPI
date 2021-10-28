@@ -16,9 +16,7 @@ public class HomeController {
 	
 	private static final Logger LOGGER = LogManager.getLogger(HomeController.class);
 
-	@Autowired
-	private Environment env;
-	
+
 	/**********************************************
 	 * DETALLE: VISTA HOME            
 	 **********************************************/
@@ -29,8 +27,6 @@ public class HomeController {
      try {
     	 
      vistaRetorno ="view_home/home";
-     ReporteConfig.env = env;
-     ReporteConfig.getReportes();
      LOGGER.info("# HOME  - VISTA (HOME) ");
      
      }catch (Exception e) {
