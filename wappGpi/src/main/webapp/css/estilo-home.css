@@ -20,21 +20,21 @@
     font-size: 14px;
     font-family: sans-serif;
     background: #e9e9e9;
-    width: 293px;
+    width: 316px;
     height: 34px;
     line-height: 32px;
     text-align: center;
     margin-left: 48px;
     font-weight: 600;
-    color: #00529b ;    
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #00529b;
+    color: #FFF ;    
+    background-color: #00529b;
+     border-radius: 7px;
 }
 
 #nav-carga-reporte .cargarep-est-btn:hover {
     color: #fff ;
-    font-weight: bolder;
-    background: #00529b;
+    background-color: #59ad40;
+    border-color: transparent;
 }
 
 
@@ -72,6 +72,7 @@ table{
 /****************btns*************/
 .tbl-btn-gnral{
 	width: 520px;
+	height: 420px;
 }
 
 .est-titulos {
@@ -89,8 +90,4 @@ table{
 }
 
 
-.btn-est {
-    width: 210px;
-    height: 24px;    
-   margin: 20px 34px 20px 16px;
-}
+

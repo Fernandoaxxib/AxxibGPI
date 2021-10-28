@@ -23,74 +23,90 @@
 
 	<section id="home">
 
-		<table id="tabla-gnral">
-			<tr height="100px" >
-				<td colspan="3">
-					<div id="nav-carga-reporte">						
-							<a class="grey" href="<c:url value="/carga"/>">							
-							 <div class="cargarep-est-btn" id="carga-avance-tit" >
-							  CARGA DE REPORTE DE AVANCE 
+	<table id="tabla-gnral">
+		<tr height="50px" >
+				<td >					
+				</td>
+			</tr>
+			<tr >
+				<td>
+					<table>
+					<tr>
+					  <td  >
+							<div id="nav-carga-reporte">						
+							<a class="grey " href="<c:url value="/carga"/>">							
+							 <div class="cargarep-est-btn " id="carga-avance-tit" >
+							 IR A CARGA DE REPORTE DE AVANCE 
 							  <span class="reporte-icon">
-							    <i	class="far fa-file-alt">
-							    </i>
+							    <i class="fas fa-file-upload"></i>
+							  </span>
+						     </div>
+							 </a> 
+						
+					  </div>		
+					 </td>
+					</tr>
+					<tr height="50px">
+					  <td >
+							
+					 </td>
+					</tr>
+					<tr>
+			      <td colspan="3">
+					<div id="nav-carga-reporte">						
+							<a class="grey" href="<c:url value="/tab"/>">							
+							 <div class="cargarep-est-btn" id="carga-avance-tit" >
+							IR A PORTAFOLIO DE PROYECTOS
+							  <span class="reporte-icon">
+							   <i class="fas fa-file-alt"></i>
 							  </span>
 						     </div>
 							 </a> 
 						
 					</div>
 				</td>
-			</tr>
-			<tr height="50px" >
-				<td colspan="3">
+				
+				</tr>	
+				<tr height="50px">
+			      <td >
 					
 				</td>
-			</tr>
-			<tr>
-				<td ></td>
 				
-				<td class="tbla-whit-center">
+				</tr>	
+				<tr height="50px">
+			      <td >
+					
+				</td>
+				
+				</tr>	
+				<tr height="50px">
+			      <td >
+					
+				</td>
+				
+				</tr>
+				<tr height="50px">
+			      <td >
+					
+				</td>
+				
+				</tr>		
+				</table>
+				</td>
+				
+				<td >
 					<div class="tbl-btn-gnral est-titulos grey-obscuro">
-					<form method="POST" action="tab" enctype="multipart/form-data" id="form-gestion-portafolios">
-					<table id="tbl-gnral-btones">
-						
-							<tr>
-								<td width="200px" align="center" rowspan="6">
-									<div class="img-left">
-										<div class="cargarep-est-btn txt-estilo grey-obscuro">
-											 GESTIÓN DE
-											PORTAFOLIOS <br> <br> <span class=" grey-obscuro portafolio-icon"><i
-												class="fas fa-chart-line"></i></span>
-										</div>
-									</div>
-								</td>
-							</tr>							
-							<tr >
-								<td align="left"><button type="submit" name="idPortafolio" value="1"
-										class="btn-gnral btn-est">BP OPERACIONES</button></td>
-							</tr>
-							<tr >
-								<td align="left"><button type="submit" name="idPortafolio" value="2"
-										class="btn-gnral btn-est">BP INVERSIONES</button></td>
-							</tr>
-							<tr >
-								<td align="left"><button type="submit" name="idPortafolio" value="3"
-										class="btn-gnral btn-est">BP COMERCIAL</button></td>
-							</tr>
-							<tr >
-								<td align="left"><button type="submit" name="idPortafolio" value="4"
-										class="btn-gnral btn-est">BP ADMON. Y
-										FINANZAS</button></td>
-							</tr>
-							<tr >
-								<td></td>
-							</tr>
-						</table>
-						</form>
+					
+					
 
 					</div>
 				</td>
-				<td ></td>
 			</tr>
+			
+			
+			
+			
+			
 			
 
 		</table>

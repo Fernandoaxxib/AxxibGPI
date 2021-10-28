@@ -1,6 +1,7 @@
 package mx.axxib.gpi.ctrll;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -21,11 +22,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
+
+import mx.axxib.gpi.config.ReporteConfig;
 import mx.axxib.gpi.eml.AccionEstrategica;
 import mx.axxib.gpi.eml.Iniciativa;
 import mx.axxib.gpi.eml.Objetivo;
 import mx.axxib.gpi.eml.Periodos;
 import mx.axxib.gpi.eml.Portafolio;
+import mx.axxib.gpi.eml.ReporteJson;
 import mx.axxib.gpi.eml.ReporteResponse;
 
 @Controller
@@ -34,6 +38,28 @@ public class TabuladorAvances {
 
 	@Autowired
 	private Environment env;
+	
+	private static List<ReporteJson> listaReportes = null;
+	
+	@RequestMapping(value = "/tab", method = RequestMethod.GET)
+	public String portafolioProyecto(Model model) {
+		
+		
+		try {
+			listaReportes =  ReporteConfig.getReportes();
+			
+		} catch (Exception e) {
+			LOGGER.error("# ERROR - NO SE PUDO OBTENER LOS TIPOS DE REPORTE - MENSAJE:{}", e.toString());
+		}
+		
+		
+		
+		LOGGER.info("# TABULADOR - VISTA (TABULADOR)");
+		
+		model.addAttribute("listaReportes", listaReportes);
+		
+		return "view_tabulador/portafolioProyectos";
+	}
 
 	@RequestMapping(value = "/tab", method = RequestMethod.POST)
 	public String carga2(@RequestParam String idPortafolio, Model model) {
@@ -63,7 +89,7 @@ public class TabuladorAvances {
 		}
 		}
 
-		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPROCESO:{} ", portafolio);
+		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPROCESO:{} ", idPortafolio);
 
 		model.addAttribute("idPortafolio", idPortafolio);
 		model.addAttribute("portafolio", portafolio);
