@@ -46,12 +46,22 @@
 .est-etiq {
 	font-size: 14px;
 	font-family: sans-serif;
-	
 	text-align: left;
-	
+
 	font-weight: 500;
-	
+
 }
+
+
+.est-radio {
+	font-size: 14px;
+	font-family: sans-serif;
+	text-align: left;
+	line-height: 28px;
+	font-weight: 500;
+}
+
+	
 
 .est-titulos {
 	font-size: 14px;
@@ -91,7 +101,20 @@
 	border-color: transparent;
 	border-radius: .25rem;
 }
+
+
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+       $('#radioContainer > input').each(function() {
+    var radioInput = $(this);
+    if(radioInput.is(':checked')) {
+        $('#radioContainer').animate({
+            scrollTop: radioInput.offset().top
+        }, 2000);
+    }
+});
+    </script>
 </head>
 <body>
 
@@ -136,26 +159,34 @@
 							<tr height="50px">
 								<td class="grey-obscuro">Seleccione la opción de carga de su interés:</td>
 							</tr>
-							<c:forEach var="i" begin="0" end="${tipos.size() - 1}">
-								<tr>
-									<c:choose>
-										<c:when test="${i==0}">
-       										<td colspan="2" ><input type="radio"
-												id="${tipos.get(i).getId()}" name="tipos"
-												value="${tipos.get(i).getId()}" checked="checked">
-											<label for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
-									</td>
-										</c:when>
-										<c:otherwise>
-       										<td colspan="2" ><input
-											type="radio" id="${tipos.get(i).getId()}" name="tipos"
-											value="${tipos.get(i).getId()}">
-											 <label for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
-									</td>
-										</c:otherwise>
-									</c:choose>
-								</tr>
-							</c:forEach>
+							<tr>
+								<td colspan="2" >
+							
+									<div id="radioContainer" style="display: block; overflow-y: auto; height: 260px;">
+			
+										<c:forEach var="i" begin="0" end="${tipos.size() - 1}">
+										
+											<c:choose>
+												<c:when test="${i==0}">
+		       										<input type="radio"
+														id="${tipos.get(i).getId()}" name="tipos"
+														value="${tipos.get(i).getId()}" checked="checked">
+													<label class="est-radio" for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
+													<br>
+												</c:when>
+												<c:otherwise>
+		       										<input
+													type="radio" id="${tipos.get(i).getId()}" name="tipos"
+													value="${tipos.get(i).getId()}">
+													 <label class="est-radio" for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
+													<br>
+												</c:otherwise>
+											</c:choose>
+										
+										</c:forEach>
+									</div>
+								</td>
+							</tr>
 						</table>
 					</div>
 					</td>
