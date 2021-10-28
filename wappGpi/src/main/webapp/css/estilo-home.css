@@ -57,7 +57,7 @@ table{
 }
 
 .portafolio-icon{
-	 font-size: 102px;
+	 font-size: 150px;
 }
 
 .img-left{
@@ -75,7 +75,7 @@ table{
 }
 
 .est-titulos {
-   font-size: 14px;
+   font-size: 15px;
     font-family: sans-serif;
     line-height: 32px;
     text-align: center;
@@ -83,14 +83,14 @@ table{
     font-weight: 600;
     color: #00529b ;    
     background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #6e6e6e;
+   border: 2px  solid #6e6e6e;
     border-radius: 14px;
     
 }
 
 
 .btn-est {
-    width: 196px;
-    height: 35px;    
-   margin: 20px 34px 7px 23px;
+    width: 210px;
+    height: 24px;    
+   margin: 20px 34px 20px 16px;
 }

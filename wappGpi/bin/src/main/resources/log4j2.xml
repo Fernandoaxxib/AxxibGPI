@@ -1,0 +1,95 @@
+<Configuration status="DEBUG">
+    
+    <Properties>
+        <Property name="LOG_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS}  %c{1} [%t] %logger{36} Line %L - %msg%n</Property>
+          <!-- CARPETA PRINCIPAL-->
+        <Property name="APP_LOG_ROOT">C:/LOGS_GPI/GPI</Property>         
+          <!-- NOMBRE DE CARPETAS -->
+        <Property name="APP_ERROR">ERROR</Property>
+        <Property name="APP_INFO">INFO</Property>
+        <Property name="APP_DEBUG">DEBUG</Property>
+        <Property name="APP_TRACE">TRACE</Property>
+         <!-- NOMBRE DE ARCHIVOS -->
+        <Property name="ARCHIVO_ERROR">GPI-ERROR</Property>
+        <Property name="ARCHIVO_INFO">GPI-INFO</Property>
+        <Property name="ARCHIVO_DEBUG">GPI-DEBUG</Property>
+        <Property name="ARCHIVO_TRACE">GPI-TRACE</Property>
+         <!-- TAMAÑO DEL LOG -->
+        <Property name="APP_TAMANO">5MB</Property>
+         <!-- NUMERO DE ARCHIVOS GENERADOS -->
+        <Property name="APP_ARCHIVOS">5</Property>
+    </Properties>
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">        
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+        
+       <RollingFile name="LogToFileInfo" fileName="${APP_LOG_ROOT}/${APP_INFO}/${ARCHIVO_INFO}.log"
+            filePattern="${APP_LOG_ROOT}/${APP_INFO}/${ARCHIVO_INFO}-%d{yyyy-MM-dd}-%i.log.gz" >
+ 
+            <!-- Matches only INFO level -->
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+ 
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${APP_TAMANO}" />
+            </Policies>
+            <DefaultRolloverStrategy max="${APP_ARCHIVOS}"/>
+        </RollingFile>
+        
+        <RollingFile name="LogToFileError" fileName="${APP_LOG_ROOT}/${APP_ERROR}/${ARCHIVO_ERROR}.log"
+            filePattern="${APP_LOG_ROOT}/${APP_ERROR}/${ARCHIVO_ERROR}-%d{yyyy-MM-dd}-%i.log.gz"> 
+            <!-- Matches only ERROR level -->
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+ 
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${APP_TAMANO}" />
+            </Policies>
+            <DefaultRolloverStrategy max="${APP_ARCHIVOS}"/>
+        </RollingFile>
+        
+        <RollingFile name="LogToFileDebug" fileName="${APP_LOG_ROOT}/${APP_DEBUG}/${ARCHIVO_DEBUG}.log"
+            filePattern="${APP_LOG_ROOT}/${APP_DEBUG}/${ARCHIVO_DEBUG}-%d{yyyy-MM-dd}-%i.log.gz"> 
+            <!-- Matches only DEBUG level -->
+            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+ 
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${APP_TAMANO}" />
+            </Policies>
+            <DefaultRolloverStrategy max="${APP_ARCHIVOS}"/>
+        </RollingFile>
+        
+         <RollingFile name="LogToFileTrace" fileName="${APP_LOG_ROOT}/${APP_TRACE}/${ARCHIVO_TRACE}.log"
+            filePattern="${APP_LOG_ROOT}/${APP_TRACE}/${ARCHIVO_TRACE}-%d{yyyy-MM-dd}-%i.log.gz"> 
+            <!-- Matches only DEBUG level -->
+            <LevelRangeFilter minLevel="TRACE" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+ 
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${APP_TAMANO}" />
+            </Policies>
+            <DefaultRolloverStrategy max="${APP_ARCHIVOS}"/>
+        </RollingFile>
+       
+    </Appenders>
+    <Loggers>
+		<!-- avoid duplicated logs with additivity=false -->
+        <Logger name="mx.axxib.gpi"  additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="LogToFileInfo"/>
+            <AppenderRef ref="LogToFileError"/>
+            <AppenderRef ref="LogToFileDebug"/>
+            <AppenderRef ref="LogToFileTrace"/>
+        </Logger>
+         <Logger name="org.springframework"  additivity="false">
+            <AppenderRef ref="LogToFileDebug"/>
+            <AppenderRef ref="LogToFileTrace"/>
+        </Logger>
+        
+        <Root level="all">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>

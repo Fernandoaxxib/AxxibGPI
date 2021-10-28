@@ -1,0 +1,200 @@
+/**************** ESTILOS DE LA MODAL CERRAR SESION *********************/
+.modalContainer {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 180px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContainer .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 4px 17px;
+	border: 1px solid lightgray;
+	width: 32%;
+}
+
+.modalContainer .close {
+	color: #787878;
+    float: right;
+    font-size: 37px;
+    font-weight: bold;
+}
+
+.modalContainer .close:hover, .modalContainer .close:focus {
+	color: #aaaaaa;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/**************CONTENIDO DE LA MODAL CERRAR SESION **************/
+.cerrar-sesion-contenido {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #cb0404;
+	padding: 22px 0px 20px;
+}
+
+
+/*************GENERAL********************/
+#header a {
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.blue {
+	color: rgb(0, 82, 155);
+}
+
+.grey {
+	color: rgb(141, 141, 141);
+}
+
+/***********HEADER-LOGIN***************/
+.header-right {
+	float: right;
+   width: 300px;
+	display: inline-flex;
+}
+
+@media screen and (max-width: 500px) {
+	.header a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.header-right {
+		float: none;
+	}
+}
+
+.header {
+	overflow: hidden;
+	background-color: #ffffff;
+	height: 55px;
+	border-bottom: 3px solid rgb(234, 50, 74);
+}
+
+.left {
+	float: left;
+}
+
+.afore {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	line-height: 38px;
+	/*  color: rgb(0, 82, 155);*/
+	margin-left: 25px;
+}
+
+#header .usuario-header {
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#header .salir-header {
+	font-weight: 600;
+	text-align: center;
+}
+
+.icono-cerrar {
+	font-size: 25px;
+	color: #d30000;
+}
+
+.btn-cerrar-sesion {
+	background: transparent;
+	border: transparent;
+}
+
+.botones-cerrar-sesion {	
+    width: 67px;
+    height: 26px;
+    margin: 27px 19px 4px 0px;
+    font-size: 17px;
+    margin-left: 78px;
+}
+.grupo-botones{
+	display: inline-flex;
+}
+
+.alerta-icono{
+	  margin: 23px 28px 2px 3px;
+}
+
+.txt-alerta{
+	margin: 49px 28px 2px 3px;
+	font-size: 15px;
+}
+
+.icono-alerta{	
+    font-size: 60px;
+}
+
+#modal-cerrar-sesion a{
+	text-decoration: none;
+	overflow: hidden;
+}
+
+
+/*******************FOOTER-LOGIN**********************/
+#footer a {
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.fixed-bottom {
+	font-family: 'Noto Sans', sans-serif;
+	color: #5d5d5d;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 5px;
+	background-color: #FFF;
+	border-top: solid 3px #d2cbcb;
+	z-index: 2000;
+}
+
+.float-right {
+	float: right;
+	margin-top: -17px;
+	margin-right: 44px;
+}
+
+.float-left {
+	margin-left: 44px;
+}
+
+.h-back:hover {
+	box-shadow: 3px 3px 15px 2px #777575d9;
+}
+
+#footer a:hover {
+	color: #fff;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+section {
+	background-color: #f3f3f3;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 522px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/**********ESTILOS PARA VISTA DE ERROR ********************/
+.est-msg-error{
+	font-size: 24px;
+    font-family: sans-serif;
+    text-align: center;
+}

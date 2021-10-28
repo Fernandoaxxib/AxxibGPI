@@ -40,8 +40,14 @@
 					</div>
 				</td>
 			</tr>
+			<tr height="50px" >
+				<td colspan="3">
+					
+				</td>
+			</tr>
 			<tr>
 				<td ></td>
+				
 				<td class="tbla-whit-center">
 					<div class="tbl-btn-gnral est-titulos grey-obscuro">
 					<form method="POST" action="tab" enctype="multipart/form-data" id="form-gestion-portafolios">
@@ -51,9 +57,9 @@
 								<td width="200px" align="center" rowspan="6">
 									<div class="img-left">
 										<div class="cargarep-est-btn txt-estilo grey-obscuro">
-											<span class=" grey-obscuro portafolio-icon"><i
-												class="fas fa-chart-line"></i></span><br> GESTIÓN DE
-											PORTAFOLIOS
+											 GESTIÓN DE
+											PORTAFOLIOS <br> <br> <span class=" grey-obscuro portafolio-icon"><i
+												class="fas fa-chart-line"></i></span>
 										</div>
 									</div>
 								</td>

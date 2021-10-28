@@ -1,3 +1,36 @@
+html{
+	height:100%; 
+}
+body{
+	background: url(../Imagenes/fondo-hexg.jpg);
+	
+	position:relative;
+	
+	background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+}
+
+
+footer{ 
+  position:absolute; 
+  bottom:0; 
+  width:100%; 
+  height:37px; 
+}
+
+footer{ 
+	background:#FFF; 
+}
+
+body{ 
+	font-family: 'Montserrat', sans-serif;
+ }
+
+
+ 
+
 /**************** ESTILOS DE LA MODAL CERRAR SESION *********************/
 .modalContainer {
 	display: none;
@@ -78,8 +111,9 @@
 .header {
 	overflow: hidden;
 	background-color: #ffffff;
-	height: 55px;
+	height: 47px;
 	border-bottom: 3px solid rgb(234, 50, 74);
+	padding:8px;
 }
 
 .left {
@@ -106,13 +140,17 @@
 }
 
 .icono-cerrar {
-	font-size: 25px;
+	font-size: 22px;
 	color: #d30000;
 }
 
 .btn-cerrar-sesion {
 	background: transparent;
 	border: transparent;
+}
+
+.icono-usuario{
+	font-size: 22px;
 }
 
 .botones-cerrar-sesion {	
@@ -182,14 +220,19 @@
 	overflow: hidden;
 }
 
-section {
-	background-color: #f3f3f3;
+/*section {
+	background-image: url(../Imagenes/fondo-hexg.jpg);
+	 background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-    height: 522px;
+    height: 100%;
 	font-family: 'Montserrat', sans-serif;
 }
+
+body {
+  min-height: 100vh;
+}*/
 
 
 /**********ESTILOS PARA VISTA DE ERROR ********************/

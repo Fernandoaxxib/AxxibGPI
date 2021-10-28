@@ -1,3 +1,29 @@
+html{
+	height:100%; 
+}
+body{
+	background: url(../Imagenes/fondo-hex-ani.gif);
+	
+	position:relative;
+	
+	background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+}
+
+
+footer{ 
+  position:absolute; 
+  bottom:0; 
+  width:100%; 
+  height:37px; 
+}
+
+footer{ 
+	background:#FFF; 
+}
+
 /*************GENERAL********************/
 .header-right {
   float: right;
@@ -60,8 +86,8 @@ a:hover {
   .header {
    overflow: hidden;
   background-color: #ffffff;
-  height: 55px;
-  
+  height: 47px;
+  padding:8px 9px 3px;
   border-bottom: 3px solid rgb(234, 50, 74);
 }
 
@@ -85,18 +111,15 @@ a:hover {
     float: left;
     margin-left: 400px;
 }
-#sesion-login {
+
+/*#sesion-login {
    background-image: url(../Imagenes/fondo-hex-ani.gif);
     height: 480px;
     background-position: center;
     background-size: cover;
     padding: 18px 0px 20px 0px;
     font-family: 'Noto Sans', sans-serif;
-
-
-
-   
-}
+}*/
 
 .h-back:hover {
     box-shadow: 3px 3px 15px 2px #777575d9;
