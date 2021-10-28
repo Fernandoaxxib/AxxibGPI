@@ -4,8 +4,7 @@ package mx.axxib.gpi.eml;
 import java.util.List;
 
 public class Portafolio {
-	private String idPortafolio;
-    private String nombrePortafolio;
+	private String idPortafolio;   
     private List<Iniciativa> iniciativas;
     private List<String> columnas;
     
@@ -22,13 +21,7 @@ public class Portafolio {
 	}
 	public void setIdPortafolio(String idPortafolio) {
 		this.idPortafolio = idPortafolio;
-	}
-	public String getNombrePortafolio() {
-		return nombrePortafolio;
-	}
-	public void setNombrePortafolio(String nombrePortafolio) {
-		this.nombrePortafolio = nombrePortafolio;
-	}
+	}	
 	public List<Iniciativa> getIniciativas() {
 		return iniciativas;
 	}

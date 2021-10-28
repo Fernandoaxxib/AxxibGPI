@@ -74,6 +74,56 @@
 	padding: 4px 4px;
 }
 
+.table-wrapper2 {
+	width: 99%;
+	height: 160px;
+	overflow: auto;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.table-wrapper2 table {
+	border-collapse: separate;
+	border-spacing: 0;
+	background: #ffffff !important;
+	color: #00529b !important;
+	font-weight: 500 !important;
+	font-size: 11px !important;
+	font-family: 'Montserrat', sans-serif;
+	border: 1px solid #acbece;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.table-wrapper2 table thead {
+	position: -webkit-sticky;
+	position: sticky;
+	top: -1px;
+	left: 0;
+}
+
+.table-wrapper2 table td {
+	border: 1px solid #acbece;
+	font-family: Montserrat, sans-serif !important;
+	font-size: 11px;
+	font-weight: 500;
+	height: 50px;
+	text-align: justify;
+	padding: 4px 10px;
+	color: #000000;
+	height: 30px;
+}
+
+.table-wrapper2 table thead th {
+	border: 1px solid #acbece;
+	background: #00529b !important;
+	color: #fff !important;
+	font-weight: 700 !important;
+	font-size: 12px !important;
+	font-family: 'Montserrat', sans-serif;
+	padding: 4px 4px;
+}
+
 .grey-obscuro {
 	color: #6e6e6e;
 }
@@ -84,17 +134,30 @@
 	font-weight: bold;
 }
 
-.div-buscar {
-	padding-top: 15px;
-	margin-left: 15px;
-	margin-bottom: 15px;
+.div-header {
+	margin-top: 10px;
+	align-items: center;
+	display: flex;
+	height: 35px;
+	justify-content: center;
+	background: #59ad40;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 14px;
+	font-weight: bold;
 }
 
+.div-botones {
+	margin-bottom: 15px;
+}
 /***********SCROLL****************/
 #info-tabulador {
 	overflow: scroll;
-	height: 406px;
-	width: 100%;
+	height: 300px;
+	width: 99%;
+	margin-left: 10px;
 }
 
 #info-tabulador::-webkit-scrollbar {
@@ -165,17 +228,27 @@
 	<jsp:include page="../layaut/header.jsp" />
 
 	<section>
-		<div class="div-buscar">
+		<div class="div-header">
+			REPORTE AVANCE PORTAFOLIOS DE PROYECTOS:
+			<c:out value="${idPortafolio}" />
+		</div>
+
+		<div class="div-botones">
 			<form method="POST" action="tabulador" id="form-tabulador">
-				<label class="est-ele-archivo grey-obscuro">GESTIÓN DE
-					PORTAFOLIOS: <c:out value="${portafolio}" />
-				</label> <input type="hidden" name="portafolio" value="${portafolio}">
 				<button type="submit" name="idPortafolio" value="${idPortafolio}"
-					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>				
+					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>
+				<input type="text" value="TOTAL DEL PORTAFOLIO: "
+					style="border: 0; margin-left: 30px; font-weight: bold; font-size: 15px"
+					disabled="disabled" />
 				<button id="btn-indicadores-avance" type="button"
 					class="open btn-gnral" style="margin-left: 500px">Indicadores
 					de avance</button>
 			</form>
+		</div>
+		<div>
+			<input type="text" value="${msj}"
+				Style="font-size: 10px; font-weight: bold; font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 400px;"
+				disabled="disabled" />
 		</div>
 
 		<div class="table-wrapper" id="info-tabulador">
@@ -328,10 +401,18 @@
 			</table>
 		</div>
 
-		<div>
-			<input type="text" value="${msj}"
-				Style="font-size: 10px; font-weight:bold;font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 450px;"
-				disabled="disabled" />
+		<div class="table-wrapper2">
+			<table style="width: 90%">
+				<thead>
+					<tr>
+						<th>ACCIONES ESTRATEGICAS</th>
+						<th width="200">TOTAL</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
 		</div>
 	</section>
 

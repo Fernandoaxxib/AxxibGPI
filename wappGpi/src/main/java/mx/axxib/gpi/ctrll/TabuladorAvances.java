@@ -1,7 +1,6 @@
 package mx.axxib.gpi.ctrll;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
-
 import mx.axxib.gpi.config.ReporteConfig;
 import mx.axxib.gpi.eml.AccionEstrategica;
 import mx.axxib.gpi.eml.Iniciativa;
@@ -38,77 +36,35 @@ public class TabuladorAvances {
 
 	@Autowired
 	private Environment env;
-	
+
 	private static List<ReporteJson> listaReportes = null;
-	
+
 	@RequestMapping(value = "/tab", method = RequestMethod.GET)
 	public String portafolioProyecto(Model model) {
-		
-		
 		try {
-			listaReportes =  ReporteConfig.getReportes();
-			
+			listaReportes = ReporteConfig.getReportes();
 		} catch (Exception e) {
 			LOGGER.error("# ERROR - NO SE PUDO OBTENER LOS TIPOS DE REPORTE - MENSAJE:{}", e.toString());
 		}
-		
-		
-		
 		LOGGER.info("# TABULADOR - VISTA (TABULADOR)");
-		
 		model.addAttribute("listaReportes", listaReportes);
-		
 		return "view_tabulador/portafolioProyectos";
 	}
 
 	@RequestMapping(value = "/tab", method = RequestMethod.POST)
 	public String carga2(@RequestParam String idPortafolio, Model model) {
-		String s = idPortafolio;
-		String portafolio = null;
-
-		switch (s) {
-		case "1": {
-			portafolio = "BP OPERACIONES";
-			break;
-		}
-		case "2": {
-			portafolio = "BP INVERSIONES";
-			break;
-		}
-		case "3": {
-			portafolio = "BP COMERCIAL";
-			break;
-		}
-		case "4": {
-			portafolio = "BP ADMINISTRACIÓN Y FINANZAS";
-			break;
-		}
-		default: {
-			portafolio = "";
-			break;
-		}
-		}
-
 		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPROCESO:{} ", idPortafolio);
-
 		model.addAttribute("idPortafolio", idPortafolio);
-		model.addAttribute("portafolio", portafolio);
 		return "view_tabulador/tabuladorAvances";
 	}
 
 	@RequestMapping(value = "/tabulador", method = RequestMethod.POST)
-	public String tabulador(@RequestParam String portafolio, @RequestParam String idPortafolio, Model model) {
+	public String tabulador(@RequestParam String idPortafolio, Model model) {
 		Portafolio portafol = new Portafolio();
-		String nombrePortafolio = "";
 		String mensaje = "";
+		String nombrePortafolio = "BP_";
 
-		if (portafolio.equals("BP ADMINISTRACIÓN Y FINANZAS")) {
-			nombrePortafolio = "BP_ADMINISTRACION";
-		} else {
-			nombrePortafolio = portafolio.replace(" ", "_");
-		}
-
-		ReporteResponse response = cargarDatos2(nombrePortafolio);
+		ReporteResponse response = cargarDatos(nombrePortafolio.concat(idPortafolio));
 		if (response.getReporte() != null) {
 			List<Iniciativa> iniciativas = response.getReporte().getIniciativas();
 			iniciativas = generaPeriodos(response.getReporte().getIniciativas());
@@ -117,64 +73,18 @@ public class TabuladorAvances {
 			portafol.setColumnas(getColumnas(iniciativas));
 
 			portafol.setIdPortafolio(idPortafolio);
-			portafol.setNombrePortafolio(portafolio);
+
 		} else {
 			mensaje = response.getMensaje();
 		}
 
 		model.addAttribute("msj", mensaje);
-		model.addAttribute("portafolio", portafolio);
+		model.addAttribute("idPortafolio", idPortafolio);
 		model.addAttribute("portafol", portafol);
 
-		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPORTAFOLIO:{}, PORTAFOLIO:{} ", idPortafolio, portafolio);
+		LOGGER.info("# TABULADOR - VISTA (TABULADOR) - IDPORTAFOLIO:{}, PORTAFOLIO:{} ", idPortafolio, idPortafolio);
 
 		return "view_tabulador/tabuladorAvances";
-	}
-
-	public ReporteResponse cargarDatos(String tipoReporte) {
-		ReporteResponse response = new ReporteResponse();
-
-		try {
-			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-			String userName = user.getUsername();
-
-			JSONObject carga = new JSONObject();
-			carga.put("usResponsable", userName);
-			carga.put("tipoReporte", tipoReporte);
-
-			HttpHeaders headers = new HttpHeaders();
-			headers.add("Authorization", this.env.getProperty("header.autorizacion"));
-			headers.setContentType(MediaType.APPLICATION_JSON);
-
-			HttpEntity<String> request = new HttpEntity<String>(carga.toString(), headers);
-
-			RestTemplate restTemplate = new RestTemplate();
-
-			response = restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"), request,
-					ReporteResponse.class);
-
-			if (response.getCodRespuesta() == 1) {
-				if (response.getReporte() != null) {
-					LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte,
-							response.getReporte());
-					return response;
-				}
-			} else {
-				response.setMensaje("ERROR OBTENIDO DEL SERVICIO REST - " + response.getMensaje());
-				LOGGER.info("# SERVICIO RECUPERA PORTAFOLIO - TIPOREPORTE, RESPUESTA:{}", tipoReporte, response);
-				return response;
-			}
-		} catch (final HttpClientErrorException httpClientErrorException) {
-			response.setMensaje("SE PRODUJO UN ERROR INESPERADO");
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpClientErrorException.getMessage());
-		} catch (HttpServerErrorException httpServerErrorException) {
-			response.setMensaje("SE PRODUJO UN ERROR INESPERADO");
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", httpServerErrorException.getMessage());
-		} catch (Exception exception) {
-			response.setMensaje("SE PRODUJO UN ERROR INESPERADO");
-			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", exception.getMessage());
-		}
-		return response;
 	}
 
 	public List<String> getColumnas(List<Iniciativa> iniciativas) {
@@ -286,7 +196,6 @@ public class TabuladorAvances {
 				}
 			}
 		}
-
 		return columnas;
 	}
 
@@ -338,13 +247,12 @@ public class TabuladorAvances {
 				}
 			});
 		}
-
 		return iniciativas;
 	}
 
-	public ReporteResponse cargarDatos2(String nombrePortafolio) {
+	public ReporteResponse cargarDatos(String nombrePortafolio) {
 		ReporteResponse response = new ReporteResponse();
-				
+
 		try {
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			String userName = user.getUsername();
@@ -385,42 +293,36 @@ public class TabuladorAvances {
 			response.setMensaje("SE PRODUJO UN ERROR INESPERADO");
 			LOGGER.error("# ERROR EN SERVICIO RECUPERA PORTAFOLIO - MENSAJE:{}", exception.getMessage());
 		}
-		
-	
 		return response;
-
 	}
-	
-	public List<Iniciativa> actualizarRows(List<Iniciativa> iniciativas){
-		iniciativas.forEach(v->{			
-			v.getObjetivos().forEach(w->{				
-				if(w.getAccionesEstrategicas().size()>0) {					
-					 w.getAccionesEstrategicas().forEach(x->{						
-						  if( x.getRS_ACCION()>0) {
-							  x.setRS_ACCION(x.getRS_ACCION()+1);							  
-						  }					 
-					  });				  	
-				}				
+
+	public List<Iniciativa> actualizarRows(List<Iniciativa> iniciativas) {
+		iniciativas.forEach(v -> {
+			v.getObjetivos().forEach(w -> {
+				if (w.getAccionesEstrategicas().size() > 0) {
+					w.getAccionesEstrategicas().forEach(x -> {
+						if (x.getRS_ACCION() > 0) {
+							x.setRS_ACCION(x.getRS_ACCION() + 1);
+						}
+					});
+				}
 			});
 		});
-		
-		int rowIniciativa=0;
-	    for (Iniciativa iniciativa : iniciativas) {
-	    	int rowObjetivo=0;
-		    for( Objetivo objetivo : iniciativa.getObjetivos()){
-		    	
-		    	for(AccionEstrategica accion : objetivo.getAccionesEstrategicas()) {
-		    		rowObjetivo+=accion.getRS_ACCION();
-		    	}
-		    	objetivo.setRS_OBJETIVO(rowObjetivo+1);
-		    	rowObjetivo=0;
-		    	rowIniciativa+=objetivo.getRS_OBJETIVO();
-		    }
-		    iniciativa.setRS_INICIATIVA(rowIniciativa+1);
-		    rowIniciativa=0;
+		int rowIniciativa = 0;
+		for (Iniciativa iniciativa : iniciativas) {
+			int rowObjetivo = 0;
+			for (Objetivo objetivo : iniciativa.getObjetivos()) {
+
+				for (AccionEstrategica accion : objetivo.getAccionesEstrategicas()) {
+					rowObjetivo += accion.getRS_ACCION();
+				}
+				objetivo.setRS_OBJETIVO(rowObjetivo + 1);
+				rowObjetivo = 0;
+				rowIniciativa += objetivo.getRS_OBJETIVO();
+			}
+			iniciativa.setRS_INICIATIVA(rowIniciativa + 1);
+			rowIniciativa = 0;
 		}
-		
-		
 		return iniciativas;
 	}
 
