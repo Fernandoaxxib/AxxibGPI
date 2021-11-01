@@ -33,50 +33,55 @@
 }
 
 .table-wrapper table {
-	border-collapse: separate;
-	border-spacing: 0;
-	background: #ffffff !important;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	background: #fff !important;
 	color: #00529b !important;
 	font-weight: 500 !important;
 	font-size: 11px !important;
 	font-family: 'Montserrat', sans-serif;
-	border: 1px solid #acbece;
-	border-collapse: collapse;
 	table-layout: fixed;
 }
 
-.table-wrapper table thead {
-	position: -webkit-sticky;
-	position: sticky;
-	top: -1px;
-	left: 0;
+.table-wrapper table tr th, .table-wrapper tr td {
+	border: 1px solid #acbece;
 }
 
-.table-wrapper table td {
-	border: 1px solid #acbece;
+.table-wrapper td {	
 	font-family: Montserrat, sans-serif !important;
 	font-size: 11px;
-	font-weight: 500;
-	height: 50px;
+	font-weight: 500;	
 	text-align: justify;
-	padding: 4px 10px;
+    padding: 4px 10px;
 	color: #000000;
 	height: 30px;
 }
 
 .table-wrapper table thead th {
-	border: 1px solid #acbece;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;		
 	background: #fff !important;
 	color: #00529b !important;
 	font-weight: 700 !important;
 	font-size: 12px !important;
-	font-family: 'Montserrat', sans-serif;
-	padding: 4px 4px;
+	font-family: 'Montserrat', sans-serif;	
+	border-top: none !important;
+	border-bottom: none !important;
+	box-shadow: inset 0 2px 0 #acbece, inset 0 -1px 0 #acbece;
+    padding: 2px 0;
+	
 }
+
+.table-wrapper table tbody:nth-of-type(0) tr:nth-of-type(0) td {
+	border-top: none !important;
+}
+
 
 .table-wrapper2 {
 	width: 85%;
-	height: 120px;
+	height: 126px;
 	overflow: auto;
 	margin-top: 15px;
 	margin-left: 10px;
@@ -349,16 +354,14 @@
 													value="${proyecto.bp.cve}"></c:out></td>
 											<td width="90" style="text-align: leftr"><c:out
 													value="${proyecto.interventor.cve}"></c:out></td>
-											<td width="90" style="text-align: right">
-											    <c:if	test="${proyecto.tituloBloque == false}">
+											<td width="90" style="text-align: right"><c:if
+													test="${proyecto.tituloBloque == false}">
 													<fmt:formatNumber type="number"
 														value="${proyecto.costoPpto}" pattern="$#,##0.00" />
-												</c:if> 
-												<c:if	test="${proyecto.tituloBloque == true}">
+												</c:if> <c:if test="${proyecto.tituloBloque == true}">
 													<c:out value="" />
-												</c:if> 
-										    </td>
-											
+												</c:if></td>
+
 											<c:forEach items="${portafol.columnas}" var="columna">
 												<td width="70"><c:forEach items="${proyecto.periodos}"
 														var="avance">
@@ -367,7 +370,7 @@
 																<c:choose>
 																	<c:when test="${avance.indicadorAvance eq 0}">
 																		<input type="text" value=""
-																			style="background: darkgrey; border: 1px solid darkgrey; width: 60px !important; heigth: 30px !important"
+																			style="background: darkgrey; border: 1px solid darkgrey; width: 50px !important; heigth: 30px !important"
 																			disabled="disabled">
 																	</c:when>
 																	<c:when test="${avance.indicadorAvance eq 1}">
