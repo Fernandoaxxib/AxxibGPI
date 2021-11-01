@@ -66,8 +66,8 @@
 
 .table-wrapper table thead th {
 	border: 1px solid #acbece;
-	background: #00529b !important;
-	color: #fff !important;
+	background: #fff !important;
+	color: #00529b !important;
 	font-weight: 700 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
@@ -75,8 +75,8 @@
 }
 
 .table-wrapper2 {
-	width: 99%;
-	height: 160px;
+	width: 85%;
+	height: 120px;
 	overflow: auto;
 	margin-top: 15px;
 	margin-left: 10px;
@@ -111,7 +111,7 @@
 	text-align: justify;
 	padding: 4px 10px;
 	color: #000000;
-	height: 30px;
+	height: 25px;
 }
 
 .table-wrapper2 table thead th {
@@ -240,6 +240,11 @@
 				<input type="text" value="TOTAL DEL PORTAFOLIO: "
 					style="border: 0; margin-left: 30px; font-weight: bold; font-size: 15px"
 					disabled="disabled" />
+				<fmt:formatNumber type="number" value="${portafol.portafolioTotal}"
+					pattern="$#,##0.00" var="myNum" />
+				<input type="text" style="text-align: right; font-weight: bold;"
+					pattern="$#,##0.00" value="${myNum}" disabled="disabled" />
+
 				<button id="btn-indicadores-avance" type="button"
 					class="open btn-gnral" style="margin-left: 500px">Indicadores
 					de avance</button>
@@ -344,17 +349,16 @@
 													value="${proyecto.bp.cve}"></c:out></td>
 											<td width="90" style="text-align: leftr"><c:out
 													value="${proyecto.interventor.cve}"></c:out></td>
-											<td width="90" style="text-align: right"><c:choose>
-													<c:when test="${proyecto.costoPpto > 0}">
-														<fmt:formatNumber type="number" value="${obj.costoPpto}"
-															pattern="$#,##0.00" />
-													</c:when>
-													<c:otherwise>
-														<div>
-															<c:out value="" />
-														</div>
-													</c:otherwise>
-												</c:choose></td>
+											<td width="90" style="text-align: right">
+											    <c:if	test="${proyecto.tituloBloque == false}">
+													<fmt:formatNumber type="number"
+														value="${proyecto.costoPpto}" pattern="$#,##0.00" />
+												</c:if> 
+												<c:if	test="${proyecto.tituloBloque == true}">
+													<c:out value="" />
+												</c:if> 
+										    </td>
+											
 											<c:forEach items="${portafol.columnas}" var="columna">
 												<td width="70"><c:forEach items="${proyecto.periodos}"
 														var="avance">
@@ -368,22 +372,22 @@
 																	</c:when>
 																	<c:when test="${avance.indicadorAvance eq 1}">
 																		<input type="text" value=""
-																			style="background: green; border: 1px solid green; width: 60px !important; heigth: 30px !important"
+																			style="background: green; border: 1px solid green; width: 50px !important; heigth: 30px !important"
 																			disabled="disabled">
 																	</c:when>
 																	<c:when test="${avance.indicadorAvance eq 2}">
 																		<input type="text" value=""
-																			style="background: lightgreen; border: 1px solid lightgreen; width: 60px !important; heigth: 30px !important"
+																			style="background: lightgreen; border: 1px solid lightgreen; width: 50px !important; heigth: 30px !important"
 																			disabled="disabled">
 																	</c:when>
 																	<c:when test="${avance.indicadorAvance eq 3}">
 																		<input type="text" value=""
-																			style="background: yellow; border: 1px solid yellow; width: 60px !important; heigth: 30px !important"
+																			style="background: yellow; border: 1px solid yellow; width: 50px !important; heigth: 30px !important"
 																			disabled="disabled">
 																	</c:when>
 																	<c:when test="${avance.indicadorAvance eq 4}">
 																		<input type="text" value=""
-																			style="background: red; border: 1px solid red; width: 60px !important; heigth: 30px !important"
+																			style="background: red; border: 1px solid red; width: 50px !important; heigth: 30px !important"
 																			disabled="disabled" />
 																	</c:when>
 																</c:choose>
@@ -402,7 +406,7 @@
 		</div>
 
 		<div class="table-wrapper2">
-			<table style="width: 90%">
+			<table style="width: 100%">
 				<thead>
 					<tr>
 						<th>ACCIONES ESTRATEGICAS</th>
@@ -410,7 +414,13 @@
 					</tr>
 				</thead>
 				<tbody>
-
+					<c:forEach items="${portafol.acciones}" var="accion">
+						<tr>
+							<td><c:out value="${accion.accionEstrategica}" /></td>
+							<td style="text-align: right"><fmt:formatNumber
+									type="number" value="${accion.total}" pattern="$#,##0.00" /></td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

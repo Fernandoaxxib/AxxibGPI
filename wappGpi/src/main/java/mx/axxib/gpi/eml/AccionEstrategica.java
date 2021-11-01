@@ -6,6 +6,7 @@ public class AccionEstrategica {
 
 	private Integer id;
 	private String accionEstrategica;
+	private Double total;
 	private Integer RS_ACCION;
 	private List<Proyecto> proyectos;
 	
@@ -21,6 +22,12 @@ public class AccionEstrategica {
 	public void setAccionEstrategica(String accionEstrategica) {
 		this.accionEstrategica = accionEstrategica;
 	}
+	public Double getTotal() {
+		return total;
+	}
+	public void setTotal(Double total) {
+		this.total = total;
+	}
 	public Integer getRS_ACCION() {
 		return RS_ACCION;
 	}
@@ -33,5 +40,7 @@ public class AccionEstrategica {
 	public void setProyectos(List<Proyecto> proyectos) {
 		this.proyectos = proyectos;
 	}
+	
+	
 	
 }

@@ -6,9 +6,9 @@ public class Objetivo {
 
 	private Integer id;
 	private String objetivo;
+	private String total;
 	private Integer RS_OBJETIVO;
 	private List<AccionEstrategica> accionesEstrategicas;
-	
 	
 	public Integer getId() {
 		return id;
@@ -22,6 +22,12 @@ public class Objetivo {
 	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
 	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
+	}
 	public Integer getRS_OBJETIVO() {
 		return RS_OBJETIVO;
 	}
@@ -34,6 +40,7 @@ public class Objetivo {
 	public void setAccionesEstrategicas(List<AccionEstrategica> accionesEstrategicas) {
 		this.accionesEstrategicas = accionesEstrategicas;
 	}
+	
 	
 	
 }

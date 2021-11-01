@@ -7,9 +7,22 @@ public class Portafolio {
 	private String idPortafolio;   
     private List<Iniciativa> iniciativas;
     private List<String> columnas;
+    private List<AccionEstrategica> acciones;
+    private Double portafolioTotal;
+        
     
-    
-    
+	public Double getPortafolioTotal() {
+		return portafolioTotal;
+	}
+	public void setPortafolioTotal(Double portafolioTotal) {
+		this.portafolioTotal = portafolioTotal;
+	}
+	public List<AccionEstrategica> getAcciones() {
+		return acciones;
+	}
+	public void setAcciones(List<AccionEstrategica> acciones) {
+		this.acciones = acciones;
+	}
 	public List<String> getColumnas() {
 		return columnas;
 	}

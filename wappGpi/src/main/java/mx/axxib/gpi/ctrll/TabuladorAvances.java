@@ -71,9 +71,9 @@ public class TabuladorAvances {
 
 			portafol.setIniciativas(actualizarRows(iniciativas));
 			portafol.setColumnas(getColumnas(iniciativas));
-
 			portafol.setIdPortafolio(idPortafolio);
-
+			portafol.setAcciones(getListaAcciones(iniciativas));
+			portafol.setPortafolioTotal(getPortafolioTotal(portafol.getAcciones()));
 		} else {
 			mensaje = response.getMensaje();
 		}
@@ -325,5 +325,35 @@ public class TabuladorAvances {
 		}
 		return iniciativas;
 	}
-
+	
+    public List<AccionEstrategica> getListaAcciones(List<Iniciativa> iniciativas){    	
+    	List<AccionEstrategica> listaAcciones= new ArrayList<>();
+    	
+    	if(iniciativas.size()>0) {
+    		iniciativas.forEach(x->{
+        		if(x.getObjetivos().size()>0) {
+        			x.getObjetivos().forEach(y->{
+        				if(y.getAccionesEstrategicas().size()>0) {
+        					y.getAccionesEstrategicas().forEach(z->{
+        						listaAcciones.add(z);
+        					});
+        				}
+        			});
+        		}
+        	});
+    	}    	
+    	return listaAcciones;
+    }
+    
+    public Double getPortafolioTotal(List<AccionEstrategica> acciones){
+           Double resultado=(double) 0;
+           
+           for (AccionEstrategica accionEstrategica : acciones) {
+        	   if(accionEstrategica.getTotal()!=null) {
+        		   resultado+=accionEstrategica.getTotal();
+        	   }			   
+		   }
+           
+    	return resultado;
+    }
 }
