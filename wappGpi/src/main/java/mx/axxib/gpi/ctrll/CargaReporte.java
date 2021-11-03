@@ -45,9 +45,9 @@ public class CargaReporte {
 		return "view_carga/cargaReporte";
 	}
 
+	//@PostMapping("/uploadFile")
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("action") String action,
-			@RequestParam("tipos") String tipo, Model model) {
+	public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("tipos") String tipo, Model model) {
 
 		String msg = "";
 		String error = "";
@@ -56,7 +56,7 @@ public class CargaReporte {
 				String nombre = file.getOriginalFilename();
 				boolean valido = false;
 
-				if (!tipo.isEmpty()) {
+				if (!tipo.isEmpty() && !tipo.contains("hide")) {
 
 					ReporteJson reporte = reportes.stream().filter(rep -> rep.getId().equals(tipo)).findAny()
 							.orElse(null);
@@ -98,8 +98,8 @@ public class CargaReporte {
 					if (res.getCodRespuesta().equals("1")) {
 						msg = "ARCHIVO CARGADO CORRECTAMENTE";
 						LOGGER.info(
-								"# CARGA REPORTE  - ARCHIVO CARGADO - OPERACION:{},  NOMBREARCHIVO:{}, URL:{}, MENSAJE:{}",
-								action, nombre, this.env.getProperty("direccion.cargaReporte"), msg);
+								"# CARGA REPORTE  - ARCHIVO CARGADO - NOMBREARCHIVO:{}, URL:{}, MENSAJE:{}",
+								nombre, this.env.getProperty("direccion.cargaReporte"), msg);
 					} else {
 						error = res.getMensaje();
 						LOGGER.error("# CARGA REPORTE  - ERROR OBTENIDO DEL SERVICIO REST  -  MENSAJE:{}", error);

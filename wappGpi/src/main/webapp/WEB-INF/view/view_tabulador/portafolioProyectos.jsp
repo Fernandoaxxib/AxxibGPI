@@ -17,11 +17,10 @@ table {
 	width: 100%;
 }
 
-#portafolio-proyecto .titl-proyecto {
+#portafolio-proyecto {
 	font-size: 14px;
 	font-family: sans-serif;
 	background: #e9e9e9;
-	width: 969px;
 	height: 34px;
 	line-height: 32px;
 	text-align: center;
@@ -47,8 +46,9 @@ table {
 	color: #00529b;
 }
 
-.tbl-botones-radio {	
-	height: 350px;
+
+.tbl-botones-radio {
+	width: 350px;
 }
 
 .est-titulos-radio {
@@ -72,7 +72,7 @@ table {
 }
 
 #tabla-contendio table td {
-    padding: 0px 3px ;
+	padding: 0px 3px;
 }
 
 #tabla-contendio {
@@ -112,71 +112,63 @@ table {
 
 
 	<section id="home">
-		<table>
-			<tr height="30px">
-				<td></td>
-			</tr>
-			<tr>
-				<td width="200"></td>
-				<td>
-					<div id="portafolio-proyecto">
-
-						<div class="titl-proyecto">GESTIÓN DE PORTAFOLIOS DE
-							PROYECTOS</div>
-
-					</div>
-
+		<table style="width: 100%">
+			<tr height="50px">
+				<td width="20%"></td>
+				<td colspan="3" style="text-align: center">
+					<div id="portafolio-proyecto">GESTIÓN DE PORTAFOLIOS DE
+						PROYECTOS</div>
 				</td>
+				<td width="20%"></td>
 			</tr>
 
 		</table>
 
-<form method="POST" action="tab"  id="form-gestion-portafolios">
-		<table id="tabla-gnral">
-			<tr height="10px">
-				<td></td>
-			</tr>
-			<tr>
-				<td width="200"></td>
-			</tr>
+		<form method="POST" action="tab" id="form-gestion-portafolios">
+			<table id="tabla-gnral">
+				<tr height="10px">
+					<td></td>
+				</tr>
+				<tr>
+					<td width="200"></td>
+				</tr>
 
-			<tr height="20px">
-				<td></td>
-				
-				 <td>
-			<h5 class="titulo-radio">SELECCIONA EL PORTAFOLIO: </h5>	
-			</td>
+				<tr height="20px">
+					<td></td>
 
-			</tr>
+					<td>
+						<h5 class="titulo-radio">SELECCIONA EL PORTAFOLIO:</h5>
+					</td>
+					<td></td>
 
-
-			<tr>
-				<td></td>
-
-				<td>
-
-					<div class="tbl-botones-radio est-titulos-radio grey-obscuro">
-						<div id="tabla-contendio">
-
-							<table id="tbl-gnral-btones">
-								<c:forEach var="lista"
-									items="${listaReportes}"
-															varStatus="indexLista">
-
-								<tr>
-									<td align="center"><input type="radio" 
-										name="idPortafolio" value="${lista.getId()}" checked></td>
-									<td align="left">${lista.getDescripcion()}</td>
-
-								</tr>
-								</c:forEach>
+				</tr>
 
 
+				<tr>
+					<td width="20%"></td>
+					<td colspan="3">
+						<div class="tbl-botones-radio est-titulos-radio grey-obscuro">
+							<div id="tabla-contendio">
+								<table id="tbl-gnral-btones">
+									<c:forEach var="lista" items="${listaReportes}"
+										varStatus="indexLista">
+										<tr>
+											<td align="center"><input type="radio" id="idPortafolio"
+												name="idPortafolio" value="${lista.getId()}"
+												required="required"></td>
+											<td align="left">${lista.getDescripcion()}</td>
 
-							</table>
+										</tr>
+									</c:forEach>
+								</table>
+							</div>
 
 						</div>
+					</td>
+					<td width="25%"><button type="submit"
+							class="btn-gnral btn-est">VER PORTAFOLIO SELECCIONADO</button></td>
 
+<<<<<<< HEAD
 					</div>
 
 				</td>
@@ -192,11 +184,15 @@ table {
 
 				<td width="100"></td>
 				<td width="100"></td>
+=======
+					<td width="100"></td>
+					<td width="100"></td>
+>>>>>>> 8115980da808c260d1a0aa297e9fe87fe2a8057b
 
 
-			</tr>
+				</tr>
 
-		</table>
+			</table>
 		</form>
 
 	</section>
@@ -206,15 +202,25 @@ table {
 
 	<jsp:include page="../layaut/footer.jsp" />
 
-<script>
-function obtieneOperacion(val){
+	<script>
+		input = document.getElementById("idPortafolio");
 
-	document.getElementById("operacion-radio").value=val;
-	console.log("operacion " + val );
-	
-}
+		input.addEventListener('invalid', function(e) {
+			if (input.validity.valueMissing) {
+				e.target.setCustomValidity("Por favor seleccione una opción.");
+			}			
+			input.addEventListener('input', function(e) {
+				e.target.setCustomValidity('');
+			});
+		});
 
-</script>
+		function obtieneOperacion(val) {
+
+			document.getElementById("operacion-radio").value = val;
+			console.log("operacion " + val);
+
+		}
+	</script>
 
 </body>
 

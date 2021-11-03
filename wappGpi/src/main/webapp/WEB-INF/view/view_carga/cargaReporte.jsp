@@ -14,12 +14,6 @@
 <script src="js/jquery-1.12.1.min.js"></script>
 <style>
 
-/*table {
-	/*border: gray 1px solid;
-	border-radius: 10px;
-	background-color: #f2f2f2;
-}
-*/
 .grey-obscuro {
 	color: #6e6e6e;
 }
@@ -45,6 +39,15 @@
 
 .est-etiq {
 	font-size: 14px;
+	font-family: sans-serif;
+	text-align: left;
+
+	font-weight: 500;
+
+}
+
+.est-res {
+	font-size: 11px;
 	font-family: sans-serif;
 	text-align: left;
 
@@ -84,6 +87,7 @@
 	font-size: 14px;
 	font-family: sans-serif;
 	font-weight: bold;
+	padding-left: 6px;
 }
 
 .est-tam {
@@ -100,6 +104,14 @@
 	background-color: #00529b;
 	border-color: transparent;
 	border-radius: .25rem;
+}
+
+textarea {
+  resize: none;
+}
+
+#hide {
+    display: none;
 }
 
 
@@ -161,27 +173,17 @@
 							</tr>
 							<tr>
 								<td colspan="2" >
-							
+									<input type="radio" id="hide" name="tipos" value="hide" checked="checked">
 									<div id="radioContainer" style="display: block; overflow-y: auto; height: 260px;">
-			
 										<c:forEach var="i" begin="0" end="${tipos.size() - 1}">
 										
-											<c:choose>
-												<c:when test="${i==0}">
-		       										<input type="radio"
-														id="${tipos.get(i).getId()}" name="tipos"
-														value="${tipos.get(i).getId()}" checked="checked">
-													<label class="est-radio" for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
-													<br>
-												</c:when>
-												<c:otherwise>
+											
 		       										<input
 													type="radio" id="${tipos.get(i).getId()}" name="tipos"
 													value="${tipos.get(i).getId()}">
 													 <label class="est-radio" for="${tipos.get(i).getId()}">${tipos.get(i).getDescripcion()}</label>
 													<br>
-												</c:otherwise>
-											</c:choose>
+											
 										
 										</c:forEach>
 									</div>
@@ -199,7 +201,7 @@
 							</tr>
 							<tr height="50px">
 								<td><input type="submit" class="boton btn-gnral"
-									name="action" value="CARGAR REPORTE"></td>
+									 value="CARGAR REPORTE"></td>
 							</tr>
 
 							<tr  height="25px">
@@ -207,7 +209,7 @@
 							</tr>
 
 							<tr>
-								<td><textarea class="est-etiq grey-obscuro" readonly style="width: 97%">${mensaje}${error}</textarea>
+								<td><textarea class="est-res grey-obscuro"  rows="3" disabled="disabled" draggable="false" readonly style="width: 97%">${mensaje}${error}</textarea>
 								</td>
 							</tr>
 						</table>
