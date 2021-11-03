@@ -36,6 +36,10 @@ table {
 	height: 400px;
 }
 
+.btn-prt{
+ height: 30px;
+}
+
 .est-titulos {
 	font-size: 15px;
 	font-family: sans-serif;
@@ -43,8 +47,7 @@ table {
 	color: #00529b;
 }
 
-.tbl-botones-radio {
-	width: 520px;
+.tbl-botones-radio {	
 	height: 350px;
 }
 
@@ -177,12 +180,13 @@ table {
 					</div>
 
 				</td>
+				<td width="20"></td>
 
 				<td>
 				
 				
 					<button type="submit" 
-						class="btn-gnral btn-est">VER PORTAFOLIO SELECCIONADO</button>
+						class="btn-gnral btn-prt">VER PORTAFOLIO SELECCIONADO</button>
 						
 				</td>
 

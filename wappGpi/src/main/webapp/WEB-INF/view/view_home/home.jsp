@@ -58,7 +58,7 @@
 							 <div class="cargarep-est-btn" id="carga-avance-tit" >
 							IR A PORTAFOLIO DE PROYECTOS
 							  <span class="reporte-icon">
-							   <i class="fas fa-file-alt"></i>
+							   <i class="fas fa-file-contract "></i>
 							  </span>
 						     </div>
 							 </a> 
@@ -66,38 +66,15 @@
 					</div>
 				</td>
 				
-				</tr>	
-				<tr height="50px">
-			      <td >
-					
-				</td>
-				
-				</tr>	
-				<tr height="50px">
-			      <td >
-					
-				</td>
-				
-				</tr>	
-				<tr height="50px">
-			      <td >
-					
-				</td>
-				
 				</tr>
-				<tr height="50px">
-			      <td >
 					
-				</td>
-				
-				</tr>		
 				</table>
 				</td>
 				
 				<td >
 					<div class="tbl-btn-gnral est-titulos grey-obscuro">
 					
-					
+					 <img src="Imagenes/portafolio.png" class=" est-img">
 
 					</div>
 				</td>
