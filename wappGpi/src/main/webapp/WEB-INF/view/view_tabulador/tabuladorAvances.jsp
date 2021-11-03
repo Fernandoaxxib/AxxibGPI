@@ -191,7 +191,7 @@
 /***********SCROLL****************/
 #info-tabulador2 {
 	overflow: scroll;
-	height: 130px;
+	height: 110px;
 	width: 80%;
 	margin-left: 10px;
 }
