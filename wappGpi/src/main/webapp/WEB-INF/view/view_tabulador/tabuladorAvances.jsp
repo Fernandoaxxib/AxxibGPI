@@ -80,39 +80,31 @@
 
 
 .table-wrapper2 {
-	width: 85%;
-	height: 126px;
 	overflow: auto;
 	margin-top: 15px;
-	margin-left: 10px;
+	width: 100%;
 }
 
 .table-wrapper2 table {
-	border-collapse: separate;
-	border-spacing: 0;
-	background: #ffffff !important;
+    width:100%;
+	border-collapse: collapse;
+	background: #fff !important;
 	color: #00529b !important;
 	font-weight: 500 !important;
 	font-size: 11px !important;
-	font-family: 'Montserrat', sans-serif;
-	border: 1px solid #acbece;
-	border-collapse: collapse;
+	font-family: 'Montserrat', sans-serif;	
 	table-layout: fixed;
 }
 
-.table-wrapper2 table thead {
-	position: -webkit-sticky;
-	position: sticky;
-	top: -1px;
-	left: 0;
+.table-wrapper2 table tr th, .table-wrapper2 tr td {
+	border: 1px solid #acbece;
 }
 
-.table-wrapper2 table td {
-	border: 1px solid #acbece;
+
+.table-wrapper2 table td {	
 	font-family: Montserrat, sans-serif !important;
 	font-size: 11px;
-	font-weight: 500;
-	height: 50px;
+	font-weight: 500;	
 	text-align: justify;
 	padding: 4px 10px;
 	color: #000000;
@@ -120,14 +112,24 @@
 }
 
 .table-wrapper2 table thead th {
-	border: 1px solid #acbece;
-	background: #00529b !important;
-	color: #fff !important;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;		
+	background: #fff !important;
+	color: #00529b !important;
 	font-weight: 700 !important;
 	font-size: 12px !important;
 	font-family: 'Montserrat', sans-serif;
-	padding: 4px 4px;
+	border-top: none !important;
+	border-bottom: none !important;
+	box-shadow: inset 0 2px 0 #acbece, inset 0 -1px 0 #acbece;
+    padding: 2px 0;
 }
+
+.table-wrapper2 table tbody:nth-of-type(0) tr:nth-of-type(0) td {
+	border-top: none !important;
+}
+
 
 .grey-obscuro {
 	color: #6e6e6e;
@@ -186,6 +188,30 @@
 ::-webkit-scrollbar-corner {
 	background-color: #007bff00;
 }
+/***********SCROLL****************/
+#info-tabulador2 {
+	overflow: scroll;
+	height: 130px;
+	width: 80%;
+	margin-left: 10px;
+}
+
+#info-tabulador2::-webkit-scrollbar {
+	width: 14px;
+	
+}
+
+#info-tabulador2::-webkit-scrollbar-track:vertical {
+	background-color: #d6d6d6;
+}
+
+
+
+#info-tabulador2::-webkit-scrollbar-thumb {
+	background-color: #00529b;
+	height: 30px;
+}
+
 
 .ocultar {
 	display: none
@@ -409,7 +435,7 @@
 			</table>
 		</div>
 
-		<div class="table-wrapper2">
+		<div class="table-wrapper2" id="info-tabulador2">
 			<table style="width: 100%">
 				<thead>
 					<tr>
