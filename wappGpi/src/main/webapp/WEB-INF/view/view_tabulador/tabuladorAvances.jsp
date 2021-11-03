@@ -152,6 +152,7 @@
 	margin-right: 10px;
 	font-size: 14px;
 	font-weight: bold;
+	border-radius:5px;
 }
 
 .div-botones {
