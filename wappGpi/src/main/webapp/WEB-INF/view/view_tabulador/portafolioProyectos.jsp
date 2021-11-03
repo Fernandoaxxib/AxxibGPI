@@ -165,13 +165,7 @@ table {
 
 						</div>
 					</td>
-					<td width="25%"><button type="submit"
-							class="btn-gnral btn-est">VER PORTAFOLIO SELECCIONADO</button></td>
-
-<<<<<<< HEAD
-					</div>
-
-				</td>
+					
 				<td width="20"></td>
 
 				<td>
@@ -184,11 +178,6 @@ table {
 
 				<td width="100"></td>
 				<td width="100"></td>
-=======
-					<td width="100"></td>
-					<td width="100"></td>
->>>>>>> 8115980da808c260d1a0aa297e9fe87fe2a8057b
-
 
 				</tr>
 
@@ -203,17 +192,6 @@ table {
 	<jsp:include page="../layaut/footer.jsp" />
 
 	<script>
-		input = document.getElementById("idPortafolio");
-
-		input.addEventListener('invalid', function(e) {
-			if (input.validity.valueMissing) {
-				e.target.setCustomValidity("Por favor seleccione una opción.");
-			}			
-			input.addEventListener('input', function(e) {
-				e.target.setCustomValidity('');
-			});
-		});
-
 		function obtieneOperacion(val) {
 
 			document.getElementById("operacion-radio").value = val;
