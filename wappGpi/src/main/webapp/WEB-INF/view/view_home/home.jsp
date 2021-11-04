@@ -74,7 +74,7 @@
 				<td >
 					<div class="tbl-btn-gnral est-titulos grey-obscuro">
 					
-					 <img src="Imagenes/portafolio.png" class=" est-img">
+					 <img src="Imagenes/portafolio.jpg" class=" est-img">
 
 					</div>
 				</td>
