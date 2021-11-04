@@ -35,29 +35,29 @@ table {
 	height: 400px;
 }
 
-.btn-prt{
- height: 30px;
+.btn-prt {
+	height: 30px;
 }
 
 .est-titulos {
-	font-size: 15px;
-	font-family: sans-serif;
-	font-weight: 600;
-	color: #00529b;
+	font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #6a6a6a;
+    text-align: left;
 }
 
-
 .tbl-botones-radio {
-	width: 350px;
+	width: 410px;
 }
 
 .est-titulos-radio {
 	font-size: 13px;
 	font-family: sans-serif;
 	line-height: 32px;
-	text-align: center;
-	font-weight: 600;
-	color: #00529b;
+	text-align: left;
+	font-weight: 500;
+	color: #0c0c0c;
 	border: 2px solid #6e6e6e;
 	border-radius: 14px;
 }
@@ -74,34 +74,11 @@ table {
 #tabla-contendio table td {
 	padding: 0px 3px;
 }
-
-#tabla-contendio {
-	overflow: scroll;
-	height: 370px;
-	width: 100%;
-}
-
-#tabla-contendio::-webkit-scrollbar {
-	width: 14px;
-}
-
-#tabla-contendio::-webkit-scrollbar-track:vertical {
-	background-color: #d6d6d6;
-}
-
-::-webkit-scrollbar-button {
-	background-color: #007bff00;
-}
-
-#tabla-contendio::-webkit-scrollbar-thumb {
-	background-color: #00529b;
-	height: 80px;
-}
-
-::-webkit-scrollbar-corner {
-	background-color: #007bff00;
-}
 </style>
+
+
+    
+
 </head>
 
 <body>
@@ -126,58 +103,69 @@ table {
 
 		<form method="POST" action="tab" id="form-gestion-portafolios">
 			<table id="tabla-gnral">
-				<tr height="10px">
+				<tr height="30px">
 					<td></td>
 				</tr>
 				<tr>
-					<td width="200"></td>
-				</tr>
-
-				<tr height="20px">
-					<td></td>
-
-					<td>
-						<h5 class="titulo-radio">SELECCIONA EL PORTAFOLIO:</h5>
-					</td>
-					<td></td>
+					<td width="400"></td>
 
 				</tr>
+				
+				
 
 
 				<tr>
-					<td width="20%"></td>
+					<td width="25%"></td>
 					<td colspan="3">
 						<div class="tbl-botones-radio est-titulos-radio grey-obscuro">
-							<div id="tabla-contendio">
+							<div id="tabla-contendio" >
 								<table id="tbl-gnral-btones">
-									<c:forEach var="lista" items="${listaReportes}"
-										varStatus="indexLista">
+									<tr height="50px">
+										<td width="10"  ></td>
+										<td class="est-titulos">SELECCIONA EL PORTAFOLIO:</td>
+										<td width="10"> </td>
+									</tr>
+									
+									
 										<tr>
-											<td align="center"><input type="radio" id="idPortafolio"
-												name="idPortafolio" value="${lista.getId()}"
-												required="required"></td>
-											<td align="left">${lista.getDescripcion()}</td>
+										 
+											
+									<td colspan="2" >
+									
+									<div id="lista-radio" style="display: block; overflow-y: auto; height: 350px;">
+										<c:forEach var="i" begin="0" end="${listaReportes.size() - 1}">
+										
+											
+		       										<input
+													type="radio" id="${listaReportes.get(i).getId()}" name="lista"
+													value="${listaReportes.get(i).getId()}" required="required" >
+													 <label class="est-radio" for="${listaReportes.get(i).getId()}">${listaReportes.get(i).getDescripcion()}</label>
+													<br>
+											
+										
+										</c:forEach>
+									</div>
+								</td>
 
 										</tr>
-									</c:forEach>
 								</table>
 							</div>
 
 						</div>
 					</td>
-					
-				<td width="20"></td>
 
-				<td>
-				
-				
-					<button type="submit" 
-						class="btn-gnral btn-prt">VER PORTAFOLIO SELECCIONADO</button>
-						
-				</td>
+					<td width="5"></td>
 
-				<td width="100"></td>
-				<td width="100"></td>
+					<td>
+
+						<button type="submit" class="btn-gnral btn-prt">VER
+							PORTAFOLIO SELECCIONADO</button>
+
+					</td>
+
+					<td width="100"></td>
+					<td width="100"></td>
+					<td width="100"></td>
 
 				</tr>
 
@@ -191,15 +179,17 @@ table {
 
 	<jsp:include page="../layaut/footer.jsp" />
 
-	<script>
-		function obtieneOperacion(val) {
-
-			document.getElementById("operacion-radio").value = val;
-			console.log("operacion " + val);
-
-		}
-	</script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+       $('#lista-radio > input').each(function() {
+    var radioInput = $(this);
+    if(radioInput.is(':checked')) {
+        $('#lista-radio').animate({
+            scrollTop: radioInput.offset().top
+        }, 2000);
+    }
+});
+       </script>
 </body>
 
 </html>
