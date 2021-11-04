@@ -27,9 +27,10 @@
 }
 
 .table-wrapper {
-	width: 100%;
-	height: 419px;
+	width: 98%;
+	height: 290px;
 	overflow: auto;
+	margin-left: 10px;
 }
 
 .table-wrapper table {
@@ -48,73 +49,20 @@
 	border: 1px solid #acbece;
 }
 
-.table-wrapper td {	
+.table-wrapper td {
 	font-family: Montserrat, sans-serif !important;
 	font-size: 11px;
-	font-weight: 500;	
+	font-weight: 500;
 	text-align: justify;
-    padding: 4px 10px;
+	padding: 4px 10px;
 	color: #000000;
-	height: 30px;
+	height: 20px;
 }
 
 .table-wrapper table thead th {
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0;		
-	background: #fff !important;
-	color: #00529b !important;
-	font-weight: 700 !important;
-	font-size: 12px !important;
-	font-family: 'Montserrat', sans-serif;	
-	border-top: none !important;
-	border-bottom: none !important;
-	box-shadow: inset 0 2px 0 #acbece, inset 0 -1px 0 #acbece;
-    padding: 2px 0;
-	
-}
-
-.table-wrapper table tbody:nth-of-type(0) tr:nth-of-type(0) td {
-	border-top: none !important;
-}
-
-
-.table-wrapper2 {
-	overflow: auto;
-	margin-top: 15px;
-	width: 100%;
-}
-
-.table-wrapper2 table {
-    width:100%;
-	border-collapse: collapse;
-	background: #fff !important;
-	color: #00529b !important;
-	font-weight: 500 !important;
-	font-size: 11px !important;
-	font-family: 'Montserrat', sans-serif;	
-	table-layout: fixed;
-}
-
-.table-wrapper2 table tr th, .table-wrapper2 tr td {
-	border: 1px solid #acbece;
-}
-
-
-.table-wrapper2 table td {	
-	font-family: Montserrat, sans-serif !important;
-	font-size: 11px;
-	font-weight: 500;	
-	text-align: justify;
-	padding: 4px 10px;
-	color: #000000;
-	height: 25px;
-}
-
-.table-wrapper2 table thead th {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;		
+	top: 0;
 	background: #fff !important;
 	color: #00529b !important;
 	font-weight: 700 !important;
@@ -123,13 +71,64 @@
 	border-top: none !important;
 	border-bottom: none !important;
 	box-shadow: inset 0 2px 0 #acbece, inset 0 -1px 0 #acbece;
-    padding: 2px 0;
+	padding: 2px 0;
+}
+
+.table-wrapper table tbody:nth-of-type(0) tr:nth-of-type(0) td {
+	border-top: none !important;
+}
+
+.table-wrapper2 {
+	overflow: auto;
+	margin-top: 15px;
+	width: 90%;
+	height: 135px;
+	margin-left: 10px;
+}
+
+.table-wrapper2 table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff !important;
+	color: #00529b !important;
+	font-weight: 500 !important;
+	font-size: 11px !important;
+	font-family: 'Montserrat', sans-serif;
+	table-layout: fixed;
+}
+
+.table-wrapper2 table tr th, .table-wrapper2 tr td {
+	border: 1px solid #acbece;
+}
+
+.table-wrapper2 table td {
+	font-family: Montserrat, sans-serif !important;
+	font-size: 11px;
+	font-weight: 500;
+	text-align: justify;
+	padding: 4px 10px;
+	color: #000000;
+	height: 20px;
+}
+
+.table-wrapper2 table thead th {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background: #fff !important;
+	color: #00529b !important;
+	font-weight: 700 !important;
+	font-size: 12px !important;
+	font-family: 'Montserrat', sans-serif;
+	border-top: none !important;
+	border-bottom: none !important;
+	box-shadow: inset 0 2px 0 #acbece, inset 0 -1px 0 #acbece;
+	padding: 2px 0;
 }
 
 .table-wrapper2 table tbody:nth-of-type(0) tr:nth-of-type(0) td {
 	border-top: none !important;
 }
-
 
 .grey-obscuro {
 	color: #6e6e6e;
@@ -154,11 +153,14 @@
 	margin-right: 10px;
 	font-size: 14px;
 	font-weight: bold;
-	border-radius:5px;
+	border-radius: 5px;
+	height: 35px;
 }
 
 .div-botones {
-	margin-bottom: 15px;
+	width: 99%;
+	overflow: auto;
+	margin-left: 10px;
 }
 /***********SCROLL****************/
 #info-tabulador {
@@ -198,20 +200,16 @@
 
 #info-tabulador2::-webkit-scrollbar {
 	width: 14px;
-	
 }
 
 #info-tabulador2::-webkit-scrollbar-track:vertical {
 	background-color: #d6d6d6;
 }
 
-
-
 #info-tabulador2::-webkit-scrollbar-thumb {
 	background-color: #00529b;
 	height: 30px;
 }
-
 
 .ocultar {
 	display: none
@@ -267,37 +265,62 @@
 
 		<div class="div-botones">
 			<form method="POST" action="tabulador" id="form-tabulador">
-				<button type="submit" name="idPortafolio" value="${idPortafolio}"
-					style="margin-left: 15px" class="btn-gnral btn-est">CONSULTAR</button>
-				<input type="text" value="TOTAL DEL PORTAFOLIO: "
-					style="border: 0; margin-left: 30px; font-weight: bold; font-size: 15px"
-					disabled="disabled" />
-				<fmt:formatNumber type="number" value="${portafol.portafolioTotal}"
-					pattern="$#,##0.00" var="myNum" />
-				<input type="text" style="text-align: right; font-weight: bold;"
-					pattern="$#,##0.00" value="${myNum}" disabled="disabled" />
+				<table style="width: 100%">
+					<tr>
 
-				<button id="btn-indicadores-avance" type="button"
-					class="open btn-gnral" style="margin-left: 500px">Indicadores
-					de avance</button>
+						<td width="10%"><button type="submit" name="idPortafolio"
+								value="${idPortafolio}" class="btn-gnral btn-est">CONSULTAR</button></td>
+						<td width="20%"><input type="text"
+							value="TOTAL DEL PORTAFOLIO: "
+							style="border: 0; margin-left: 30px; font-weight: bold; font-size: 15px"
+							disabled="disabled" /></td>
+						<td width="40%"><fmt:formatNumber type="number"
+								value="${portafol.portafolioTotal}" pattern="$#,##0.00"
+								var="myNum" /> <input type="text"
+							style="text-align: right; font-weight: bold;" pattern="$#,##0.00"
+							value="${myNum}" disabled="disabled" /></td>
+						<td width="10%"></td>
+						<td width="20%">
+							<button id="btn-indicadores-avance" type="button"
+								class="open btn-gnral">Indicadores de avance</button>
+						</td>
+					</tr>
+					<tr>
+						<td width="10%"></td>
+						<td width="20%"></td>
+						<td width="40%">
+							<div>
+								<input type="text" value="${msj}"
+									Style="font-size: 10px; font-weight: bold; font-family: sans-serif; color: red; border: 0px; width: 450px"
+									disabled="disabled" />
+							</div>
+						</td>
+						<td width="10%"></td>
+						<td width="20%"></td>
+					</tr>
+				</table>
+
+
+
+
 			</form>
 		</div>
-		<div>
+		<%-- <div>
 			<input type="text" value="${msj}"
 				Style="font-size: 10px; font-weight: bold; font-family: sans-serif; color: red; border: 0px; width: 500px; margin-left: 400px;"
 				disabled="disabled" />
-		</div>
+		</div> --%>
 
-		<div class="table-wrapper" id="info-tabulador">
+		<div class="table-wrapper">
 			<table style="width: 100%">
 				<thead>
 					<tr>
-						<th width="200">INICIATIVA</th>
-						<th width="200">OBJETIVO</th>
-						<th width="200">ACCIONES ESTRATÉGICAS</th>
-						<th width="300">PROYECTOS</th>
-						<th width="90">ID PRESUPUESTO</th>
-						<th width="90">NORMATIVO</th>
+						<th width="190">INICIATIVA</th>
+						<th width="190">OBJETIVO</th>
+						<th width="190">ACCIONES ESTRATÉGICAS</th>
+						<th width="250">PROYECTOS</th>
+						<th width="100">ID PRESUPUESTO</th>
+						<th width="80">NORMATIVO</th>
 						<th width="90">FECHA REQUERIDA</th>
 						<th width="50">BP</th>
 						<th width="90">RECURSOS</th>
@@ -313,25 +336,25 @@
 					<c:forEach items="${portafol.iniciativas}" var="iniciativa">
 						<c:if test="${iniciativa.id > 0}">
 							<tr>
-								<td width="200" rowspan="${iniciativa.RS_INICIATIVA}"><c:out
+								<td width="190" rowspan="${iniciativa.RS_INICIATIVA}"><c:out
 										value="${iniciativa.iniciativa}"></c:out></td>
 							</tr>
 							<c:forEach items="${iniciativa.objetivos}" var="objetivos">
 								<tr>
-									<td width="200" rowspan="${objetivos.RS_OBJETIVO}"><c:out
+									<td width="190" rowspan="${objetivos.RS_OBJETIVO}"><c:out
 											value="${objetivos.objetivo}"></c:out></td>
 								</tr>
 
 								<c:forEach items="${objetivos.accionesEstrategicas}"
 									var="accion">
 									<tr>
-										<td width="200" rowspan="${accion.RS_ACCION}"><c:out
+										<td width="190" rowspan="${accion.RS_ACCION}"><c:out
 												value="${accion.accionEstrategica}"></c:out></td>
 									</tr>
 
 									<c:forEach items="${accion.proyectos}" var="proyecto">
 										<tr>
-											<td width="300"><c:choose>
+											<td width="250"><c:choose>
 													<c:when test="${proyecto.tituloBloque == true}">
 														<div style="font-weight: bold;">
 															<c:out value="${proyecto.proyecto}" />
@@ -346,7 +369,7 @@
 
 
 
-											<td width="90" style="text-align: right"><c:choose>
+											<td width="100" style="text-align: right"><c:choose>
 													<c:when test="${proyecto.presupuesto.id > 0}">
 														<div>
 															<c:out value="${proyecto.presupuesto.id}" />
@@ -358,7 +381,7 @@
 														</div>
 													</c:otherwise>
 												</c:choose></td>
-											<td width="90" style="text-align: left"><c:choose>
+											<td width="80" style="text-align: left"><c:choose>
 													<c:when test="${proyecto.normativo == true}">
 														<c:if test="${proyecto.tituloBloque == false}">
 															<c:out value="SI" />
@@ -435,7 +458,7 @@
 			</table>
 		</div>
 
-		<div class="table-wrapper2" id="info-tabulador2">
+		<div class="table-wrapper2" id="">
 			<table style="width: 100%">
 				<thead>
 					<tr>
