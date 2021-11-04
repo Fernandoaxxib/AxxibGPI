@@ -137,7 +137,7 @@ table {
 										
 											
 		       										<input
-													type="radio" id="${listaReportes.get(i).getId()}" name="lista"
+													type="radio" id="${listaReportes.get(i).getId()}" name="idPortafolio"
 													value="${listaReportes.get(i).getId()}" required="required" >
 													 <label class="est-radio" for="${listaReportes.get(i).getId()}">${listaReportes.get(i).getDescripcion()}</label>
 													<br>
