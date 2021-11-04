@@ -72,7 +72,7 @@
 	line-height: 25px;
 	text-align: left;
 	
-	font-weight: 500;
+	font-weight: 600;
 	background-color: rgba(0, 0, 0, 0);
 	border: 2px solid #6e6e6e;
 	border-radius: 14px;
@@ -140,35 +140,39 @@ textarea {
 			<table border="0" style="width: 100%;">
 				<tr height="50px">
 					<td width="20%"></td>
-					<td colspan="3" style="text-align: center">
+					<td colspan="5" style="text-align: center">
 						<div class="cargarep-titulo">CARGA REPORTES DE AVANCES PARA PORTAFOLIOS.</div>
 					</td>
 					<td width="20%"></td>
 				</tr>
 				<tr>
-					<td width="20%"></td>
+					<td width="10%"></td>
+					<td width="5%"></td>
 
-					<td width="100px" align="center"><img src="Imagenes/excel.png"
-						width="100px"></td>
+					<td width="80px" ><img src="Imagenes/excel.png"
+						width="100px" style="margin-left:-18px;"></td>
 
-					<td align="left" colspan="2" class="est-ele-archivo grey-obscuro">Elegir
+					<td align="left"  class="est-ele-archivo grey-obscuro">Elegir
 						archivo: <input type="file" name="file"
 						accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
 					</td>
 
-					<td width="20%"></td>
+					<td></td>
+					<td width="5%"></td>
+					<td width="10%"></td>
 				</tr>
 				<tr height="10px">
 				</tr>
 
 				<tr>
-					<td width="20%"></td>
 					<td width="10%"></td>
+					<td width="5%"></td>
 
-					<td width="30%" align="center">
+					<td width="30%" colspan="2" align="center">
 					<div class="tbl-upload est-titulos">
 						<table border="0" style="width: 100%;">
 							<tr height="50px">
+								<td width="2px"></td>
 								<td class="grey-obscuro">Seleccione la opción de carga de su interés:</td>
 							</tr>
 							<tr>
@@ -195,7 +199,7 @@ textarea {
 
 					<td width="20%" align="left">
 						<table border="0"
-							style="height: 100%; margin-left: 10px; margin-right: 10px">
+							style="height: 100%; margin-left: 10px;">
 							<tr height="180px">
 								<td></td>
 							</tr>
@@ -216,8 +220,8 @@ textarea {
 
 
 					</td>
-
-					<td width="20%"></td>
+					<td width="5%"></td>
+					<td width="10%"></td>
 				</tr>
 
 			</table>
