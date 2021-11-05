@@ -322,13 +322,13 @@
 						<th width="100">ID PRESUPUESTO</th>
 						<th width="80">NORMATIVO</th>
 						<th width="90">FECHA REQUERIDA</th>
-						<th width="50">BP</th>
-						<th width="90">RECURSOS</th>
-						<th width="90">COSTOS</th>
 						<c:forEach items="${portafol.columnas}" var="columna">
 							<th width="70" style="font-size: 10px !important;"><c:out
 									value="${columna}"></c:out></th>
 						</c:forEach>
+						<th width="50">BP</th>
+						<th width="90">RECURSOS</th>
+						<th width="90">COSTOS</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -400,18 +400,6 @@
 												</c:choose></td>
 											<td width="90" style="text-align: right"><c:out
 													value="${proyecto.fechaRequerida}"></c:out></td>
-											<td width="50" style="text-align: left"><c:out
-													value="${proyecto.bp.cve}"></c:out></td>
-											<td width="90" style="text-align: leftr"><c:out
-													value="${proyecto.interventor.cve}"></c:out></td>
-											<td width="90" style="text-align: right"><c:if
-													test="${proyecto.tituloBloque == false}">
-													<fmt:formatNumber type="number"
-														value="${proyecto.costoPpto}" pattern="$#,##0.00" />
-												</c:if> <c:if test="${proyecto.tituloBloque == true}">
-													<c:out value="" />
-												</c:if></td>
-
 											<c:forEach items="${portafol.columnas}" var="columna">
 												<td width="70"><c:forEach items="${proyecto.periodos}"
 														var="avance">
@@ -448,6 +436,17 @@
 														</c:choose>
 													</c:forEach></td>
 											</c:forEach>
+											<td width="50" style="text-align: left"><c:out
+													value="${proyecto.bp.cve}"></c:out></td>
+											<td width="90" style="text-align: leftr"><c:out
+													value="${proyecto.interventor.cve}"></c:out></td>
+											<td width="90" style="text-align: right"><c:if
+													test="${proyecto.tituloBloque == false}">
+													<fmt:formatNumber type="number"
+														value="${proyecto.costoPpto}" pattern="$#,##0.00" />
+												</c:if> <c:if test="${proyecto.tituloBloque == true}">
+													<c:out value="" />
+												</c:if></td>
 										</tr>
 									</c:forEach>
 								</c:forEach>
