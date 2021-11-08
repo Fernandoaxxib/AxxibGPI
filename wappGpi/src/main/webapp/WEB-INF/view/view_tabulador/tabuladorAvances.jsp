@@ -11,7 +11,12 @@
 <link rel="stylesheet" href="css/estilos-gnrls.css">
 <script src="https://kit.fontawesome.com/4fb8bc8279.js"></script>
 <script src="js/jquery-1.12.1.min.js"></script>
-
+<script>
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
 
 <style>
 .boton {
