@@ -200,7 +200,7 @@ public class PortafolioController {
 					altaPortafolioRequest.setClaveBP(altaForm.getClaveBPPortafolio());
 					altaPortafolioRequest.setEstatus(estatusPortafolio);
 
-					idPortafolio = "1";//portafolio.altaPortafolio(altaPortafolioRequest);
+					idPortafolio = portafolio.altaPortafolio(altaPortafolioRequest);
 					
 					LOGGER.info(" DATOS OBTENIDOS ALTA PORTAFOLIO - CLAVEPORTAFOLIO:{}, DESCRIPCIONPORTAFOLIO:{}, ESTATUSPORTAFOLIO:{}, BPPORTAFOLIO:{} - RESULTADO - IDPORTAFOLIO:{}",
 							altaForm.getClavePortafolio(), altaForm.getDescripcionPortafolio(), altaForm.getEstatusPortafolio(),
@@ -240,7 +240,7 @@ public class PortafolioController {
 						altaProyectoRequest.setTipoGasto(tipoGasto);
 						altaProyectoRequest.setPresupuesto(presupuesto);
 
-						respuestaAlta = "200";// portafolio.altaProyecto(altaProyectoRequest);
+						respuestaAlta =  portafolio.altaProyecto(altaProyectoRequest);
 						
 						LOGGER.info(" DATOS OBTENIDOS - ALTA PROYECTO - DESCRIPCION:{}, RECURSOS:{}, CLAVE:{}, BP:{}, COSTO:{}, FECHA:{} FECHAMAXIMA:{}, ESTATUS:{}, PORTAFOLIO:{}, CIRCUITOS:{}, INICIATIVA:{} OBJETIVO:{}, ACCION:{}, META:{}, COSTOS:{}, GASTO:{}, PRESUPUESTO:{} - RESULTADO - CODRESPUESTA:{}",
 								 altaForm.getProyDescripcion(), altaForm.getProyRecursos(),
@@ -431,7 +431,7 @@ public class PortafolioController {
 				altaProyectoRequest.setTipoGasto(tipoGasto);
 				altaProyectoRequest.setPresupuesto(presupuesto);
 
-				respuestaAlta = "200"; //portafolio.altaProyecto(altaProyectoRequest);
+				respuestaAlta = portafolio.altaProyecto(altaProyectoRequest);
 
 				if (respuestaAlta.equals("200")) {
 					msg = "Se dio de alta el proyecto correctamente.";
@@ -470,9 +470,9 @@ public class PortafolioController {
 
 		try {
 			
-			lportafolios = null;//portafolio.consultaPortafolios();
-			lProyectos = null;//portafolio.consultaProyectos();
-			lregistro = null;//portafolio.consultaRegistroAvance();
+			lportafolios = portafolio.consultaPortafolios();
+			lProyectos = portafolio.consultaProyectos();
+			lregistro = portafolio.consultaRegistroAvance();
 
 			model.addAttribute("lportafolios", lportafolios);
 			model.addAttribute("lplanes", lProyectos);
