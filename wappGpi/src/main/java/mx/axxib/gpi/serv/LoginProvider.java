@@ -78,7 +78,7 @@ public class LoginProvider implements AuthenticationProvider {
 
 			respLogin = service.authenticate(login);
 
-			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}, ", respLogin.getResult(),
+			LOGGER.info("# CONSULTA USUARIO - EXISTE:{}, MENSAJE:{}, USUARIO:{}, CONTRA:{} ", respLogin.getResult(),
 					respLogin.getMessage(), usuario);
 
 			if (respLogin.getResult()) {

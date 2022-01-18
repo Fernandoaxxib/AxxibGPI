@@ -1,0 +1,123 @@
+/***********ESTILOS GENERALES*********************/
+
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: #00529b;
+}
+
+.grey-obscuro {
+	color: #6e6e6e;
+}
+
+/*************** TITULO CARGA ARCHIVO *****************/
+
+th, td{
+ padding: 3px 4px 5px;
+
+}
+
+
+
+.estilo-tabla-principal:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+    background: white;
+}
+
+.estilo-tabla-principal {
+    background: white;
+    padding: 1px 4px 7px 4px;
+    border: 1px solid #b9b8b8;
+    border-radius: 2px;
+}
+
+
+#tituloPortafolio {
+	font-size: 14px;
+	font-family: sans-serif;
+	background: #b9b8b8;
+	height: 27px;
+	line-height: 32px;
+	text-align: left;
+	font-weight: 600;
+	border-radius: 7px;
+	color: #fff;
+	padding: 0px 6px;
+}
+
+
+.est-tabla-1 th{	
+	color: #00529b;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 4px solid #e4e4e4;
+    
+	
+}
+
+
+table {
+	border-spacing: 0px;
+}
+
+table tbody {
+	font-weight: 500;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.largo-txt{
+	resize: none;
+	font-size: 13px;
+    font-family: sans-serif;
+    width: -webkit-fill-available;
+    height: 98px;
+    outline: none;
+}
+
+.largo-caja-txt{
+	 width: -webkit-fill-available;
+}
+
+.largo-select{
+	 width: 1237px;
+}
+
+.linea {
+	display: block;
+	height: 3px;
+	background: #b9b8b8;
+	width: 100%;
+}
+
+#ttl-datosportafolio {
+	border-radius: 7px;
+	font-size: 14px;
+    font-family: sans-serif;
+    color: #1e1e1e;
+    height: 30px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.alto-select {
+    height: 25px;
+}
+
+
+.select .select-input {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    width: 300px !important;
+}
+
+
+

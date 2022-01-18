@@ -1,5 +1,53 @@
 /****************CARGANDO LAYAUT*****************************/
 
+.red{
+	color: #ff0000;
+}
+.green{
+	
+	color: #48b348;
+}
+
+.blue{
+	color: #00529b;
+}
+
+
+/********* TEXT- GENERAL ***************/
+a {
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.alerta-txt{
+  box-shadow: 0 0 0 3px #77ad77;
+  
+}
+
+input[type=text] {
+    border: 1px solid #767373;
+    outline: none;
+    height: 24px;
+    border-radius: 3px;
+    padding: 0px 16px;
+}
+
+input[type=text]:focus {
+   box-shadow: 0 0 0 0.2rem rgb(179 179 179 / 179%);
+}
+
+textarea:focus {
+   box-shadow: 0 0 0 0.2rem rgb(179 179 179 / 179%);
+    border-radius: 3px;
+}
+
+/***********LETRA DE BOTONES *****************/
+.letra-btn{
+	font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
 #loader-cargando {
 	position: fixed;
     width: 100%;
@@ -51,6 +99,13 @@
 
 
 /****************BOTONES**********************/
+.btn-gnera-href{
+	padding: 5px 11px;
+}
+
+.button {
+  cursor: pointer;
+}
 
 .btn-gnral {
   
@@ -59,12 +114,22 @@
     background-color: #00529b;
     border-color: transparent;
     border-radius: .25rem;
+    cursor: pointer;
 }
 
 .btn-gnral:hover {
     background-color: #59ad40;
     border-color: transparent;
 }
+
+.button-tabla{
+	font-family: 'Montserrat', sans-serif;
+   
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
 
 /*************PARA BOTONES COMO CANCELAR O CERRAR*****************/
 .btn-gnral-red {
@@ -74,9 +139,115 @@
     background-color: #e50e30;
     border-color: transparent;
     border-radius: .25rem;
+    cursor: pointer;
 }
 
 .btn-gnral-red:hover {
     background-color: #e50e30;
     border-color: transparent;
+}
+
+/************BOTONES CON ICONO ************/
+.btn-gnral-icono {
+   font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #00529b;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: .25rem;
+}
+
+.btn-gnral-icono:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*********MSG GENERAL**************/
+.est-msg-general{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/**************POPUP GENERAL****************/
+
+.popup {
+  position: relative;
+  cursor: default;
+}
+
+
+.posicion-pop{
+	 margin-left: 138px;
+    margin-top: -68px;
+}
+
+.posicion-pop2{
+	margin-left: 138px;
+    margin-top: -149px;
+}
+
+.posicion-pop1{
+	margin-left: 28px;
+    margin-top: -68px;
+}
+
+.popup .popuptext {
+	font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    visibility: hidden;
+    width: max-content;
+    background-color: #fff;
+    color: #319325;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 8px 9px;
+    position: absolute;
+    z-index: 1;   
+    border: 2px solid #7baf74;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #7baf74 transparent transparent transparent;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+/*************OCULTAR***************/
+.ocultar-componentes{
+	display:none;
+}
+
+.ocultar-Proyecto{
+	display:none;
+}
+
+.ocultar {
+	display: none
+}
+/****************ALTO SELECT **************/
+.alto-select{
+	height: 25px;
 }

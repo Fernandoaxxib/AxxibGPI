@@ -44,6 +44,13 @@
 }
 
 /*************TABLA*****************/
+
+.botones-hover:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+    background: transparent;
+}
+
+
 table{
 	width: 100%;
 }
@@ -69,28 +76,21 @@ table{
 
 
 
-/****************btns*************/
-.tbl-btn-gnral{
-	width: 810px;
-	height: 420px;
+#tabla-home  {
+	width: 100%;
 }
 
-.est-titulos {
-   font-size: 15px;
-    font-family: sans-serif;
-    line-height: 32px;
-    text-align: center;
-    margin-left: 48px;
-    font-weight: 600;
-    color: #00529b ;    
-    background-color: rgba(0, 0, 0, 0);
-    
+.img-home {
+    height: 516px;
+    width: 690px;
 }
 
-
-.est-img{
-	height: 100%;
-    width: 100%;
+.img-hex {
+   
+    width: 43%;
+    margin: 4px 0px 13px 40px;
 }
 
-
+.ancho-btons {
+	
+}

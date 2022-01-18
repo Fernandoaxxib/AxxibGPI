@@ -269,7 +269,7 @@ public class TabuladorAvances {
 
 			RestTemplate restTemplate = new RestTemplate();
 
-			response = restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"), request,
+			response =restTemplate.postForObject(this.env.getProperty("direccion.recuperaPortafolio"), request,
 					ReporteResponse.class);
 
 			if (response.getCodRespuesta() == 1) {

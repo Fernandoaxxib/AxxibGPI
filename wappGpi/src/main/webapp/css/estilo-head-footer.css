@@ -7,18 +7,20 @@ body{
 	position:relative;
 	
 	background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       margin: 0;
       height: 100vh;
 }
 
 
 footer{ 
-  position:absolute; 
+ position: fixed;
   bottom:0; 
   width:100%; 
   height:37px; 
 }
+
+
 
 footer{ 
 	background:#FFF; 
@@ -28,14 +30,25 @@ body{
 	font-family: 'Montserrat', sans-serif;
  }
 
+.linea-header {
+	display: block;
+	height: 3px;
+	background: #cd0a0a;
+	width: 100%;
+}
 
+.estilo-tbl-header{
+	background: #ffffff;
+	
+}
  
+
 
 /**************** ESTILOS DE LA MODAL CERRAR SESION *********************/
 .modalContainer {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 1000;
 	padding-top: 180px;
 	left: 0;
 	top: 0;
@@ -67,6 +80,9 @@ body{
 	cursor: pointer;
 }
 
+.tbl-header{
+	background: #fefefe;
+}
 /**************CONTENIDO DE LA MODAL CERRAR SESION **************/
 .cerrar-sesion-contenido {
 	text-align: center;
@@ -91,6 +107,12 @@ body{
 }
 
 /***********HEADER-LOGIN***************/
+header{
+	background: #fefefe;
+	position: sticky;
+	z-index: 1000;
+    top: 0;
+}
 .header-right {
 	float: right;
    width: 300px;
@@ -110,10 +132,7 @@ body{
 
 .header {
 	overflow: hidden;
-	background-color: #ffffff;
-	height: 47px;
-	border-bottom: 3px solid rgb(234, 50, 74);
-	padding:8px;
+	padding:3px;
 }
 
 .left {
@@ -130,7 +149,7 @@ body{
 
 #header .usuario-header {
 	font-weight: 600;
-	text-align: center;
+	text-align: end;
 	text-transform: uppercase;
 }
 
@@ -147,6 +166,7 @@ body{
 .btn-cerrar-sesion {
 	background: transparent;
 	border: transparent;
+	cursor: pointer;
 }
 
 .icono-usuario{
@@ -220,19 +240,6 @@ body{
 	overflow: hidden;
 }
 
-/*section {
-	background-image: url(../Imagenes/fondo-hexg.jpg);
-	 background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-    height: 100%;
-	font-family: 'Montserrat', sans-serif;
-}
-
-body {
-  min-height: 100vh;
-}*/
 
 
 /**********ESTILOS PARA VISTA DE ERROR ********************/

@@ -21,74 +21,46 @@
 
 
 
-	<section id="home">
+	 <section id="home">
 
-	<table id="tabla-gnral">
-		<tr height="50px" >
-				<td >					
-				</td>
-			</tr>
-			<tr >
-				<td>
-					<table>
+        <table id="tabla-home">          
+            
 					<tr>
+					 <td width="300" ></td>
 					  <td  >
-							<div id="nav-carga-reporte">						
-							<a class="grey " href="<c:url value="/carga"/>">							
-							 <div class="cargarep-est-btn " id="carga-avance-tit" >
-							 IR A CARGA DE REPORTE DE AVANCE 
-							  <span class="reporte-icon">
-							    <i class="fas fa-file-upload"></i>
-							  </span>
-						     </div>
-							 </a> 
-						
-					  </div>		
-					 </td>
-					</tr>
-					<tr height="50px">
-					  <td >
-							
-					 </td>
-					</tr>
-					<tr>
-			      <td colspan="3">
-					<div id="nav-carga-reporte">						
-							<a class="grey" href="<c:url value="/tab"/>">							
-							 <div class="cargarep-est-btn" id="carga-avance-tit" >
-							IR A PORTAFOLIO DE PROYECTOS
-							  <span class="reporte-icon">
-							   <i class="fas fa-file-contract "></i>
-							  </span>
-						     </div>
-							 </a> 
-						
-					</div>
-				</td>
-				
-				</tr>
-					
-				</table>
-				</td>
-				
-				<td >
-					<div class="tbl-btn-gnral est-titulos grey-obscuro">
-					
-					 <img src="Imagenes/portafolio.jpg" class=" est-img">
+						<div>
 
-					</div>
-				</td>
+                            <div >
+                                <img src="Imagenes/inicio-h.jpg" class=" img-home ">
+
+                            </div>
+
+                        </div>	
+					 </td>
+                     
+                     <td   width="600" align="center">
+						   
+                            <a href="<c:url value="/portafolio"/>" >
+                                <img src="Imagenes/btn1.png"  class="botones-hover img-hex" alt="">
+                            </a>
+                            
+                            <a  href="<c:url value="/registroAvance"/>">
+                                <img src="Imagenes/btn2.png" class="botones-hover img-hex" alt="">
+                            </a>
+                           
+                            <a  href="#">
+                                <img src="Imagenes/btn3.png" class="botones-hover img-hex" alt="">
+                            </a>
+                           
+
+                        
+
+					 </td>
+					 <td width="100" ></td>
 			</tr>
-			
-			
-			
-			
-			
-			
-
-		</table>
-
-	</section>
+        </table>
+    
+        </section>
 
 
 

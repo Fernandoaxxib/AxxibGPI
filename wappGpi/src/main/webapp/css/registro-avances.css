@@ -1,0 +1,257 @@
+/***********ESTILOS GENERALES*********************/
+
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: #00529b;
+}
+
+.grey-obscuro {
+	color: #6e6e6e;
+}
+.g1{
+	color: #59ad4033;
+}
+.g2 {
+    color: #59ad4071;
+}
+.g3 {
+    color: #59ad40b0;
+}
+.g4 {
+    color: #59ad40;
+}
+
+.g1-back {
+      background-color: #59ad4033;
+}
+
+.g2-back {
+    background-color: #59ad4071;
+}
+
+.g3-back {
+    background-color: #59ad40b0;
+}
+
+.point{
+	cursor: pointer;
+}
+
+.g4-back {
+    background-color: #59ad40;
+}
+.trans{
+	 background-color: transparent;
+}
+
+
+
+/*************** TITULO CARGA ARCHIVO *****************/
+
+th, td{
+ padding: 3px 4px 5px;
+
+}
+
+.estilo-tabla-principal:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+    background: white;
+}
+
+.estilo-tabla-principal {
+    background: white;
+    padding: 1px 4px 7px 4px;
+    border: 1px solid #b9b8b8;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#tituloPortafolio {
+	font-size: 14px;
+	font-family: sans-serif;
+	background: #b9b8b8;
+	height: 27px;
+	line-height: 32px;
+	text-align: left;
+	font-weight: 600;
+	border-radius: 7px;
+	color: #fff;
+	padding: 0px 6px;
+}
+
+table {
+	border-spacing: 0px;
+}
+
+  .tableFixHead {
+        overflow-y: auto;
+        height: 150px;
+      }
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+      }
+      
+      
+     th {
+        background: #dfdfdf;
+      }
+      
+      
+     th {
+        background: #dfdfdf;
+      }
+      
+ .altoTabla{
+	height: 177px;
+}
+
+.altoTablaHistorico{
+	height: 407px;
+}
+      
+      .est-tabla-1 th{	
+	color: #00529b;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 4px solid #e4e4e4;    
+	
+}
+
+.ocultar-tabla{
+	display:none;
+}
+/************ MODAL REGISTRO DE AVANCES **************/
+#registro-avance{	
+	font-size: 14px;
+	font-family: sans-serif;
+	background: #b9b8b8;
+	height: 27px;
+	line-height: 0px;
+	text-align: left;
+	font-weight: 600;
+	border-radius: 7px;
+	color: #fff;
+	padding: 0px 6px;
+}
+.tbl-mod-reg-avance{
+	 background: white;
+    padding: 1px 4px 7px 4px;
+    border: 2px solid #b9b8b8;
+    border-radius: 2px;
+}
+
+.tbl-mod-reg-avance-body{
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+
+
+.modal-registro-avances {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	padding-top: 180px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 2px solid #b9b8b8;
+}
+
+.modal-registro-avances .modal-body {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 4px 17px;
+	border: 1px solid lightgray;
+	width: 50%;
+}
+
+ .cerrar-RegistroAvance {
+	color: #787878;
+    font-size: 37px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.cerrar-RegistroAvance:hover,  .cerrar-RegistroAvance:focus {
+	color: #787878;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.registro-avance-contenido {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;	
+	padding: 22px 0px 20px;
+}
+
+.alto-select-modal {
+    height: 25px;
+    width: 200px;
+    outline: none;
+}
+
+.btn-drop{
+	background-color: transparent;
+}
+
+.dropbtn {  
+  cursor: pointer;
+  border: 2px solid #b9b8b8;
+  padding: 23px 99px 1px;
+}
+
+.dropbtn:hover {
+  background-color: transparent;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 202px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {display: block;}
+
+
+/*****************CAJAS DE TEXTO ***********************/
+.largo-txt{
+	resize: none;
+	font-size: 13px;
+    font-family: sans-serif;
+    width: 196px;
+    height: 67px;
+    outline: none;
+    border-radius: 3px;
+}

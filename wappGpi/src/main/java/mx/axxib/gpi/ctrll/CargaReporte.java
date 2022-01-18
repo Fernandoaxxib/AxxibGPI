@@ -83,6 +83,7 @@ public class CargaReporte {
 
 					HttpHeaders headers = new HttpHeaders();
 					headers.add("Authorization", this.env.getProperty("header.autorizacion"));
+					
 					headers.setContentType(MediaType.APPLICATION_JSON);
 
 					org.json.JSONObject carga = new org.json.JSONObject();

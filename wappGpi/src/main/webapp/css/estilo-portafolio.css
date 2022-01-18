@@ -1,0 +1,94 @@
+/***********ESTILOS GENERALES*********************/
+
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: #00529b;
+}
+
+.grey-obscuro {
+	color: #6e6e6e;
+}
+/*************** TITULO CARGA ARCHIVO *****************/
+
+th, td{
+ padding: 3px 4px 5px;
+
+}
+
+
+
+.estilo-tabla-principal:hover {
+    box-shadow: 3px 3px 15px 2px #777575d9;
+    background: white;
+}
+
+.estilo-tabla-principal {
+    background: white;
+    padding: 1px 4px 7px 4px;
+    border-radius: .25rem;
+    border: 1px solid #b9b8b8;
+}
+
+
+#tituloPortafolio {
+	font-size: 14px;
+	font-family: sans-serif;
+	background: #b9b8b8;
+	height: 27px;
+	line-height: 32px;
+	text-align: left;
+	font-weight: 600;
+	border-radius: 7px;
+	color: #fff;
+	padding: 0px 6px;
+}
+
+
+.est-tabla-1 th{	
+	color: #00529b;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 4px solid #e4e4e4;    
+	
+}
+
+table {
+	border-spacing: 0px;
+}
+
+table tbody {
+	font-weight: 500;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+  .tableFixHead {
+        overflow-y: auto;
+        height: 150px;
+      }
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+      }
+      
+      
+     th {
+        background: #dfdfdf;
+      }
+      
+  
+
+.ocultar-tabla{
+	display:none;
+}
+
+.ocultar{
+	display:none;
+}
+
