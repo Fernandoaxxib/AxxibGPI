@@ -1,3 +1,12 @@
+function limpiarVariables(){
+	console.log("limpiar");
+	$("#btn-indicador").removeClass("btn-drop");
+	  $("#btn-indicador").removeClass("g4-back");
+	  $("#btn-indicador").removeClass("g3-back");
+	  $("#btn-indicador").removeClass("g2-back");
+    $("#btn-indicador").removeClass("g1-back");
+    $("#btn-indicador").addClass("btn-drop");
+}
 
 /***********FUNCION PARA DESPLEGAR EL MENU DE LOS INDICADORES DE COLOR*********/
 function myFunction() {
@@ -16,6 +25,7 @@ window.onclick = function(event) {
         openDropdown.classList.remove('show');
         
         document.getElementById("btn-indicador").classList.toggle("show");
+        
         
       }
     }
@@ -69,7 +79,6 @@ function indicador(idColor) {
 $( document ).ready(function() {
 	if(document.getElementById("btn-registro-avance")){
 		
-       
 		
 		var modal1 = document.getElementById("modal-registrar-avances");
 		var btn1 = document.getElementById("btn-registro-avance");
@@ -82,8 +91,7 @@ $( document ).ready(function() {
 			body.style.position = "static";
 			body.style.height = "100%";
 			body.style.overflow = "hidden";
-			//const boton = document.getElementById("btn-indicador");
-			//boton.style.backgroundColor = "transparent";
+			
 		}
 
 		span1.onclick = function() {
@@ -91,8 +99,8 @@ $( document ).ready(function() {
 			body.style.position = "inherit";
 			body.style.height = "auto";
 			body.style.overflow = "visible";
-			//const boton = document.getElementById("btn-indicador");
-			//boton.style.backgroundColor = "transparent";
+			
+			
 		}
 
 		cerrar1.onclick = function() {
@@ -101,8 +109,6 @@ $( document ).ready(function() {
 			body.style.height = "auto";
 			body.style.overflow = "visible";
 			
-			//const boton = document.getElementById("btn-indicador");
-			//boton.style.backgroundColor = "transparent"; 
 		}
 
 		

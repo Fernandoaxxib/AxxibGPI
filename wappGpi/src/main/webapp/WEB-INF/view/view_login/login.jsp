@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate" />
 <title>GPP</title>
@@ -14,51 +14,36 @@
 </head>
 
 <body>
-	<div class="header">
-  <img src="Imagenes/logo-ban.png" class=" left">
-  <div class="afore left">GESTOR PORTAFOLIOS PARA PROYECTOS</div>
 
- 
-</div>
-
-
-	<section id="sesion-login">
-		<div class="titulo-login">
-			<div class="card-header-titulo">GESTOR PORTAFOLIOS PARA PROYECTOS (GPP)</div>
-		</div>
-		<div class="imagen-login">
-			<img src="Imagenes/logo-hex.png" class="img-fluid" alt="">
-		</div>
-
-		<div id="noticias" class="noticias-right">
-			<nav class="fixed">
-				<ul>
-					<li>
-						<button class=" btn tooltip" >
-							<img src="Imagenes/noticias.png" class="image-fluid " alt="">
-							<span class="tooltiptext">
-													 <h4 class="green">Afore XXI Banorte invertirá en bonos verdes</h4>
-													 <p>Afore XXI Banorte está dispuesta a destinar toda su inversión en 
-													 infraestructura y energía en bonos verdes, alrededor de 50,000 
-													 millones de pesos, como parte de su compromiso para combatir el cambio
-													  climático frente al riesgo que representa para las inversiones.</p>
-						   </span>
-						</button>
-					</li>
-					<li>
-						<button class=" btn tooltip-video " >
-							<img src="Imagenes/videos.png" class="image-fluid " alt="">                                    
-							<span class="tooltipvideo">
-								
-	                        </span>
-						</button>
-					</li>
-				</ul>
-			</nav>
-		</div>
-
-
-		<div class="form-login h-back">
+	<table style="width: 100%" class="tabla-header">
+		<tr height="50px">
+			<td width="200" align="left"><img src="Imagenes/logo-ban.png" class="logo-img">
+			</td>
+			<td align="left">
+				<div class="afore ">GESTOR PORTAFOLIOS PARA PROYECTOS</div>
+			</td>
+		</tr>
+	</table>
+	
+	<table style="width: 100%">
+	<tr height="200px">
+	 <td width="600" align="left">
+			<div class="card-header-titulo">GESTOR PORTAFOLIOS PARA PROYECTOS (GPP)</div>		
+	 </td>
+	 <td width="300" align="left">					
+	 </td>
+	 <td width="500" align="center" ><img src="Imagenes/logo-hex.png" class="img-fluid" alt=""></td>
+	 <td width="300" align="center" > </td>	
+	</tr>
+	
+	<tr height="200px">
+	 <td width="600" align="left">
+				
+	 </td>
+	 <td width="300" align="left">					
+	 </td>
+	 <td width="500" align="center" >
+	 <div class="form-login h-back">
 						
 			
 			<form action="login" method="POST" class="form-horizontal">
@@ -84,12 +69,42 @@
 		  </form>
 		  <div class=" text-right">[Versión 01.00.01]</div>
 		</div>
-
-		
-		
-
-	</section>
-
+	 
+	 </td>
+	 <td width="300" align="right" >
+	 <div id="noticias" class="noticias-right">
+			<nav class="fixed">
+				<ul>
+					<li>
+						<button class=" btn tooltip" >
+							<img src="Imagenes/noticias.png" class="image-fluid " alt="">
+							<span class="tooltiptext">
+													 <h4 class="green">Afore XXI Banorte invertirá en bonos verdes</h4>
+													 <p>Afore XXI Banorte está dispuesta a destinar toda su inversión en 
+													 infraestructura y energía en bonos verdes, alrededor de 50,000 
+													 millones de pesos, como parte de su compromiso para combatir el cambio
+													  climático frente al riesgo que representa para las inversiones.</p>
+						   </span>
+						</button>
+					</li>
+					<li>
+						<button class=" btn tooltip-video " >
+							<img src="Imagenes/videos.png" class="image-fluid " alt="">                                    
+							<span class="tooltipvideo">
+								
+	                        </span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	 
+	 
+	  </td>	
+	</tr>
+	
+	</table>
+	
 	<footer>
 		<div class="fixed-bottom">
 			<div class="float-left">
@@ -121,6 +136,7 @@
 
 		</div>
 	</footer>
+
 
 </body>
 

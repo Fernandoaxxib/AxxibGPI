@@ -14,7 +14,7 @@ body{
 
 
 footer{ 
-  position:absolute; 
+  position:fixed; 
   bottom:0; 
   width:100%; 
   height:37px; 
@@ -42,9 +42,6 @@ footer{
 
 }
 
-.left{
-  float: left;
-}
 
 a{
    
@@ -73,7 +70,7 @@ a:hover {
 .text-right{
    text-align: end;
    margin-right: 19px;
-   margin-top: -29px;
+   margin-top: -21px;
    font-size: 13px;
    font-family: 'Montserrat', sans-serif;
 }
@@ -83,16 +80,12 @@ a:hover {
 }
 
 /***********HEADER-LOGIN***************/
-  
-  .header {
-   overflow: hidden;
+  .tabla-header{
   background-color: #ffffff;
-  height: 47px;
-  padding:8px 9px 3px;
-  border-bottom: 3px solid rgb(234, 50, 74);
-}
-
-
+   border-bottom: 3px solid rgb(234, 50, 74);
+   overflow: hidden;
+  }
+ 
   .afore{
    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -103,46 +96,34 @@ a:hover {
 
  
 /*****************BODY-LOGIN***************************/
-.titulo-login{
-    width: 400px;
-    float: left;
-}
-
 .imagen-login{
     float: left;
     margin-left: 400px;
 }
 
-/*#sesion-login {
-   background-image: url(../Imagenes/fondo-hex-ani.gif);
-    height: 480px;
-    background-position: center;
-    background-size: cover;
-    padding: 18px 0px 20px 0px;
-    font-family: 'Noto Sans', sans-serif;
-}*/
-
 .h-back:hover {
     box-shadow: 3px 3px 15px 2px #777575d9;
 }
-#sesion-login .card-header-titulo {
+.card-header-titulo {
     color: #464646;
     font-weight: 600;
     font-size: 30px;
     text-shadow: 6px 6px 2px #cccccc9c;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    margin-top: 22px;
 }
 
-#sesion-login img {
+ .logo-img {
    display: block;
-    width: 48%;
-   /* margin-left: 355px;*/
+   
+}
+
+.img-fluid{
+	width: 70%;
 }
 
 
-#sesion-login .card-login-head{
+ .card-login-head{
     color: #3c3c3c;
     font-weight: 500;
     padding: .7rem;
@@ -153,9 +134,7 @@ a:hover {
 }
 .form-login{
     width: 308px;
-    float: right;
-    margin-right: 209px;
-    margin-top: 10px;
+  
 }
 
 form {
@@ -166,18 +145,18 @@ form {
     text-align: left;
     background-color: white;
     margin-top: -11px;
-    height: 300px;
+    height: 278px;
 }
 .container {
     padding: 2px 14px;
     text-align: left;
 }
 
-#sesion-login label {
+ label {
     color: #3c3c3c;
     display: block;
     margin-bottom: 0.5rem;
-    margin-top: 7px;
+    margin-top: 0px;
     text-align: left;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
@@ -211,16 +190,6 @@ input[type=text], input[type=password] {
     box-shadow: 0 0 0 0.2rem rgb(195 195 195 / 50%);
 }
 
-.noticias-right{
-    float: right;
-}
-#noticias nav ul {
-    display: block;
-    
-    height: auto;
-    padding: 10px;
-    margin: 0px ;
-}
 
 #noticias nav li {
     display: block;

@@ -153,7 +153,7 @@
 												class="letra-btn blue ocultar-Proyecto"></div></td>
 										<td width="100" align="left"></td>
 										<td width="200" align="right">
-										<button id="btn-registro-avance" onclick="limpiaVariables();"  class="button btn-gnral btn-prt" >REGISTRAR AVANCE</button>
+										<button id="btn-registro-avance"   class="button btn-gnral btn-prt" >REGISTRAR AVANCE</button>
 										</td>
 									</tr>
 								</table>
@@ -170,19 +170,20 @@
 										<thead>
 											<tr>
 												<th width="100">% AVANCE:</th>
-												<th width="200">FECHA REGISTRO:</th>
 												<th width="100">INDICADOR:</th>
+												<th width="200">FECHA REGISTRO:</th>
 												<th width="400">OBSERVACIONES:</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>30%</td>
-												<td>28/12/2021</td>
+										<c:forEach var="registroAvance" items="${lregistro}" varStatus="porIndx">
+											<tr>												
+												<td>${registroAvance.porcentaje}</td>
+												<td>${registroAvance.indicador}</td>
 												<td></td>
-												<td>ESTAS OBSERVACIONES SON NUEVAS DENTORO DE ESTA
-													SOLICITUDKNF DFKASDL</td>
+												<td></td>												
 											</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -256,7 +257,7 @@
 											</td>
 											<td align="center">
 												<form>
-													<button class="btn-gnral  btn-guardar   ">GUARDAR</button>
+													<button class="btn-gnral  btn-guardar " type="button" onclick="limpiarVariables();">GUARDAR</button>
 												</form>
 											</td>
 										</tr>

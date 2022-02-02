@@ -205,7 +205,7 @@ table {
 }
 
 .btn-drop{
-	background-color: transparent;
+	background-color: white;
 }
 
 .dropbtn {  
@@ -214,9 +214,9 @@ table {
   padding: 23px 99px 1px;
 }
 
-.dropbtn:hover {
+/*.dropbtn:hover {
   background-color: transparent;
-}
+}*/
 
 
 .dropdown {
